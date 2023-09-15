@@ -1,0 +1,30 @@
+{
+  "name": "solid-demo-app",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite --open --host",
+    "build": "vite build --sourcemap=true",
+    "build:analyze": "vite-bundle-visualizer",
+    "preview": "vite preview --open --port 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lightningjs/renderer": "file:../renderer/",
+    "@lightningjs/solid": "file:../solid/",
+    "@solidjs/router": "^0.8.2",
+    "solid-js": "^1.7.8",
+    "vite-plugin-babel": "^1.1.3"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9",
+    "vite-bundle-visualizer": "^0.10.0",
+    "vite-plugin-cross-origin-isolation": "^0.1.6",
+    "vite-plugin-solid": "^2.7.0",
+    "vite-plugin-import-chunk-url": "file:../vite-plugin-import-chunk-url"
+  }
+}
