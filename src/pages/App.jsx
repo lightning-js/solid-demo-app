@@ -12,17 +12,15 @@ import {FocusRing} from '../components';
 
 const App = () => {
   useFocusManager();
-  const Announcer = useAnnouncer();
-  Announcer.debug = true;
+  useAnnouncer();
   const navigate = useNavigate();
   let focusRingRef;
 
   createEffect(on(activeElement, (elm) => {
-    focusRingRef.parent = elm;
-    focusRingRef.alpha = 1;
-    // focusRingRef.height = elm.height + 8;
-    // focusRingRef.width = elm.width + 8;
-    focusRingRef.zIndex = (elm.zIndex - 0.00000001);
+    setTimeout(() => {
+      focusRingRef.parent = elm;
+      focusRingRef.zIndex = (elm.zIndex - 0.00000001);
+    }, 10)
   }, { defer: true}))
 
   return (

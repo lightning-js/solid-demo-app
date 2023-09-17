@@ -2,8 +2,13 @@ import api from '../';
 import { convertItemsToTiles, chunkArray } from '../formatters/ItemFormatter';
 
 let leftoverTiles = [];
+let cache = new Map();
 export default function (pageIndex) {
-  return api.get('/trending/all/week?page=' + pageIndex).then((trending) => {
+  if (cache.has(pageIndex)) {
+    return cache.get(pageIndex);
+  }
+
+  let result = api.get('/trending/all/week?page=' + pageIndex).then((trending) => {
     let results = trending.results.filter((r) => !r.adult);
     let tiles = leftoverTiles.concat(convertItemsToTiles(results));
     let chunks = chunkArray(tiles);
@@ -14,4 +19,7 @@ export default function (pageIndex) {
     }
     return chunks
   });
+
+  cache.set(pageIndex, result);
+  return result;
 }

@@ -16,21 +16,14 @@ const ButtonsPage = () => {
     y: 400
   }
 
-  const RoundedRectangle = ['RoundedRectangle', { radius: 30 }];
   function Button(props) {
     return (
       <View {...props} forwardStates animate
-        shader={RoundedRectangle}
         style={buttonStyles.container}>
         <Text style={buttonStyles.text}>{props.children}</Text>
       </View>
     );
   }
-
-  const effects = {
-    radius: { radius : 29 },
-    border: { width: 15, color: '#00ffff' },
-  };
 
   return (
     <>
@@ -38,7 +31,7 @@ const ButtonsPage = () => {
         <Button autofocus onEnter={onEnter}>TV Shows</Button>
         <Button states={{ active: true, disabled: false }}>Movies</Button>
         <Button states={'active'}>Sports</Button>
-        <Button effects={effects} states='disabled'>News</Button>
+        <Button states='disabled'>News</Button>
       </Row>
     </>
   );
