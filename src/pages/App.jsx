@@ -19,6 +19,8 @@ const App = () => {
   createEffect(on(activeElement, (elm) => {
     setTimeout(() => {
       focusRingRef.parent = elm;
+      focusRingRef.width = elm.width + 10;
+      focusRingRef.height = elm.height + 10;
       focusRingRef.zIndex = (elm.zIndex - 0.00000001);
     }, 10)
   }, { defer: true}))

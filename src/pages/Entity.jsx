@@ -60,7 +60,8 @@ const Entity = () => {
     width: 1900,
     height: 740,
     x: 10,
-    y: 670
+    y: 670,
+    borderRadius: 30,
   }
 
   function onRowFocus() {
@@ -103,7 +104,7 @@ const Entity = () => {
           <TileRow wrap width={1900} onFocus={onRowFocusAnimate} onEnter={onEnter} items={credits()} />
         </Show>
       </Column>
-      <View ref={backdropRef} animate style={Backdrop} shader={['RoundedRectangle', { radius: 30 }]} />
+      <View ref={backdropRef} animate style={Backdrop} />
 
     </Show>
   );

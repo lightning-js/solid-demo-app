@@ -37,7 +37,9 @@ const Browse = () => {
 
   return (
     <>
-      <View style={styles.headlineBlur}><Text>Watch {showTitle()}!</Text></View>
+      <View style={styles.headlineBlur}>
+        <Text style={styles.showHeadline}>Watch {showTitle()}!</Text>
+      </View>
       <Column announce="All Trending - Week" selected={1} animate y={columnY()} style={styles.Column}>
         <For each={pages()}>
           {(items, i) =>

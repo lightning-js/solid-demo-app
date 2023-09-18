@@ -3,22 +3,23 @@ export default {
     width: 1920, height: 1080
   },
   Thumbnail: {
+    borderRadius: 30,
     width: 185, height: 278, scale: 1, zIndex: 2,
     focus: { scale: 1.1 }
   },
   FocusRing: {
-    width: 194, height: 286, y: -5, x: -5, pivot: 4, color: '#ffff00'
+    borderRadius: 30,
+    width: 194, height: 286, y: -5, x: -5
   },
-  showHeadline: { width: 1920, height: 80, x: 50, y: 20, zIndex: 15 },
+  showHeadline: { x: 70, y: 20 },
   headlineBlur: { width: 1920, height: 150, x: 0, y: 0, zIndex: 14, alpha: 0.9, color: '#000000' },
   TileRowText: { height: 100, fontSize: 80, color: '#f0f0f0' },
   Row: {
     display: 'flex',
-    justifyContent: 'flexStart',
+    justifyContent: 'spaceBetween',
     width: 1760,
     height: 300,
     color: '00000000',
-    gap: 26,
   },
   Column: {
     display: 'flex',
@@ -51,6 +52,7 @@ const Button = {
   focus: {
     color: ['#58807d', {duration: 2000}],
     scale: 1.2,
+    border: { width: 5, color: '#ff0000' },
     alpha: [1, {duration: 1500, delay: 200, timing: "easy-in"}]
   },
   active: {

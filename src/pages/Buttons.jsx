@@ -27,7 +27,7 @@ const ButtonsPage = () => {
 
   return (
     <>
-      <Row x={100} style={RowStyles}>
+      <Row x={100} gap={40} style={RowStyles}>
         <Button autofocus onEnter={onEnter}>TV Shows</Button>
         <Button states={{ active: true, disabled: false }}>Movies</Button>
         <Button states={'active'}>Sports</Button>

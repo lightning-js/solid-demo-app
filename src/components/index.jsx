@@ -2,14 +2,12 @@ import { Row, View } from '@lightningjs/solid';
 import { splitProps } from 'solid-js';
 import styles from '../styles';
 
-export const RoundedRectangle = ['RoundedRectangle', { radius: 15 }];
-
 export function Thumbnail(props) {
   return <View {...props} animate style={styles.Thumbnail} />
 }
 
 export function FocusRing(props) {
-  return <View {...props} shader={RoundedRectangle} style={styles.FocusRing} />
+  return <View {...props} style={styles.FocusRing} />
 }
 
 export function TileRow(props) {
@@ -19,7 +17,7 @@ export function TileRow(props) {
   }
   return <Row {...others} style={styles.Row} onBlur={onBlur}>
    <For each={local.items}>
-      {(item) => <Thumbnail {...item} shader={RoundedRectangle} /> }
+      {(item) => <Thumbnail {...item} /> }
     </For>
   </Row>
 
