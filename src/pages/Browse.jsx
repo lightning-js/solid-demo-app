@@ -26,7 +26,7 @@ const Browse = () => {
     setcolumnY(200 + this.y * -1);
     let numPages = pages().length;
     if (numPages === 0 || this.parent.selected >= numPages - 2) {
-      setPage(numPages + 1);
+      setPage(p => p + 1);
     }
   }
 
