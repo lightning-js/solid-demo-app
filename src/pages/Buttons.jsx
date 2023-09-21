@@ -1,4 +1,4 @@
-import { Row, View, Text } from '@lightningjs/solid';
+import { Row, View, Text, withPadding } from '@lightningjs/solid';
 import styles, { buttonStyles } from '../styles';
 
 const ButtonsPage = () => {
@@ -25,8 +25,33 @@ const ButtonsPage = () => {
     );
   }
 
+  const Badge = (props) => {
+    return <node
+          use:withPadding={[10, 15]}
+          {...props}
+          style={{
+            color: '#000000be',
+            borderRadius: 8,
+            border: { width: 2, color: '#ffffff' },
+          }}>
+          <Text style={{
+              fontSize: 20,
+              lineHeight: 20,
+            }}>
+            {props.children}
+          </Text>
+        </node>;
+    };
   return (
     <>
+      <Row x={100} y={200} gap={5} style={RowStyles}>
+        <Badge>HD</Badge>
+        <Badge>PG13</Badge>
+        <Badge>NC17</Badge>
+        <Text fontSize={30}>I like bananas</Text>
+        <Badge>DOLBY</Badge>
+      </Row>
+
       <Row x={100} gap={40} style={RowStyles}>
         <Button autofocus onEnter={onEnter}>TV Shows</Button>
         <Button states={{ active: true, disabled: false }}>Movies</Button>

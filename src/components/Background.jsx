@@ -5,9 +5,20 @@ import { createEffect, on } from "solid-js";
 export default function Background() {
   let bg1, bg2;
   let active = 0;
-  const alpha = 0.6;
+  const alpha = 1;
   const bgStyle = { width: 1920, height: 1080, alpha };
   const animationSettings = { duration: 1000, easing: 'ease-in-out' };
+  const gradientStyle = {
+    linearGradient:
+    {
+      angle: 180,
+      stops: [0.1, 1],
+      colors: [
+        '#000000aa', '#00000000',
+      ],
+    },
+    width: 1920, height: 1080
+  }
 
   function onLoad(elm, {width, height}) {
     console.log('LOADED: ', elm, width, height);
@@ -38,8 +49,9 @@ export default function Background() {
   }, { defer: true}))
 
   return (<>
-    <View style={{ width: 1920, height: 1080, color: '#1a1a1a'}} />
-    <View onLoad={onLoad} ref={bg1} animate animationSettings={animationSettings} {...bgStyle} />
+    <View onLoad={onLoad}
+    ref={bg1} animate animationSettings={animationSettings} {...bgStyle} />
     <View ref={bg2} animate animationSettings={animationSettings} {...bgStyle} alpha="0" />
+    <View style={gradientStyle} />
   </>);
 }

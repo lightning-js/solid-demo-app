@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@lightningjs/renderer": "^0.3.0",
-    "@lightningjs/solid": "^0.3.0",
+    "@lightningjs/solid": "^0.3.3",
     "@solidjs/router": "^0.8.2",
     "solid-js": "^1.7.8",
     "vite-plugin-babel": "^1.1.3"
