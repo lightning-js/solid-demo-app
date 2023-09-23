@@ -10,6 +10,8 @@ Config.fontSettings.color = 0xffffffff;
 Config.fontSettings.fontSize = 100;
 Config.keyMap.m = 'Menu';
 Config.keyMap.t = 'Text';
+Config.keyMap.f = 'Flex';
+Config.keyMap.c = 'FlexColumn';
 Config.keyMap.b = 'Buttons';
 
 const driver = 'threadx'; // Use 'main' for main thread-only rendering

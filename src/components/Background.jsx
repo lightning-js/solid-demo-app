@@ -24,6 +24,15 @@ export default function Background() {
     console.log('LOADED: ', elm, width, height);
   }
   createEffect(on(globalBackground, (img) => {
+    if (img.startsWith('#')) {
+      bg1.color = img;
+      bg1.src = '';
+      bg1.alpha = 1;
+      active = 1;
+      bg2.alpha = 0;
+      return;
+    }
+
     if (active === 0) {
       bg1.src = img;
       active = 1;
@@ -50,8 +59,8 @@ export default function Background() {
 
   return (<>
     <View onLoad={onLoad}
-    ref={bg1} animate animationSettings={animationSettings} {...bgStyle} />
-    <View ref={bg2} animate animationSettings={animationSettings} {...bgStyle} alpha="0" />
+    ref={bg1} animate animationSettings={animationSettings} style={bgStyle} />
+    <View ref={bg2} animate animationSettings={animationSettings} style={bgStyle} alpha="0" />
     <View style={gradientStyle} />
   </>);
 }

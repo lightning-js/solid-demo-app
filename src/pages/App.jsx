@@ -4,6 +4,8 @@ import { useFocusManager, useAnnouncer, View, activeElement} from "@lightningjs/
 import Browse from './Browse';
 import TextPage from './Text';
 import ButtonsPage from './Buttons';
+import FlexPage from './Flex';
+import FlexColumnPage from './FlexColumn';
 import ButtonsMaterialPage from './ButtonsMaterial';
 import Entity from './Entity';
 import NotFound from './NotFound';
@@ -29,6 +31,8 @@ const App = () => {
     <View ref={window.APP}
       onLast={() => history.back()}
       onText={() => navigate('/text')}
+      onFlex={() => navigate('/flex')}
+      onFlexColumn={() => navigate('/flexcolumn')}
       onButtons={() => navigate('/buttons')}
       onMenu={() => navigate('/')} style={{ width: 1920, height: 1080 }}>
       <Background />
@@ -37,6 +41,8 @@ const App = () => {
         <Route path="/" component={Browse} />
         <Route path="/text" component={TextPage} />
         <Route path="/buttons" component={ButtonsPage} />
+        <Route path="/flex" component={FlexPage} />
+        <Route path="/flexcolumn" component={FlexColumnPage} />
         <Route path="/buttonsmaterial" component={ButtonsMaterialPage} />
         <Route path="/entity/:type/:id" component={Entity} />
         <Route path="/*all" component={NotFound} />
