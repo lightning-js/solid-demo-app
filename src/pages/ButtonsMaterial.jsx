@@ -1,4 +1,6 @@
-import { Row, View, Text } from '@lightningjs/solid';
+import { Text, View } from '@lightningjs/solid';
+import { Row } from '@lightningjs/solid-primitives';
+
 import { MaterialButtonText } from '../styles';
 
 const MaterialButtonsPage = () => {

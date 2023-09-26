@@ -1,4 +1,5 @@
-import { Row, View } from '@lightningjs/solid';
+import { View } from '@lightningjs/solid';
+import { Row } from '@lightningjs/solid-primitives';
 import { splitProps } from 'solid-js';
 import styles from '../styles';
 

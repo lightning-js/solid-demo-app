@@ -1,4 +1,5 @@
-import { Column, Text, View } from '@lightningjs/solid';
+import { Text, View } from '@lightningjs/solid';
+import { Column } from '@lightningjs/solid-primitives';
 import { useParams } from "@solidjs/router";
 import { createEffect, createResource, on } from "solid-js";
 import { TileRow } from '../components';

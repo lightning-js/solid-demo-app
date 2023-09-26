@@ -1,6 +1,7 @@
 import { createEffect, on } from "solid-js";
 import { Route, Routes, useNavigate } from "@solidjs/router";
-import { useFocusManager, useAnnouncer, View, activeElement} from "@lightningjs/solid";
+import { View, activeElement} from "@lightningjs/solid";
+import { useFocusManager, useAnnouncer } from "@lightningjs/solid-primitives";
 import Browse from './Browse';
 import TextPage from './Text';
 import ButtonsPage from './Buttons';
@@ -13,7 +14,13 @@ import Background from '../components/Background';
 import {FocusRing} from '../components';
 
 const App = () => {
-  useFocusManager();
+  useFocusManager({
+    m: 'Menu',
+    f: 'Flex',
+    c: 'FlexColumn',
+    t: 'Text',
+    b: 'Buttons'
+  });
   useAnnouncer();
   const navigate = useNavigate();
   let focusRingRef;

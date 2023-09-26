@@ -1,4 +1,5 @@
-import { Row, View, Text, withPadding } from '@lightningjs/solid';
+import { View, Text } from '@lightningjs/solid';
+import { Row, withPadding } from '@lightningjs/solid-primitives';
 import styles, { buttonStyles } from '../styles';
 
 const ButtonsPage = () => {

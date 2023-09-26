@@ -1,4 +1,5 @@
-import { Column, Row, Text, View } from '@lightningjs/solid';
+import { Text, View } from '@lightningjs/solid';
+import { Column, Row } from '@lightningjs/solid-primitives';
 import { createSignal, onMount } from 'solid-js';
 import styles from '../styles';
 import { setGlobalBackground } from "../state";

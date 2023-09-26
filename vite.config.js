@@ -10,12 +10,15 @@ export default defineConfig({
     },
   })],
   resolve: {
-    dedupe: ['solid-js'],
+    dedupe: ['solid-js', '@lightningjs/solid'],
   },
   optimizeDeps: {
     include: [],
     // This is important for things to work right in `vite` dev mode! Needs more investigation.
-    exclude: ['@lightningjs/solid', '@lightningjs/renderer/core', '@lightningjs/renderer/workers/renderer']
+    exclude: ['@lightningjs/solid',
+    '@lightningjs/solid-primitives',
+    '@lightningjs/renderer/core',
+    '@lightningjs/renderer/workers/renderer']
   },
   server: {
     port: 5174,
