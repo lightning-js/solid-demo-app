@@ -1,14 +1,18 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import { importChunkUrl } from '@lightningjs/vite-plugin-import-chunk-url';
+import legacy from '@vitejs/plugin-legacy';
 
 export default defineConfig({
   plugins: [importChunkUrl(), solidPlugin({
     solid: {
       moduleName: "@lightningjs/solid",
       generate: 'universal',
-    },
-  })],
+    }}),
+    legacy({
+      targets: ['defaults', 'not IE 11'],
+    }),
+  ],
   resolve: {
     dedupe: ['solid-js', '@lightningjs/solid'],
   },
