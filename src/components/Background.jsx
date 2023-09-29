@@ -6,7 +6,7 @@ export default function Background() {
   let bg1, bg2;
   let active = 0;
   const alpha = 1;
-  const bgStyle = { width: 1920, height: 1080, alpha };
+  const bgStyle = { alpha, color: '#ffffffff' };
   const animationSettings = { duration: 1000, easing: 'ease-in-out' };
   const gradientStyle = {
     linearGradient:
@@ -16,8 +16,7 @@ export default function Background() {
       colors: [
         '#000000aa', '#00000000',
       ],
-    },
-    width: 1920, height: 1080
+    }
   }
 
   function onLoad(elm, {width, height}) {

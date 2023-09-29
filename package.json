@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "vite --open --host",
+    "start": "vite --open --host --force",
     "build": "vite build --sourcemap=true",
     "build:analyze": "vite-bundle-visualizer",
     "preview": "vite preview --open --port 8080",
@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@lightningjs/renderer": "^0.3.0",
-    "@lightningjs/solid": "^0.4.2",
+    "@lightningjs/solid": "^0.5.0",
     "@lightningjs/solid-primitives": "^0.3.3",
     "@solidjs/router": "^0.8.2",
     "solid-js": "^1.7.8",
