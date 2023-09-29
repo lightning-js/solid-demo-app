@@ -9,7 +9,7 @@ Config.fontSettings.fontFamily = 'Ubuntu';
 Config.fontSettings.color = 0xffffffff;
 Config.fontSettings.fontSize = 100;
 
-const driver = 'threadx'; // Use 'main' for main thread-only rendering
+const driver = 'main'; // Use 'main' for main thread-only rendering
 
 const RenderOptions = {
   coreExtensionModule: coreExtensionModuleUrl,
