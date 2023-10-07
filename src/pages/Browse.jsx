@@ -1,33 +1,45 @@
-import { createEffect, on, createSignal } from "solid-js";
+import { createEffect, createMemo, on, createSignal, Show, createResource } from "solid-js";
 import { View, Text, activeElement } from '@lightningjs/solid';
 import { Column } from '@lightningjs/solid-primitives';
-import { useNavigate } from "@solidjs/router";
+import { useNavigate, useParams } from "@solidjs/router";
 import { TileRow } from '../components';
 import styles from '../styles';
 import { setGlobalBackground } from "../state";
 import browseProvider from '../api/providers/browse';
 import { createInfiniteScroll } from '../components/pagination';
+import ContentBlock from "../components/ContentBlock";
+import * as entityProvider from '../api/providers/entity';
 
 const Browse = () => {
-  const [columnY, setcolumnY] = createSignal(50);
-  const [showTitle, setShowTitle] = createSignal('');
-  const [pages, { page, setPage }] = createInfiniteScroll(browseProvider);
+  const params = useParams();
+  const [columnY, setcolumnY] = createSignal(0);
+  const [entityInfo, setEntityInfo] = createSignal();
+  const [entityData] = createResource(entityInfo, entityProvider.getInfo);
+  const [heroContent, setHeroContent] = createSignal({});
   const navigate = useNavigate();
+
+  const provider = createMemo(() => {
+    return createInfiniteScroll(browseProvider(params.filter || 'all'));
+  });
 
   createEffect(on(activeElement, (elm) => {
     if (elm.backdrop) {
-      // elm.animate({ rotation: Math.PI * 2 }, { duration: 1500 }).start()
       setGlobalBackground(elm.backdrop);
-      setShowTitle(elm.shortTitle);
+    }
+    if (elm.entityInfo) {
+      setEntityInfo(elm.entityInfo);
+    }
+    if (elm.heroContent) {
+      setHeroContent(elm.heroContent);
     }
   }, { defer: true}))
 
   function onRowFocus() {
     this.children.selected.setFocus();
-    setcolumnY(200 + this.y * -1);
-    let numPages = pages().length;
+    setcolumnY(this.y * -1 + 24);
+    let numPages = provider().pages().length;
     if (numPages === 0 || this.parent.selected >= numPages - 2) {
-      setPage(p => p + 1);
+      provider().setPage(p => p + 1);
     }
   }
 
@@ -37,22 +49,19 @@ const Browse = () => {
   };
 
   return (
-    <>
-      <View style={styles.headlineBlur}>
-        <Text style={styles.showHeadline}>Watch {showTitle()}!</Text>
+    <Show when={provider().pages().length} keyed>
+      <ContentBlock y={150} x={160} {...heroContent()}></ContentBlock>
+      <View clipping style={styles.itemsContainer}>
+        <Column plinko announce="All Trending - Week" animate y={columnY()} style={styles.Column}>
+          <For each={provider().pages()} keyed>
+            {(items, i) =>
+              <TileRow autofocus={i() === 0}
+                  items={items} onFocus={onRowFocus} onEnter={onEnter} />
+            }
+          </For>
+        </Column>
       </View>
-      <Column announce="All Trending - Week" selected={1} animate y={columnY()} style={styles.Column}>
-        <For each={pages()}>
-          {(items, i) =>
-            <>
-              <Text skipFocus style={styles.TileRowText}>{i()}) {items[0].title} ---</Text>
-              <TileRow autofocus={i() === 0} wrap={i() % 2 === 0}
-                items={items} onFocus={onRowFocus} onEnter={onEnter} />
-            </>
-          }
-        </For>
-      </Column>
-    </>
+    </Show>
   );
 };
 

@@ -1,25 +1,29 @@
 import api from '../';
 import { convertItemsToTiles, chunkArray } from '../formatters/ItemFormatter';
 
-let leftoverTiles = [];
 let cache = new Map();
-export default function (pageIndex) {
-  if (cache.has(pageIndex)) {
-    return cache.get(pageIndex);
-  }
+const leftoverTiles = new Map();
 
-  let result = api.get('/trending/all/week?page=' + pageIndex).then((trending) => {
-    let results = trending.results.filter((r) => !r.adult);
-    let tiles = leftoverTiles.concat(convertItemsToTiles(results));
-    let chunks = chunkArray(tiles);
-    if (chunks[chunks.length - 1].length < 7) {
-      leftoverTiles = chunks.pop();
-    } else {
-      leftoverTiles = [];
+export default function (filter) {
+  return (pageIndex) => {
+    const url = `/trending/${filter}/week?page=${pageIndex}`;
+    if (cache.has(url)) {
+      return cache.get(url);
     }
-    return chunks
-  });
 
-  cache.set(pageIndex, result);
-  return result;
+    let result = api.get(url).then((trending) => {
+      let results = trending.results.filter((r) => !r.adult);
+      let tiles = (leftoverTiles.has(filter) ? leftoverTiles.get(filter) : []).concat(convertItemsToTiles(results));
+      let chunks = chunkArray(tiles);
+      if (chunks[chunks.length - 1].length < 7) {
+        leftoverTiles.set(filter, chunks.pop());
+      } else {
+        leftoverTiles.delete(filter);
+      }
+      return chunks;
+    });
+
+    cache.set(url, result);
+    return result;
+  }
 }

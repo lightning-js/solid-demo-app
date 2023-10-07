@@ -1,14 +1,22 @@
+import theme from 'theme';
+
 export default {
   Page: {
     width: 1920, height: 1080
   },
+  itemsContainer: {
+    width: theme.layout.screenW,
+    height: 600,
+    y: 560,
+    x: 0
+  },
   Thumbnail: {
-    borderRadius: 30,
+    borderRadius: 16,
     width: 185, height: 278, scale: 1, zIndex: 2,
     focus: { scale: 1.1 }
   },
   FocusRing: {
-    borderRadius: 30,
+    borderRadius: 16,
     width: 194, height: 286, y: -5, x: -5
   },
   showHeadline: { x: 70, y: 20 },
@@ -17,20 +25,16 @@ export default {
   Row: {
     display: 'flex',
     justifyContent: 'spaceBetween',
-    width: 1760,
     height: 300,
-    color: '00000000',
   },
   Column: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flexStart',
-    width: 1760,
-    height: 500,
-    gap: 50,
-    y: 200,
-    x: 80,
-    color: '00000000'
+    gap: 20,
+    width: theme.layout.screenW - (2 * theme.layout.marginX),
+    x: theme.layout.marginX,
+    y: 48
   },
   Rect: {
     width: 250,
