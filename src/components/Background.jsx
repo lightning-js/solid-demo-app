@@ -18,6 +18,8 @@ export default function Background() {
       active = 1;
       bg2.alpha = 0;
       return;
+    } else {
+      bg1.color = 0xffffffff;
     }
 
     if (active === 0) {

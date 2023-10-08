@@ -1,4 +1,5 @@
-import { createEffect, createMemo, on, createSignal, Show, createResource } from "solid-js";
+import { createEffect, createMemo, on, createSignal,
+  Show, createResource, createSelector } from "solid-js";
 import { View, Text, activeElement } from '@lightningjs/solid';
 import { Column } from '@lightningjs/solid-primitives';
 import { useNavigate, useParams } from "@solidjs/router";
@@ -17,6 +18,9 @@ const Browse = () => {
   const [entityData] = createResource(entityInfo, entityProvider.getInfo);
   const [heroContent, setHeroContent] = createSignal({});
   const navigate = useNavigate();
+  const isFirst = createSelector(() => {
+    return 0;
+  });
 
   const provider = createMemo(() => {
     return createInfiniteScroll(browseProvider(params.filter || 'all'));
@@ -26,9 +30,9 @@ const Browse = () => {
     if (elm.backdrop) {
       setGlobalBackground(elm.backdrop);
     }
-    if (elm.entityInfo) {
-      setEntityInfo(elm.entityInfo);
-    }
+    // if (elm.entityInfo) {
+    //   setEntityInfo(elm.entityInfo);
+    // }
     if (elm.heroContent) {
       setHeroContent(elm.heroContent);
     }
@@ -49,13 +53,13 @@ const Browse = () => {
   };
 
   return (
-    <Show when={provider().pages().length} keyed>
-      <ContentBlock y={150} x={160} {...heroContent()}></ContentBlock>
+    <Show when={provider().pages().length}>
+      <ContentBlock y={360} x={150} {...heroContent()}></ContentBlock>
       <View clipping style={styles.itemsContainer}>
         <Column plinko announce="All Trending - Week" animate y={columnY()} style={styles.Column}>
           <For each={provider().pages()} keyed>
             {(items, i) =>
-              <TileRow autofocus={i() === 0}
+              <TileRow autofocus={isFirst(i())}
                   items={items} onFocus={onRowFocus} onEnter={onEnter} />
             }
           </For>

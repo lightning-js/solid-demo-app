@@ -2,9 +2,10 @@ import { View, Text } from '@lightningjs/solid';
 import { withPadding } from '@lightningjs/solid-primitives';
 import theme from 'theme';
 
+const blockWidth = 1100;
 const HeadlineStyles = {
   ...theme.typography.display2,
-  width: 900,
+  width: blockWidth,
   height: 58,
   contain: 'both',
 };
@@ -16,7 +17,7 @@ const Headline = (props) => (
 
 const DescriptionStyles = {
   ...theme.typography.body1,
-  width: 900,
+  width: blockWidth,
   height: 72,
   contain: 'both',
 };
@@ -39,7 +40,7 @@ function getReviews(reviews) {
         <View
           src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Tomato-Torrent-Icon.png"
           title="Rotten Tomatoes Rating"
-          style={{ y: 5, width: 30, height: 30, marginRight: -6 }}
+          style={{ width: 30, height: 30, marginRight: -6 }}
         />
         <Text style={MetaTextStyle}>{reviews.rtCrit + '%'}</Text>
       </Show>
@@ -47,7 +48,7 @@ function getReviews(reviews) {
         <View
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Rotten_Tomatoes_positive_audience.svg/80px-Rotten_Tomatoes_positive_audience.svg.png"
           title="Rotten Tomatoes Rating"
-          style={{ y: 5, width: 24, height: 30, marginRight: -6 }}
+          style={{ width: 24, height: 30, marginRight: -6 }}
         />
         <Text style={MetaTextStyle}>{reviews.rtFan + '%'}</Text>
       </Show>
@@ -58,7 +59,7 @@ function getReviews(reviews) {
 const Badge = (props) => {
   return (
     <node
-      use:withPadding={[7, 15, 13, 15]}
+      use:withPadding={[8, 15, 13, 15]}
       {...props}
       style={{
         color: '#00000099',
@@ -78,12 +79,12 @@ const Metadata = (props) => (
     style={{
       ...theme.flexRow,
       gap: 12,
-      width: 900,
-      height: 40,
+      width: blockWidth,
+      height: 48,
     }}
   >
     <Text style={MetaTextStyle}>{props.metaText}</Text>
-    <For each={props.badges}>{(item) => <Badge>{item}</Badge>}</For>
+    <For each={props.badges}>{(item) => <Badge y={-5}>{item}</Badge>}</For>
     {getReviews(props.reviews)}
   </View>
 );
@@ -93,7 +94,7 @@ const ContentBlock = (props) => {
       {...props}
       style={{
         ...theme.flexColumn,
-        width: 933,
+        width: blockWidth,
         height: 160,
         gap: 16,
       }}
