@@ -1,36 +1,54 @@
+import theme from 'theme';
+
 export default {
   Page: {
     width: 1920, height: 1080
   },
+  headlineText: {
+    width: 1200, height: 240,
+    x: 360,
+    lineHeight: 170, y: 455, contain: 'both',
+    fontSize: 66,
+    textAlign: 'center'
+  },
+  headlineSubText: {
+    width: 960, height: 170, lineHeight: 170,
+    x: 530,
+    y: 655, contain: 'both',
+    fontSize: 48,
+    textAlign: 'center'
+  },
+  itemsContainer: {
+    width: theme.layout.screenW,
+    height: 600,
+    y: 560,
+    x: 0
+  },
   Thumbnail: {
-    borderRadius: 30,
+    borderRadius: 16,
     width: 185, height: 278, scale: 1, zIndex: 2,
     focus: { scale: 1.1 }
   },
   FocusRing: {
-    borderRadius: 30,
+    borderRadius: 16,
     width: 194, height: 286, y: -5, x: -5
   },
   showHeadline: { x: 70, y: 20 },
   headlineBlur: { width: 1920, height: 150, x: 0, y: 0, zIndex: 14, alpha: 0.9, color: '#000000' },
-  TileRowText: { height: 100, fontSize: 80, color: '#f0f0f0' },
+  RowTitle: { height: 60, width: 300, marginTop: 20, fontSize: 36, color: '#f0f0f0', zIndex: 2 },
   Row: {
     display: 'flex',
     justifyContent: 'spaceBetween',
-    width: 1760,
     height: 300,
-    color: '00000000',
   },
   Column: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flexStart',
-    width: 1760,
-    height: 500,
-    gap: 50,
-    y: 200,
-    x: 80,
-    color: '00000000'
+    gap: 20,
+    width: theme.layout.screenW - (2 * theme.layout.marginX),
+    x: theme.layout.marginX,
+    y: 48
   },
   Rect: {
     width: 250,
@@ -39,6 +57,12 @@ export default {
     x: 300,
     color: '#0000ff'
   },
+  peopleBio: {
+    ...theme.typography.body1,
+    contain: 'both',
+    width: 1500,
+    height: 400
+  }
 };
 
 const Button = {

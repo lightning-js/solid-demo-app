@@ -1,27 +1,15 @@
 import { globalBackground } from "../state";
 import { View } from "@lightningjs/solid";
 import { createEffect, on } from "solid-js";
+import theme from 'theme';
 
 export default function Background() {
   let bg1, bg2;
   let active = 0;
   const alpha = 1;
-  const bgStyle = { alpha, color: '#ffffffff' };
+  const bgStyles = { alpha, color: '#ffffffff' };
   const animationSettings = { duration: 1000, easing: 'ease-in-out' };
-  const gradientStyle = {
-    linearGradient:
-    {
-      angle: 180,
-      stops: [0.1, 1],
-      colors: [
-        '#000000aa', '#00000000',
-      ],
-    }
-  }
 
-  function onLoad(elm, {width, height}) {
-    console.log('LOADED: ', elm, width, height);
-  }
   createEffect(on(globalBackground, (img) => {
     if (img.startsWith('#')) {
       bg1.color = img;
@@ -30,6 +18,8 @@ export default function Background() {
       active = 1;
       bg2.alpha = 0;
       return;
+    } else {
+      bg1.color = 0xffffffff;
     }
 
     if (active === 0) {
@@ -57,9 +47,20 @@ export default function Background() {
   }, { defer: true}))
 
   return (<>
-    <View onLoad={onLoad}
-    ref={bg1} animate animationSettings={animationSettings} style={bgStyle} />
-    <View ref={bg2} animate animationSettings={animationSettings} style={bgStyle} alpha="0" />
-    <View style={gradientStyle} />
+  <View width="1920" height="1080" color="#000000">
+    <View ref={bg1} animate animationSettings={animationSettings} style={bgStyles} />
+    <View ref={bg2} animate animationSettings={animationSettings} style={bgStyles} alpha="0" />
+    <View
+      effects={{
+        radialGradient: {
+          colors: ['#336699ff', '#336699ff', 0x000000ff],
+          stops: [0, 0.4, 1.0],
+          height: 720,
+          width: 1920,
+          pivot: [0.8, 0],
+        },
+      }}
+    />
+    </View>
   </>);
 }

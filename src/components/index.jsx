@@ -13,10 +13,8 @@ export function FocusRing(props) {
 
 export function TileRow(props) {
   const [local, others] = splitProps(props, ["items"]);
-  const onBlur = function() {
-    this.selected = 0;
-  }
-  return <Row {...others} style={styles.Row} onBlur={onBlur}>
+
+  return <Row {...others} style={styles.Row}>
    <For each={local.items}>
       {(item) => <Thumbnail {...item} /> }
     </For>

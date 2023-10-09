@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   '@lightningjs/renderer':
-    specifier: ^0.3.0
-    version: 0.3.0
+    specifier: ^0.3.6
+    version: 0.3.6
   '@lightningjs/solid':
-    specifier: ^0.5.0
-    version: 0.5.0(solid-js@1.7.12)
+    specifier: ^0.5.4
+    version: 0.5.4(solid-js@1.7.12)
   '@lightningjs/solid-primitives':
-    specifier: ^0.3.3
-    version: 0.3.3(@lightningjs/solid@0.5.0)(solid-js@1.7.12)
+    specifier: ^0.3.4
+    version: 0.3.6(@lightningjs/solid@0.5.4)(solid-js@1.7.12)
   '@solidjs/router':
     specifier: ^0.8.2
     version: 0.8.3(solid-js@1.7.12)
@@ -1450,36 +1450,36 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@lightningjs/renderer@0.3.0:
-    resolution: {integrity: sha512-JyQNbe7BLBhtDk8zoLvJqBZ/6AijSf7n1TuxIMRKzO7+s5pVAthFZCLDmqY/wihTJOIktBXg0z/jMFnPhmHuQQ==}
+  /@lightningjs/renderer@0.3.6:
+    resolution: {integrity: sha512-cw+QrptWQ2Nj5QAc9vQGRu7jgjaiUXqxUuAcYiaAUM9sYJhpEpNzYkzaPMiQvv5Mo4hRRI1zgZdnmQ7qZgJq5A==}
     dependencies:
-      '@lightningjs/threadx': 0.3.0
+      '@lightningjs/threadx': 0.3.3
       '@protobufjs/eventemitter': 1.1.0
     dev: false
 
-  /@lightningjs/solid-primitives@0.3.3(@lightningjs/solid@0.5.0)(solid-js@1.7.12):
-    resolution: {integrity: sha512-4zkX5Ka4Vt3I81g6DHxtN9SgdwhsYkxX0DWSWkEUkBDBi9wK9yfr2jkqwgw33yQCE2RbC1JdwV4162Gg/UrMyg==}
+  /@lightningjs/solid-primitives@0.3.6(@lightningjs/solid@0.5.4)(solid-js@1.7.12):
+    resolution: {integrity: sha512-qNPZL9MFFemf7IJpvOvu3G0l8KqGPDKfcRob59XItnkTtmO8N5Uq0TkJdR+5CYfLzPt5u6ywloIge4yfZGrNbg==}
     peerDependencies:
       '@lightningjs/solid': '*'
-      solid-js: ^1.7.12
+      solid-js: '*'
     dependencies:
-      '@lightningjs/solid': 0.5.0(solid-js@1.7.12)
+      '@lightningjs/solid': 0.5.4(solid-js@1.7.12)
       '@solid-primitives/keyboard': 1.2.5(solid-js@1.7.12)
       '@solid-primitives/scheduled': 1.4.1(solid-js@1.7.12)
       solid-js: 1.7.12
     dev: false
 
-  /@lightningjs/solid@0.5.0(solid-js@1.7.12):
-    resolution: {integrity: sha512-81En30j4YRLlxXas0IQI7D+NLw19Fd34u2y0DAMAeWn2eyt5C4oNfzmDyp3SCHjo3VhKRqBffrF/9KW8n/ihYw==}
+  /@lightningjs/solid@0.5.4(solid-js@1.7.12):
+    resolution: {integrity: sha512-1OaaCOkuTrPELaor6BEAxU6iZC401f1Y3SyFAhOnGDhnDZ9UkMcsUfPBfLxAZhsbFeOhfuobqA+N4cKBXbgpZw==}
     peerDependencies:
       solid-js: ^1.7.12
     dependencies:
-      '@lightningjs/renderer': 0.3.0
+      '@lightningjs/renderer': 0.3.6
       solid-js: 1.7.12
     dev: false
 
-  /@lightningjs/threadx@0.3.0:
-    resolution: {integrity: sha512-93Db9Ek5HRDXRy8LtI53nfIShlQsnhf/llnEBej6fmDXBPyrGeCFgx2XsHSLn4J4cdTsPTcTA+lcqWhi24lw7Q==}
+  /@lightningjs/threadx@0.3.3:
+    resolution: {integrity: sha512-cctepz1aYBjfT0y0vx4KknT89DowbYyu158IxPszuzVXB4J0FfuBoBNx923FKiNXBGcVc7CnyWEJ9sNMatUhCQ==}
     dev: false
 
   /@lightningjs/vite-plugin-import-chunk-url@0.3.0(vite@4.4.9):

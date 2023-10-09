@@ -1,11 +1,13 @@
 import { Text, View } from '@lightningjs/solid';
+import { onMount } from 'solid-js';
+import { setGlobalBackground } from "../state";
 
 const TextPage = () => {
   const OverviewContainer = {
     width: 900,
     height: 500,
     y: 350,
-    x: 20,
+    x: 150,
     gap: 25,
     display: 'flex',
     flexDirection: 'column',
@@ -37,8 +39,12 @@ const TextPage = () => {
     fontSize: 26,
   };
 
+  onMount(() => {
+    setGlobalBackground('#000000');
+  });
+
   return (
-    <View style={OverviewContainer}>
+    <View autofocus style={OverviewContainer}>
       <Text style={Title}>Title of the Page</Text>
       <Text style={Overview}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel tempor tellus. Sed eu leo purus. Vestibulum sollicitudin eget tellus a varius. Phasellus est turpis, volutpat sed blandit sit amet, rutrum sit amet mauris. In dignissim elit orci, a sollicitudin ipsum faucibus et. Quisque vel quam rutrum, faucibus augue sed, scelerisque nunc.</Text>
       <View style={SublineContainer}>

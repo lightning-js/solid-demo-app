@@ -18,14 +18,12 @@ export function createInfiniteScroll(fetcher) {
     });
   });
 
-  return [
-    pages,
-    {
+  return {
+      pages,
       page,
       setPage,
       setPages,
       end,
       setEnd
-    }
-  ];
+    };
 }
