@@ -33,9 +33,10 @@ export default {
     },
     alpha: [0],
     focus: {
-      alpha: [1]
+      width: 1600,
+      alpha: [1],
     },
-    width: 1600,
+    width: 100,
     height: 1080,
   },
   NavButton: {

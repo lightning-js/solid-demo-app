@@ -31,28 +31,30 @@ function NavButton(props) {
 }
 
 export default function NavDrawer(props) {
-  let column;
+  let backdrop;
   const navigate = useNavigate();
 
   function onFocus() {
-    column.children.forEach((c) => c.states.add('active'));
-    column.children.selected.setFocus();
+    backdrop.states.add('focus');
+    this.children.forEach((c) => c.states.add('active'));
+    this.children.selected.setFocus();
   }
 
   function onBlur() {
-    column.selected = 0;
-    column.children.forEach((c) => c.states.remove('active'));
+    backdrop.states.remove('focus');
+    this.selected = 0;
+    this.children.forEach((c) => c.states.remove('active'));
   }
 
   return (
-    <View {...props} forwardStates onFocus={onFocus} onBlur={onBlur}>
-      <Column ref={column} style={styles.Column} animate>
+    <>
+      <Column {...props} onFocus={onFocus} onBlur={onBlur} style={styles.Column} animate>
         <NavButton onEnter={() => navigate('/browse/all')} icon='trending'>Trending</NavButton>
         <NavButton icon='movie' onEnter={() => navigate('/browse/movie')}>Movies</NavButton>
         <NavButton icon='tv' onEnter={() => navigate('/browse/tv')}>TV</NavButton>
         <NavButton icon='experiment' onEnter={() => navigate('/examples')}>Examples</NavButton>
       </Column>
-      <View style={styles.Gradient}></View>
-    </View>
+      <View ref={backdrop} style={styles.Gradient}></View>
+    </>
   );
 }
