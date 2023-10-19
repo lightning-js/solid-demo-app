@@ -16,14 +16,35 @@ import Background from '../components/Background';
 import NavDrawer from '../components/NavDrawer/NavDrawer';
 import {FocusRing} from '../components';
 import theme from 'theme';
+import { assertTruthy } from "@lightningjs/renderer/utils";
+
+declare module '@lightningjs/solid-primitives' {
+  // Augment the FocusManager KeyMap interface with our custom keys
+  interface KeyMap {
+    Menu: string;
+    Flex: string;
+    FlexColumn: string;
+    Text: string;
+    Buttons: string;
+  }
+}
+
+declare module '@lightningjs/solid' {
+  interface ElementNode {
+    heroContent?: boolean;
+    backdrop?: any;
+    entityInfo?: any;
+    href?: string;
+  }
+}
 
 const App = () => {
   useFocusManager({
-    m: 'Menu',
-    f: 'Flex',
-    c: 'FlexColumn',
-    t: 'Text',
-    b: 'Buttons'
+    Menu: 'm',
+    Flex: 'f',
+    FlexColumn: 'c',
+    Text: 't',
+    Buttons: 'b'
   });
   useAnnouncer();
   const navigate = useNavigate();
@@ -31,13 +52,14 @@ const App = () => {
   let focusRingRef, navDrawer, lastFocused;
 
   createEffect(on(activeElement, (elm) => {
+    assertTruthy(elm);
     setTimeout(() => {
       if (elm.heroContent) {
         focusRingRef.parent = elm;
         focusRingRef.alpha = 1;
-        focusRingRef.width = elm.width + 10;
-        focusRingRef.height = elm.height + 10;
-        focusRingRef.zIndex = (elm.zIndex - 0.00000001);
+        focusRingRef.width = elm.width! + 10;
+        focusRingRef.height = elm.height! + 10;
+        focusRingRef.zIndex = (elm.zIndex! - 0.00000001);
       } else {
         focusRingRef.alpha = 0;
       }

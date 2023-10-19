@@ -1,11 +1,11 @@
-import api from '../';
+import api from '..';
 import { convertItemsToTiles, chunkArray } from '../formatters/ItemFormatter';
 
 let cache = new Map();
 const leftoverTiles = new Map();
 
-export default function (filter) {
-  return (pageIndex) => {
+export default function (filter: string) {
+  return (pageIndex: number): Promise<any> => {
     const url = `/trending/${filter}/week?page=${pageIndex}`;
     if (cache.has(url)) {
       return cache.get(url);

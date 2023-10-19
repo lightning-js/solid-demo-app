@@ -1,4 +1,4 @@
-import { Text, View } from '@lightningjs/solid';
+import { ElementNode, Text, View, Show, hexColor } from '@lightningjs/solid';
 import { Column } from '@lightningjs/solid-primitives';
 import { useParams } from "@solidjs/router";
 import { createEffect, createResource, on } from "solid-js";
@@ -8,6 +8,7 @@ import ContentBlock from "../components/ContentBlock";
 import { useNavigate } from "@solidjs/router";
 import styles from '../styles';
 import * as provider from '../api/providers/entity';
+import { assertTruthy } from '@lightningjs/renderer/utils';
 
 const Entity = () => {
   const params = useParams();
@@ -22,7 +23,7 @@ const Entity = () => {
   }, { defer: true}))
 
   const Backdrop = {
-    color: '#000000',
+    color: hexColor('#000000'),
     alpha: 0.1,
     width: 1900,
     height: 740,
@@ -31,22 +32,23 @@ const Entity = () => {
     borderRadius: 30,
   }
 
-  function onRowFocus() {
-    this.children.selected.setFocus();
+  function onRowFocus(this: ElementNode) {
+    this.children.selected?.setFocus();
     columnRef.y = 670;
     backdropRef.y = 670;
     backdropRef.alpha = 0.1;
   }
 
-  function onRowFocusAnimate() {
-    this.children.selected.setFocus();
+  function onRowFocusAnimate(this: ElementNode) {
+    this.children.selected?.setFocus();
     columnRef.y = 280;
     backdropRef.y = 240;
     backdropRef.alpha = 0.9;
   }
 
-  function onEnter() {
+  function onEnter(this: ElementNode) {
     let entity = this.children.selected;
+    assertTruthy(entity && entity.href);
     navigate(entity.href);
   };
 

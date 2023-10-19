@@ -1,10 +1,10 @@
-import { Text, View } from '@lightningjs/solid';
+import { ElementNode, IntrinsicNodeStyleProps, Text, View, hexColor } from '@lightningjs/solid';
 import { Row } from '@lightningjs/solid-primitives';
 
 import { MaterialButtonText } from '../styles';
 
 const MaterialButtonsPage = () => {
-  function onEnter(event, elm) {
+  function onEnter(this: ElementNode, event, elm) {
     this.states.toggle('disabled');
   }
 
@@ -13,11 +13,11 @@ const MaterialButtonsPage = () => {
     justifyContent: 'flexStart',
     width: 1500,
     height: 300,
-    color: '00000000',
+    color: hexColor('00000000'),
     gap: 26,
     y: 400,
     x: 100
-  }
+  } satisfies IntrinsicNodeStyleProps;
 
   const MaterialButton = {
     width: 386,

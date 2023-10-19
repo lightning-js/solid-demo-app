@@ -11,19 +11,19 @@ const defaultFetchParams = {
   },
 };
 
-export function getImageUrl(path, posterSize = basePosterSize) {
+export function getImageUrl(path: string, posterSize: string = basePosterSize) {
   return baseImageUrl + posterSize + path;
 }
 
-function get(...args) {
+function get(path: string, params: RequestInit = {}) {
   if (tmdbConfig) {
-    return _get(...args);
+    return _get(path, params);
   } else {
-    return loadConfig().then(() => _get(...args))
+    return loadConfig().then(() => _get(path, params))
   }
 }
 
-function _get(path, params = {}) {
+function _get(path: string, params: RequestInit = {}) {
   return fetch(API_BASE + path, {
     ...defaultFetchParams,
     ...params,

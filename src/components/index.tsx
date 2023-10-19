@@ -1,17 +1,21 @@
-import { View } from '@lightningjs/solid';
+import { IntrinsicNodeProps, View } from '@lightningjs/solid';
 import { Row } from '@lightningjs/solid-primitives';
-import { splitProps } from 'solid-js';
+import { For, splitProps } from 'solid-js';
 import styles from '../styles';
 
-export function Thumbnail(props) {
+export function Thumbnail(props: IntrinsicNodeProps) {
   return <View {...props} animate style={styles.Thumbnail} />
 }
 
-export function FocusRing(props) {
+export function FocusRing(props: IntrinsicNodeProps) {
   return <View {...props} style={styles.FocusRing} />
 }
 
-export function TileRow(props) {
+export interface TileRowProps extends IntrinsicNodeProps {
+  items: IntrinsicNodeProps[];
+}
+
+export function TileRow(props: TileRowProps) {
   const [local, others] = splitProps(props, ["items"]);
 
   return <Row {...others} style={styles.Row}>

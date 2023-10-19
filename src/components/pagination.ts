@@ -1,7 +1,7 @@
 import { createSignal, createComputed, batch, createResource } from "solid-js";
 
-export function createInfiniteScroll(fetcher) {
-  const [pages, setPages] = createSignal([]);
+export function createInfiniteScroll(fetcher: (page: number) => Promise<any>) {
+  const [pages, setPages] = createSignal<any[]>([]);
   const [page, setPage] = createSignal(1);
   const [end, setEnd] = createSignal(false);
 

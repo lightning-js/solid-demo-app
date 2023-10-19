@@ -1,11 +1,15 @@
 import { useNavigate } from '@solidjs/router';
-import { View, Text } from '@lightningjs/solid';
+import { View, Text, IntrinsicNodeProps, ElementNode } from '@lightningjs/solid';
 import { Column } from '@lightningjs/solid-primitives';
 import styles from './NavDrawer.styles';
 import Icon from '../Icon';
 import theme from 'theme';
 
-function NavButton(props) {
+interface NavButtonProps extends IntrinsicNodeProps {
+  icon: string;
+}
+
+function NavButton(props: NavButtonProps) {
   return (
     <View {...props} forwardStates style={styles.NavButton}>
       <View y={-16}>
@@ -34,16 +38,16 @@ export default function NavDrawer(props) {
   let backdrop;
   const navigate = useNavigate();
 
-  function onFocus() {
+  function onFocus(this: ElementNode) {
     backdrop.states.add('focus');
-    this.children.forEach((c) => c.states.add('active'));
-    this.children.selected.setFocus();
+    this.children.forEach((c) => c.states!.add('active'));
+    this.children.selected!.setFocus();
   }
 
-  function onBlur() {
+  function onBlur(this: ElementNode) {
     backdrop.states.remove('focus');
     this.selected = 0;
-    this.children.forEach((c) => c.states.remove('active'));
+    this.children.forEach((c) => c.states!.remove('active'));
   }
 
   return (

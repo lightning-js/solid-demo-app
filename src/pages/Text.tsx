@@ -1,4 +1,4 @@
-import { Text, View } from '@lightningjs/solid';
+import { IntrinsicNodeStyleProps, IntrinsicTextNodeStyleProps, Text, View, hexColor } from '@lightningjs/solid';
 import { onMount } from 'solid-js';
 import { setGlobalBackground } from "../state";
 
@@ -12,8 +12,8 @@ const TextPage = () => {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flexStart',
-    color: 0x00000000
-  }
+    color: hexColor('00000000')
+  } satisfies IntrinsicNodeStyleProps
 
   const SublineContainer = {
     width: 900,
@@ -22,8 +22,8 @@ const TextPage = () => {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flexStart',
-    color: 0x00000000
-  }
+    color: hexColor('00000000')
+  } satisfies IntrinsicNodeStyleProps
 
   const Title = {
     fontSize: 42,
@@ -33,7 +33,7 @@ const TextPage = () => {
     width: OverviewContainer.width,
     fontSize: 26,
     contain: 'width'
-  };
+  } satisfies IntrinsicTextNodeStyleProps;
 
   const Subline = {
     fontSize: 26,
