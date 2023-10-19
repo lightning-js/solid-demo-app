@@ -54,7 +54,7 @@ export default function Background() {
     <View
       effects={{
         radialGradient: {
-          colors: ['#336699ff', '#336699ff', 0x000000ff],
+          colors: [hexColor('#336699ff'), hexColor('#336699ff'), hexColor('#000000')],
           stops: [0, 0.4, 1.0],
           height: 720,
           width: 1920,
