@@ -1,4 +1,4 @@
-import { Text, View } from '@lightningjs/solid';
+import { ElementNode, Text, View, Show, hexColor } from '@lightningjs/solid';
 import { Column } from '@lightningjs/solid-primitives';
 import { useParams } from "@solidjs/router";
 import { createEffect, createResource, on } from "solid-js";
@@ -8,6 +8,7 @@ import { useNavigate } from "@solidjs/router";
 import theme from 'theme';
 import styles from '../styles';
 import * as provider from '../api/providers/people';
+import { assertTruthy } from '@lightningjs/renderer/utils';
 
 const People = () => {
   const params = useParams();
@@ -21,7 +22,7 @@ const People = () => {
   }, { defer: true}))
 
   const Backdrop = {
-    color: '#000000',
+    color: hexColor('#000000'),
     alpha: 0.8,
     width: 1540,
     height: 440,
@@ -30,8 +31,9 @@ const People = () => {
     borderRadius: 30,
   }
 
-  function onEnter() {
+  function onEnter(this: ElementNode) {
     let entity = this.children.selected;
+    assertTruthy(entity && entity.href);
     navigate(entity.href);
   };
 

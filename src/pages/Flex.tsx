@@ -1,4 +1,4 @@
-import { Text, View } from '@lightningjs/solid';
+import { ElementNode, IntrinsicNodeStyleProps, Text, View, hexColor } from '@lightningjs/solid';
 import { Column, Row } from '@lightningjs/solid-primitives';
 import { createSignal, onMount } from 'solid-js';
 import styles from '../styles';
@@ -10,8 +10,8 @@ const FlexPage = () => {
     justifyContent: 'flexStart',
     width: 1600,
     height: 110,
-    color: '#4dabf5',
-  }
+    color: hexColor('#4dabf5'),
+  } satisfies IntrinsicNodeStyleProps;
 
   const rowTitle = {
     fontSize: 44,
@@ -25,16 +25,16 @@ const FlexPage = () => {
       width: 200,
       height: 100,
       y: 5,
-      color: '#1769aa'
+      color: 0x1769aaff,
     }
 
     return <View {...props} style={styles} />;
   }
 
   const [columnY, setColumnY] = createSignal(50);
-  function onFocus() {
-    this.children.selected.setFocus();
-    setColumnY(150 + this.y * -1);
+  function onFocus(this: ElementNode) {
+    this.children.selected?.setFocus();
+    setColumnY(150 + (this.y || 0) * -1);
   }
 
   onMount(() => {

@@ -1,5 +1,4 @@
-import { View, Text } from '@lightningjs/solid';
-import { withPadding } from '@lightningjs/solid-primitives';
+import { View, Text, Show, IntrinsicNodeStyleProps, For } from '@lightningjs/solid';
 import theme from 'theme';
 
 const blockWidth = 1100;
@@ -77,7 +76,7 @@ const MetaTextStyle = theme.typography.body2;
 const Metadata = (props) => (
   <View
     style={{
-      ...theme.flexRow,
+      ...theme.flexRow as IntrinsicNodeStyleProps,
       gap: 12,
       width: blockWidth,
       height: 48,

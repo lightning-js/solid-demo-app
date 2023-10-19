@@ -1,14 +1,19 @@
 {
   "compilerOptions": {
     "strict": true,
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "ES2019",
+    "module": "ES2015",
+    "moduleResolution": "Bundler",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": ["vite/client"],
+    "types": ["vite/client", "@lightningjs/vite-plugin-import-chunk-url/client"],
     "noEmit": true,
-    "isolatedModules": true
-  }
+    "isolatedModules": true,
+    "noImplicitAny": false,
+    "paths": {
+      "theme": ["./src/material-theme.json"]
+    }
+  },
 }

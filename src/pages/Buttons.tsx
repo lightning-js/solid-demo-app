@@ -1,9 +1,9 @@
-import { View, Text } from '@lightningjs/solid';
-import { Row, withPadding } from '@lightningjs/solid-primitives';
-import styles, { buttonStyles } from '../styles';
+import { View, Text, ElementNode, IntrinsicNodeProps, hexColor, IntrinsicNodeStyleProps } from '@lightningjs/solid';
+import { Row } from '@lightningjs/solid-primitives';
+import { buttonStyles } from '../styles';
 
 const ButtonsPage = () => {
-  function onEnter(event, elm) {
+  function onEnter(this: ElementNode, event, elm) {
     this.states.toggle('disabled');
   }
 
@@ -12,10 +12,10 @@ const ButtonsPage = () => {
     justifyContent: 'flexStart',
     width: 1500,
     height: 300,
-    color: '00000000',
+    color: hexColor('00000000'),
     gap: 26,
     y: 400
-  }
+  } satisfies IntrinsicNodeStyleProps;
 
   function Button(props) {
     return (
@@ -26,18 +26,19 @@ const ButtonsPage = () => {
     );
   }
 
-  const Badge = (props) => {
+  const Badge = (props: IntrinsicNodeProps) => {
     return <node
           use:withPadding={[10, 15]}
           {...props}
           style={{
-            color: '#000000be',
+            color: hexColor('#000000be'),
             borderRadius: 8,
-            border: { width: 2, color: '#ffffff' },
+            border: { width: 2, color: hexColor('#ffffff') },
           }}>
           <Text style={{
               fontSize: 20,
-              lineHeight: 20,
+              // TODO: lineHeight is not supported by renderer yet
+              // lineHeight: 20,
             }}>
             {props.children}
           </Text>

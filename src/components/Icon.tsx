@@ -1,4 +1,4 @@
-import { View } from '@lightningjs/solid';
+import { For, IntrinsicNodeProps, View } from '@lightningjs/solid';
 import { createSpriteMap } from '@lightningjs/solid-primitives';
 // Icons from https://uxwing.com/
 
@@ -10,7 +10,11 @@ const icons = [
   { name: 'movie', width: 94, height: 100, x: 281, y: 0 },
 ];
 
-function Icon(props) {
+interface IconProps extends IntrinsicNodeProps {
+  name: string;
+}
+
+function Icon(props: IconProps) {
   const sprite = createSpriteMap('/assets/icons_white.png', icons);
 
   return (
@@ -19,8 +23,8 @@ function Icon(props) {
       texture={sprite[props.name]}
       width={sprite[props.name].props.width}
       height={sprite[props.name].props.height}
-      x={(100 - sprite[props.name].props.width) / 2}
-      y={(100 - sprite[props.name].props.height) / 2}
+      x={(100 - (sprite[props.name].props.width || 0)) / 2}
+      y={(100 - (sprite[props.name].props.height || 0)) / 2}
     ></View>
   );
 }

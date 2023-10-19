@@ -21,10 +21,11 @@ import {
   CoreExtension,
   WebTrFontFace,
   SdfTrFontFace,
+  type Stage,
 } from '@lightningjs/renderer/core';
 
 export default class AppCoreExtension extends CoreExtension {
-  async run(stage) {
+  async run(stage: Stage) {
     stage.fontManager.addFontFace(
       new WebTrFontFace('NotoSans', {}, '/fonts/NotoSans-Regular.ttf'),
     );

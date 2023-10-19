@@ -9,6 +9,7 @@
     "build": "vite build --sourcemap=true",
     "build:analyze": "vite-bundle-visualizer",
     "preview": "vite preview --open --port 8080",
+    "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -25,6 +26,7 @@
     "@lightningjs/vite-plugin-import-chunk-url": "^0.3.0",
     "@vitejs/plugin-legacy": "^4.1.1",
     "terser": "^5.20.0",
+    "typescript": "^5.2.2",
     "vite": "^4.3.9",
     "vite-bundle-visualizer": "^0.10.0",
     "vite-plugin-cross-origin-isolation": "^0.1.6",
