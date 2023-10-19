@@ -17,7 +17,7 @@ export default defineConfig({
     alias: {
       theme: 'src/material-theme.json',
     },
-    dedupe: ['solid-js', '@lightningjs/solid'],
+    dedupe: ['solid-js', '@lightningjs/solid', '@lightningjs/renderer'],
   },
   optimizeDeps: {
     include: [],
