@@ -1,6 +1,6 @@
 import { createEffect, on } from "solid-js";
 import { Route, Routes, useNavigate } from "@solidjs/router";
-import { View, activeElement} from "@lightningjs/solid";
+import { View, activeElement, hexColor} from "@lightningjs/solid";
 import { useFocusManager, useAnnouncer } from "@lightningjs/solid-primitives";
 import Browse from './Browse';
 import Examples from './Examples';
@@ -83,7 +83,7 @@ const App = () => {
       }}
       onRight={() => navDrawer.states.has('focus') && lastFocused.setFocus()}>
       <Background />
-      <FocusRing color={theme.color.primary} ref={focusRingRef} />
+      <FocusRing color={hexColor(theme.color.primary)} ref={focusRingRef} />
       <Routes>
         <Route path="/" component={Browse} />
         <Route path="/examples" component={Examples} />
