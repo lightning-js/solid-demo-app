@@ -1,5 +1,7 @@
 import { View, Text, Show, IntrinsicNodeStyleProps, For } from '@lightningjs/solid';
+import { withPadding } from '@lightningjs/solid-primitives';
 import theme from 'theme';
+withPadding;
 
 const blockWidth = 1100;
 const HeadlineStyles = {

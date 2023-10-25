@@ -1,14 +1,13 @@
-import { AnimationSettings } from "@lightningjs/renderer";
+import { type AnimationSettings } from "@lightningjs/renderer";
 import { globalBackground } from "../state.js";
-import { IntrinsicNodeStyleProps, View, hexColor } from "@lightningjs/solid";
+import { type IntrinsicNodeStyleProps, View } from "@lightningjs/solid";
 import { createEffect, on } from "solid-js";
-import theme from 'theme';
 
 export default function Background() {
   let bg1, bg2;
   let active = 0;
   const alpha = 1;
-  const bgStyles = { alpha, color: hexColor('#ffffffff') } satisfies IntrinsicNodeStyleProps;
+  const bgStyles = { alpha, color: 0xffffffff } satisfies IntrinsicNodeStyleProps;
   const animationSettings = { duration: 1000, easing: 'ease-in-out' } satisfies Partial<AnimationSettings>;
 
   createEffect(on(globalBackground, (img: string) => {
@@ -48,17 +47,17 @@ export default function Background() {
   }, { defer: true}))
 
   return (<>
-  <View width={1920} height={1080} color={hexColor('#000000')}>
+  <View width={1920} height={1080}>
     <View ref={bg1} animate animationSettings={animationSettings} style={bgStyles} />
     <View ref={bg2} animate animationSettings={animationSettings} style={bgStyles} alpha={0} />
     <View
       effects={{
         radialGradient: {
-          colors: [hexColor('#336699ff'), hexColor('#336699ff'), hexColor('#000000')],
-          stops: [0, 0.4, 1.0],
-          height: 720,
+          colors: [0x0000007C, 0x0000007C, 0x336699ff],
+          stops: [0, 0.4, 0.9],
+          height: 800,
           width: 1920,
-          pivot: [0.8, 0],
+          pivot: [0.8, 0], 
         },
       }}
     />
