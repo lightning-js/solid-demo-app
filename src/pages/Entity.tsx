@@ -22,27 +22,29 @@ const Entity = () => {
     setGlobalBackground(data.backgroundImage);
   }, { defer: true}))
 
+  const columnY = 600;
+
   const Backdrop = {
     color: hexColor('#000000'),
-    alpha: 0.1,
+    alpha: 0,
     width: 1900,
-    height: 740,
+    height: 890,
     x: 10,
-    y: 670,
+    y: columnY,
     borderRadius: 30,
   }
 
   function onRowFocus(this: ElementNode) {
     this.children.selected?.setFocus();
-    columnRef.y = 670;
-    backdropRef.y = 670;
-    backdropRef.alpha = 0.1;
+    columnRef.y = columnY;
+    backdropRef.y = columnY;
+    backdropRef.alpha = 0;
   }
 
   function onRowFocusAnimate(this: ElementNode) {
     this.children.selected?.setFocus();
-    columnRef.y = 280;
-    backdropRef.y = 240;
+    columnRef.y = 200;
+    backdropRef.y = 160;
     backdropRef.alpha = 0.9;
   }
 
@@ -57,7 +59,7 @@ const Entity = () => {
   return (
     <Show when={data()} keyed>
       <ContentBlock y={360} x={150} {...data().heroContent}></ContentBlock>
-      <Column animate ref={columnRef} y={670} x={140} style={styles.Column}>
+      <Column animate ref={columnRef} y={columnY} x={140} style={styles.Column}>
         <Show when={recommendations() && credits()}>
           <Text skipFocus style={styles.RowTitle}>Recommendations</Text>
           <TileRow autofocus onFocus={onRowFocus} onEnter={onEnter} items={recommendations()} />

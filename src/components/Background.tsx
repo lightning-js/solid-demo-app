@@ -1,7 +1,8 @@
 import { type AnimationSettings } from "@lightningjs/renderer";
 import { globalBackground } from "../state.js";
-import { type IntrinsicNodeStyleProps, View } from "@lightningjs/solid";
+import { type IntrinsicNodeStyleProps, View, hexColor } from "@lightningjs/solid";
 import { createEffect, on } from "solid-js";
+import theme from 'theme';
 
 export default function Background() {
   let bg1, bg2;
@@ -53,7 +54,7 @@ export default function Background() {
     <View
       effects={{
         radialGradient: {
-          colors: [0x0000007C, 0x0000007C, 0x336699ff],
+          colors: [0x0000007C, 0x0000007C, hexColor(theme.color.container)],
           stops: [0, 0.4, 0.9],
           height: 800,
           width: 1920,

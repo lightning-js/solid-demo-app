@@ -33,7 +33,7 @@ function _get(path: string, params: RequestInit = {}) {
 function loadConfig() {
   return _get('/configuration').then((data) => {
     tmdbConfig = data;
-    baseImageUrl = data.images?.base_url;
+    baseImageUrl = data.images?.secure_base_url;
     return data;
   });
 }

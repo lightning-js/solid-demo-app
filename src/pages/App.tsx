@@ -83,19 +83,21 @@ const App = () => {
       }}
       onRight={() => navDrawer.states.has('focus') && lastFocused.setFocus()}>
       <Background />
-      <FocusRing color={hexColor(theme.color.primary)} ref={focusRingRef} />
+      <FocusRing color={hexColor(theme.color.focus)} ref={focusRingRef} />
       <Routes>
-        <Route path="/" component={Browse} />
-        <Route path="/examples" component={Examples} />
-        <Route path="/browse/:filter" component={Browse} />
-        <Route path="/text" component={TextPage} />
-        <Route path="/buttons" component={ButtonsPage} />
-        <Route path="/flex" component={FlexPage} />
-        <Route path="/flexcolumn" component={FlexColumnPage} />
-        <Route path="/buttonsmaterial" component={ButtonsMaterialPage} />
-        <Route path="/entity/people/:id" component={People} />
-        <Route path="/entity/:type/:id" component={Entity} />
-        <Route path="/*all" component={NotFound} />
+        <Route path={import.meta.env.BASE_URL}>
+          <Route path="" component={Browse} />
+          <Route path="examples" component={Examples} />
+          <Route path="browse/:filter" component={Browse} />
+          <Route path="text" component={TextPage} />
+          <Route path="buttons" component={ButtonsPage} />
+          <Route path="flex" component={FlexPage} />
+          <Route path="flexcolumn" component={FlexColumnPage} />
+          <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
+          <Route path="entity/people/:id" component={People} />
+          <Route path="entity/:type/:id" component={Entity} />
+          <Route path="*all" component={NotFound} />
+        </Route>
       </Routes>
       <NavDrawer ref={navDrawer} />
     </View>

@@ -2,6 +2,7 @@ import { For, IntrinsicNodeProps, View } from '@lightningjs/solid';
 import { createSpriteMap } from '@lightningjs/solid-primitives';
 // Icons from https://uxwing.com/
 
+const basePath = import.meta.env.BASE_URL;
 
 const icons = [
   { name: 'experiment', width: 81, height: 100, x: 0, y: 0 },
@@ -15,7 +16,7 @@ interface IconProps extends IntrinsicNodeProps {
 }
 
 function Icon(props: IconProps) {
-  const sprite = createSpriteMap('/assets/icons_white.png', icons);
+  const sprite = createSpriteMap(basePath + 'assets/icons_white.png', icons);
 
   return (
     <View
@@ -34,7 +35,7 @@ export function PreviewIcons() {
   return (
     <>
       <View
-        src="/assets/icons.png"
+        src={`${basePath}assets/icons.png`}
         width={375}
         height={100}
         y={10}

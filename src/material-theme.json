@@ -20,6 +20,7 @@
   },
   "color": {
     "primary": "#00315c",
+    "focus": "#bdbdbd",
     "container": "#004882"
   },
   "typography": {

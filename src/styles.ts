@@ -82,7 +82,7 @@ export default {
     justifyContent: 'flexStart',
     gap: 20,
     width: theme.layout.screenW - (2 * theme.layout.marginX),
-    x: theme.layout.marginX,
+    x: theme.layout.marginX + theme.layout.gutterX,
     y: 48
   } satisfies IntrinsicNodeStyleProps,
   Rect: {
