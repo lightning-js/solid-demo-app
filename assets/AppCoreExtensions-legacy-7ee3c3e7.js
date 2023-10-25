@@ -1,0 +1,2 @@
+System.register(["./CoreExtension-legacy-ac715ad4.js"],(function(n,t){"use strict";var e,s,o;return{setters:[n=>{e=n.C,s=n.W,o=n.S}],execute:function(){const t="/solid-demo-app/";n("default",class extends e{async run(n){n.fontManager.addFontFace(new s("NotoSans",{},t+"fonts/NotoSans-Regular.ttf")),n.fontManager.addFontFace(new o("Ubuntu",{},"msdf",n,t+"fonts/Ubuntu-Bold.msdf.png",t+"fonts/Ubuntu-Bold.msdf.json"))}})}}}));
+//# sourceMappingURL=AppCoreExtensions-legacy-7ee3c3e7.js.map

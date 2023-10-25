@@ -1,2 +1,0 @@
-import{C as t,W as a,S as e}from"./CoreExtension-d763954d.js";function s(){import.meta.url,import("_").catch(()=>1);async function*o(){}}class f extends t{async run(n){n.fontManager.addFontFace(new a("NotoSans",{},"/fonts/NotoSans-Regular.ttf")),n.fontManager.addFontFace(new e("Ubuntu",{},"msdf",n,"/fonts/Ubuntu-Bold.msdf.png","/fonts/Ubuntu-Bold.msdf.json"))}}export{s as __vite_legacy_guard,f as default};
-//# sourceMappingURL=AppCoreExtensions-1daee84c.js.map
