@@ -66,14 +66,16 @@ const App = () => {
     }, 10)
   }, { defer: true}))
 
+  const BASE_URL = import.meta.env.BASE_URL;
+
   return (
     <View ref={window.APP}
       onLast={() => history.back()}
-      onText={() => navigate('/text')}
-      onFlex={() => navigate('/flex')}
-      onFlexColumn={() => navigate('/flexcolumn')}
-      onButtons={() => navigate('/buttons')}
-      onMenu={() => navigate('/')} style={{ width: 1920, height: 1080 }}
+      onText={() => navigate(BASE_URL + 'text')}
+      onFlex={() => navigate(BASE_URL + 'flex')}
+      onFlexColumn={() => navigate(BASE_URL + 'flexcolumn')}
+      onButtons={() => navigate(BASE_URL + 'buttons')}
+      onMenu={() => navigate(BASE_URL)} style={{ width: 1920, height: 1080 }}
       onLeft={() => {
         if (navDrawer.states.has('focus')) {
           return false;
@@ -85,7 +87,7 @@ const App = () => {
       <Background />
       <FocusRing color={hexColor(theme.color.focus)} ref={focusRingRef} />
       <Routes>
-        <Route path={import.meta.env.BASE_URL}>
+        <Route path={BASE_URL}>
           <Route path="" component={Browse} />
           <Route path="examples" component={Examples} />
           <Route path="browse/:filter" component={Browse} />

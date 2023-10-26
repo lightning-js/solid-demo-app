@@ -50,13 +50,15 @@ export default function NavDrawer(props) {
     this.children.forEach((c) => c.states!.remove('active'));
   }
 
+  const BASE_URL = import.meta.env.BASE_URL;
+
   return (
     <>
       <Column {...props} onFocus={onFocus} onBlur={onBlur} style={styles.Column} animate>
-        <NavButton onEnter={() => navigate('/browse/all')} icon='trending'>Trending</NavButton>
-        <NavButton icon='movie' onEnter={() => navigate('/browse/movie')}>Movies</NavButton>
-        <NavButton icon='tv' onEnter={() => navigate('/browse/tv')}>TV</NavButton>
-        <NavButton icon='experiment' onEnter={() => navigate('/examples')}>Examples</NavButton>
+        <NavButton onEnter={() => navigate(BASE_URL + 'browse/all')} icon='trending'>Trending</NavButton>
+        <NavButton icon='movie' onEnter={() => navigate(BASE_URL + 'browse/movie')}>Movies</NavButton>
+        <NavButton icon='tv' onEnter={() => navigate(BASE_URL + 'browse/tv')}>TV</NavButton>
+        <NavButton icon='experiment' onEnter={() => navigate(BASE_URL + 'examples')}>Examples</NavButton>
       </Column>
       <View ref={backdrop} style={styles.Gradient}></View>
     </>
