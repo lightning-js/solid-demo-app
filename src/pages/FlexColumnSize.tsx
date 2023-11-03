@@ -19,7 +19,7 @@ const FlexColumnPage = () => {
     justifyContent: 'flexStart',
     color: hexColor('#4dabf5'),
     height: 850,
-    width: 60
+    width: 80
   } satisfies IntrinsicNodeStyleProps;
 
   const rowTitle = {
@@ -30,7 +30,7 @@ const FlexColumnPage = () => {
 
   function Block(props) {
     const styles = {
-      width: 50,
+      width: randSize(),
       height: 80,
       x: 5,
       color: hexColor('#1769aa'),
@@ -38,6 +38,12 @@ const FlexColumnPage = () => {
 
     return <View {...props} style={styles} />;
   }
+
+  function randSize() {
+    // size 10 to 70
+    return Math.floor(Math.random() * 61) + 10;
+  }
+
 
   const [columnY, setColumnY] = createSignal(50);
   function onFocus(this: ElementNode) {
@@ -55,7 +61,7 @@ const FlexColumnPage = () => {
     <>
       <Text style={rowTitle}>Start, MarginTop, End, MarginBottom, Center, Between, Evenly</Text>
       <Row gap={gap} style={RowStyles} onFocus={onFocus}>
-        <Column gap={30} style={ColumnStyles}>
+        <Column gap={30} style={ColumnStyles} alignItems='center'>
           <Block autofocus />
           <Block />
           <Block />
@@ -63,7 +69,7 @@ const FlexColumnPage = () => {
           <Block />
         </Column>
 
-        <Column gap={gap} style={ColumnStyles} onFocus={onFocus}>
+        <Column gap={gap} style={ColumnStyles} onFocus={onFocus} alignItems='flexStart'>
           <Block marginTop={100} />
           <Block />
           <Block marginTop={100} />
@@ -71,7 +77,7 @@ const FlexColumnPage = () => {
           <Block />
         </Column>
 
-        <Column gap={gap} justifyContent={'flexEnd'} style={ColumnStyles} onFocus={onFocus}>
+        <Column gap={gap} alignItems='flexEnd' justifyContent={'flexEnd'} style={ColumnStyles} onFocus={onFocus}>
           <Block />
           <Block />
           <Block />

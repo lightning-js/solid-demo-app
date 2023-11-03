@@ -7,6 +7,8 @@ import Examples from './Examples';
 import TextPage from './Text';
 import ButtonsPage from './Buttons';
 import FlexPage from './Flex';
+import FlexSizePage from './FlexSize';
+import FlexColumnSizePage from './FlexColumnSize';
 import FlexColumnPage from './FlexColumn';
 import ButtonsMaterialPage from './ButtonsMaterial';
 import Entity from './Entity';
@@ -42,6 +44,8 @@ const App = () => {
   useFocusManager({
     Menu: 'm',
     Flex: 'f',
+    FlexSize: 's',
+    FlexColumnSize: 'x',
     FlexColumn: 'c',
     Text: 't',
     Buttons: 'b'
@@ -73,6 +77,8 @@ const App = () => {
       onLast={() => history.back()}
       onText={() => navigate(BASE_URL + 'text')}
       onFlex={() => navigate(BASE_URL + 'flex')}
+      onFlexSize={() => navigate(BASE_URL + 'flexsize')}
+      onFlexColumnSize={() => navigate(BASE_URL + 'flexcolumnsize')}
       onFlexColumn={() => navigate(BASE_URL + 'flexcolumn')}
       onButtons={() => navigate(BASE_URL + 'buttons')}
       onMenu={() => navigate(BASE_URL)} style={{ width: 1920, height: 1080 }}
@@ -94,6 +100,8 @@ const App = () => {
           <Route path="text" component={TextPage} />
           <Route path="buttons" component={ButtonsPage} />
           <Route path="flex" component={FlexPage} />
+          <Route path="flexsize" component={FlexSizePage} />
+          <Route path="flexcolumnsize" component={FlexColumnSizePage} />
           <Route path="flexcolumn" component={FlexColumnPage} />
           <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
           <Route path="entity/people/:id" component={People} />

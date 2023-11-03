@@ -8,8 +8,8 @@
     "start": "vite --open --host --force",
     "build": "vite build --sourcemap=true",
     "build:github": "vite build --sourcemap=true --base=/solid-demo-app/",
-    "build:analyze": "vite-bundle-visualizer", 
-    "deploy": "gh-pages -d dist", 
+    "build:analyze": "vite-bundle-visualizer",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview --open --port 8080",
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,22 +17,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@lightningjs/renderer": "^0.4.0",
-    "@lightningjs/solid": "^0.7.0",
-    "@lightningjs/solid-primitives": "^0.4.1",
-    "@solidjs/router": "^0.8.2",
-    "solid-js": "^1.8.2",
+    "@lightningjs/renderer": "^0.4.2",
+    "@lightningjs/solid": "^0.7.5",
+    "@lightningjs/solid-primitives": "^0.4.3",
+    "@solidjs/router": "^0.8.3",
+    "solid-js": "^1.8.5",
     "vite-plugin-babel": "^1.1.3"
   },
   "devDependencies": {
     "@lightningjs/vite-plugin-import-chunk-url": "^0.3.0",
     "@vitejs/plugin-legacy": "^4.1.1",
     "gh-pages": "^6.0.0",
-    "terser": "^5.20.0",
+    "terser": "^5.24.0",
     "typescript": "^5.2.2",
-    "vite": "^4.3.9",
+    "vite": "^4.5.0",
     "vite-bundle-visualizer": "^0.10.0",
     "vite-plugin-cross-origin-isolation": "^0.1.6",
-    "vite-plugin-solid": "^2.7.0"
+    "vite-plugin-solid": "^2.7.2"
   }
 }
