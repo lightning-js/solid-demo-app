@@ -109,7 +109,7 @@ const Button = {
   border: { width: 5, color: hexColor('#cc33ff') },
   scale: 1,
   focus: {
-    color: ['#58807d', {duration: 2000}] as any, // TODO: Fix this type
+    color: [hexColor('#58807d'), {duration: 2000}] as any, // TODO: Fix this type
     scale: 1.2,
     border: { width: 5, color: hexColor('#ff0000') },
     alpha: [1, {duration: 1500, delay: 200, timing: "easy-in"}] as any, // TODO: Fix this type
