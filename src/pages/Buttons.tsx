@@ -1,6 +1,7 @@
 import { View, Text, ElementNode, IntrinsicNodeProps, hexColor, IntrinsicNodeStyleProps } from '@lightningjs/solid';
-import { Row } from '@lightningjs/solid-primitives';
+import { Row, withPadding } from '@lightningjs/solid-primitives';
 import { buttonStyles } from '../styles';
+withPadding;
 
 const ButtonsPage = () => {
   function onEnter(this: ElementNode, event, elm) {
@@ -40,7 +41,7 @@ const ButtonsPage = () => {
               // TODO: lineHeight is not supported by renderer yet
               // lineHeight: 20,
             }}>
-            {props.children}
+            {props.children as string}
           </Text>
         </node>;
     };

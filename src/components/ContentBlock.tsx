@@ -63,9 +63,9 @@ const Badge = (props) => {
       use:withPadding={[8, 15, 13, 15]}
       {...props}
       style={{
-        color: '#00000099',
+        color: '0x00000099',
         borderRadius: 8,
-        border: { width: 3, color: '#ffffff' },
+        border: { width: 3, color: '0xffffffff' },
       }}
     >
       <Text style={BadgeStyle}>{props.children}</Text>

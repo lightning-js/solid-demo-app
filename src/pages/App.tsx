@@ -25,6 +25,8 @@ declare module '@lightningjs/solid-primitives' {
   interface KeyMap {
     Menu: string;
     Flex: string;
+    FlexSize: string;
+    FlexColumnSize: string;
     FlexColumn: string;
     Text: string;
     Buttons: string;

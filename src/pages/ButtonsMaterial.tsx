@@ -22,12 +22,12 @@ const MaterialButtonsPage = () => {
   const MaterialButton = {
     width: 386,
     height: 136,
-    color: '#715cab',
+    color: '0x715cabff',
     focus: {
-      color: '#5a39a2',
+      color: '0x5a39a2ff',
     },
     disabled: {
-      color: '#291d43',
+      color: '0x291d43ff',
     }
   };
   const RoundedRectangle = ['RoundedRectangle', { radius: 65 }];

@@ -40,7 +40,7 @@ const TextPage = () => {
   };
 
   onMount(() => {
-    setGlobalBackground('#000000');
+    setGlobalBackground('0x000000ff');
   });
 
   return (
