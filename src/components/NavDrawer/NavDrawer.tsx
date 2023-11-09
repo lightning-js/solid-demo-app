@@ -7,6 +7,7 @@ import theme from 'theme';
 
 interface NavButtonProps extends IntrinsicNodeProps {
   icon: string;
+  children: string;
 }
 
 function NavButton(props: NavButtonProps) {
