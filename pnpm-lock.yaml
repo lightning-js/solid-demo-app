@@ -9,11 +9,11 @@ dependencies:
     specifier: ^0.5.0
     version: 0.5.0
   '@lightningjs/solid':
-    specifier: ^0.8.1
-    version: 0.8.1(@babel/core@7.23.2)(solid-js@1.8.5)(vite@4.5.0)
+    specifier: ^0.8.2
+    version: 0.8.2(@babel/core@7.23.2)(solid-js@1.8.5)(vite@4.5.0)
   '@lightningjs/solid-primitives':
     specifier: ^0.4.3
-    version: 0.4.3(@lightningjs/renderer@0.5.0)(@lightningjs/solid@0.8.1)(solid-js@1.8.5)
+    version: 0.4.3(@lightningjs/renderer@0.5.0)(@lightningjs/solid@0.8.2)(solid-js@1.8.5)
   '@solidjs/router':
     specifier: ^0.8.3
     version: 0.8.3(solid-js@1.8.5)
@@ -1464,7 +1464,7 @@ packages:
       '@protobufjs/eventemitter': 1.1.0
     dev: false
 
-  /@lightningjs/solid-primitives@0.4.3(@lightningjs/renderer@0.5.0)(@lightningjs/solid@0.8.1)(solid-js@1.8.5):
+  /@lightningjs/solid-primitives@0.4.3(@lightningjs/renderer@0.5.0)(@lightningjs/solid@0.8.2)(solid-js@1.8.5):
     resolution: {integrity: sha512-bv0bsr0zraif3EPJ6qcqXwQulfuATxdh5kb+sJBLPWH0wk0n90iD/SE7Vn8R8vQHQAYNgTu0dMAM3bR9MIvWNA==}
     peerDependencies:
       '@lightningjs/renderer': '*'
@@ -1472,14 +1472,14 @@ packages:
       solid-js: '*'
     dependencies:
       '@lightningjs/renderer': 0.5.0
-      '@lightningjs/solid': 0.8.1(@babel/core@7.23.2)(solid-js@1.8.5)(vite@4.5.0)
+      '@lightningjs/solid': 0.8.2(@babel/core@7.23.2)(solid-js@1.8.5)(vite@4.5.0)
       '@solid-primitives/keyboard': 1.2.5(solid-js@1.8.5)
       '@solid-primitives/scheduled': 1.4.1(solid-js@1.8.5)
       solid-js: 1.8.5
     dev: false
 
-  /@lightningjs/solid@0.8.1(@babel/core@7.23.2)(solid-js@1.8.5)(vite@4.5.0):
-    resolution: {integrity: sha512-Qh0EUbMm5NaL9BQRFGvogcekYiKouNU6R6afzXjKhywWYxwqw1DCMoVJNCk7aqs6l+K92mQ/uG9FkYaevBzx4Q==}
+  /@lightningjs/solid@0.8.2(@babel/core@7.23.2)(solid-js@1.8.5)(vite@4.5.0):
+    resolution: {integrity: sha512-SBZgqr0ZqeWk8ueCh6Qrbip1PUFc4I8UCs3khh7FZQE6AmmrCvJY1BVI+gh4RzsvfEq6MTWROk5Yu0nb+3Jedg==}
     peerDependencies:
       solid-js: '*'
     dependencies:
@@ -2578,8 +2578,8 @@ packages:
     name: solid-demo-app
     dependencies:
       '@lightningjs/renderer': 0.5.0
-      '@lightningjs/solid': 0.8.1(@babel/core@7.23.2)(solid-js@1.8.5)(vite@4.5.0)
-      '@lightningjs/solid-primitives': 0.4.3(@lightningjs/renderer@0.5.0)(@lightningjs/solid@0.8.1)(solid-js@1.8.5)
+      '@lightningjs/solid': 0.8.2(@babel/core@7.23.2)(solid-js@1.8.5)(vite@4.5.0)
+      '@lightningjs/solid-primitives': 0.4.3(@lightningjs/renderer@0.5.0)(@lightningjs/solid@0.8.2)(solid-js@1.8.5)
       '@solidjs/router': 0.8.3(solid-js@1.8.5)
       solid-js: 1.8.5
       vite-plugin-babel: 1.1.3(@babel/core@7.23.2)(vite@4.5.0)
