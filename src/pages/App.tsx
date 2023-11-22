@@ -60,12 +60,10 @@ const App = () => {
     }, 10)
   }, { defer: true}))
 
-  const BASE_URL = import.meta.env.BASE_URL;
-
   return (
     <View ref={window.APP}
       onLast={() => history.back()}
-      onMenu={() => navigate(BASE_URL)} style={{ width: 1920, height: 1080 }}
+      onMenu={() => navigate('/')} style={{ width: 1920, height: 1080 }}
       onLeft={() => {
         if (navDrawer.states.has('focus')) {
           return false;
@@ -77,21 +75,19 @@ const App = () => {
       <Background />
       <FocusRing color={hexColor(theme.color.focus)} ref={focusRingRef} />
       <Routes>
-        <Route path={BASE_URL}>
-          <Route path="" component={Browse} />
-          <Route path="examples" component={Portal} />
-          <Route path="browse/:filter" component={Browse} />
-          <Route path="text" component={TextPage} />
-          <Route path="buttons" component={ButtonsPage} />
-          <Route path="flex" component={FlexPage} />
-          <Route path="flexsize" component={FlexSizePage} />
-          <Route path="flexcolumnsize" component={FlexColumnSizePage} />
-          <Route path="flexcolumn" component={FlexColumnPage} />
-          <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
-          <Route path="entity/people/:id" component={People} />
-          <Route path="entity/:type/:id" component={Entity} />
-          <Route path="*all" component={NotFound} />
-        </Route>
+        <Route path="" component={Browse} />
+        <Route path="examples" component={Portal} />
+        <Route path="browse/:filter" component={Browse} />
+        <Route path="text" component={TextPage} />
+        <Route path="buttons" component={ButtonsPage} />
+        <Route path="flex" component={FlexPage} />
+        <Route path="flexsize" component={FlexSizePage} />
+        <Route path="flexcolumnsize" component={FlexColumnSizePage} />
+        <Route path="flexcolumn" component={FlexColumnPage} />
+        <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
+        <Route path="entity/people/:id" component={People} />
+        <Route path="entity/:type/:id" component={Entity} />
+        <Route path="*all" component={NotFound} />
       </Routes>
       <NavDrawer ref={navDrawer} />
     </View>

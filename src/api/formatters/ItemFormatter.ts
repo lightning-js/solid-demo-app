@@ -39,7 +39,7 @@ export function convertItemsToTiles(items: any[] = []): Tile[] {
       src: getImageUrl(item.poster_path || item.profile_path),
       tileSrc: getImageUrl(item.backdrop_path || item.profile_path, 'w300'),
       backdrop: getImageUrl(item.backdrop_path, 'w1280'),
-      href: `${import.meta.env.BASE_URL}entity/${item.media_type || 'people'}/${item.id}`,
+      href: `/entity/${item.media_type || 'people'}/${item.id}`,
       shortTitle: truncateString(item.title || item.name, 30),
       title: item.title || item.name,
       data: item,
