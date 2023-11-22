@@ -1,5 +1,5 @@
 import { render, Canvas, Config, SolidNode, SolidRendererOptions, hexColor } from '@lightningjs/solid';
-import { Router } from "@solidjs/router";
+import { Router, hashIntegration } from "@solidjs/router";
 import App from './pages/App';
 import coreExtensionModuleUrl from './AppCoreExtensions.js?importChunkUrl';
 import coreWorkerUrl from './threadx-core-worker.js?importChunkUrl';
@@ -17,7 +17,7 @@ render(() =>  (
     threadXCoreWorkerUrl: driver === 'threadx' ? coreWorkerUrl : undefined,
     // deviceLogicalPixelRatio: 1
   }}>
-    <Router>
+    <Router source={hashIntegration()}>
       <App />
     </Router>
   </Canvas>

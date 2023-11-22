@@ -3,7 +3,7 @@ import { Route, Routes, useNavigate } from "@solidjs/router";
 import { View, activeElement, hexColor} from "@lightningjs/solid";
 import { useFocusManager, useAnnouncer } from "@lightningjs/solid-primitives";
 import Browse from './Browse';
-import Examples from './Examples';
+import Portal from './Portal';
 import TextPage from './Text';
 import ButtonsPage from './Buttons';
 import FlexPage from './Flex';
@@ -24,12 +24,6 @@ declare module '@lightningjs/solid-primitives' {
   // Augment the FocusManager KeyMap interface with our custom keys
   interface KeyMap {
     Menu: string;
-    Flex: string;
-    FlexSize: string;
-    FlexColumnSize: string;
-    FlexColumn: string;
-    Text: string;
-    Buttons: string;
   }
 }
 
@@ -44,13 +38,7 @@ declare module '@lightningjs/solid' {
 
 const App = () => {
   useFocusManager({
-    Menu: 'm',
-    Flex: 'f',
-    FlexSize: 's',
-    FlexColumnSize: 'x',
-    FlexColumn: 'c',
-    Text: 't',
-    Buttons: 'b'
+    Menu: 'm'
   });
   useAnnouncer();
   const navigate = useNavigate();
@@ -77,12 +65,6 @@ const App = () => {
   return (
     <View ref={window.APP}
       onLast={() => history.back()}
-      onText={() => navigate(BASE_URL + 'text')}
-      onFlex={() => navigate(BASE_URL + 'flex')}
-      onFlexSize={() => navigate(BASE_URL + 'flexsize')}
-      onFlexColumnSize={() => navigate(BASE_URL + 'flexcolumnsize')}
-      onFlexColumn={() => navigate(BASE_URL + 'flexcolumn')}
-      onButtons={() => navigate(BASE_URL + 'buttons')}
       onMenu={() => navigate(BASE_URL)} style={{ width: 1920, height: 1080 }}
       onLeft={() => {
         if (navDrawer.states.has('focus')) {
@@ -97,7 +79,7 @@ const App = () => {
       <Routes>
         <Route path={BASE_URL}>
           <Route path="" component={Browse} />
-          <Route path="examples" component={Examples} />
+          <Route path="examples" component={Portal} />
           <Route path="browse/:filter" component={Browse} />
           <Route path="text" component={TextPage} />
           <Route path="buttons" component={ButtonsPage} />
