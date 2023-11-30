@@ -21,8 +21,11 @@
     "@lightningjs/solid": "^0.8.4",
     "@lightningjs/solid-primitives": "^0.4.3",
     "@solidjs/router": "^0.8.3",
+    "es6-proxy-polyfill": "^2.1.1",
+    "proxy-polyfill": "^0.3.2",
     "solid-js": "^1.8.5",
-    "vite-plugin-babel": "^1.1.3"
+    "vite-plugin-babel": "^1.1.3",
+    "whatwg-fetch": "^3.6.19"
   },
   "devDependencies": {
     "@lightningjs/vite-plugin-import-chunk-url": "^0.3.0",

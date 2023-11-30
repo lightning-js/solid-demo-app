@@ -10,7 +10,8 @@ export default defineConfig({
       generate: 'universal',
     }}),
     legacy({
-      targets: ['defaults', 'not IE 11'],
+      targets: ['defaults', 'Chrome >= 38'],
+      additionalLegacyPolyfills: ['whatwg-fetch', 'es6-proxy-polyfill']
     }),
   ],
   resolve: {

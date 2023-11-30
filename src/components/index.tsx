@@ -2,6 +2,7 @@ import { IntrinsicNodeProps, View } from '@lightningjs/solid';
 import { Row } from '@lightningjs/solid-primitives';
 import { For, splitProps } from 'solid-js';
 import styles from '../styles';
+import { type Tile } from '../api/formatters/ItemFormatter';
 
 export function Thumbnail(props: IntrinsicNodeProps) {
   return <View {...props} animate style={styles.Thumbnail} />
@@ -12,7 +13,7 @@ export function FocusRing(props: IntrinsicNodeProps) {
 }
 
 export interface TileRowProps extends IntrinsicNodeProps {
-  items: IntrinsicNodeProps[];
+  items: Tile[];
 }
 
 export function TileRow(props: TileRowProps) {
