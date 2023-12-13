@@ -9,14 +9,15 @@ import { useNavigate } from "@solidjs/router";
 import styles from '../styles';
 import * as provider from '../api/providers/entity';
 import { assertTruthy } from '@lightningjs/renderer/utils';
+import type { Tile } from '../api/formatters/ItemFormatter';
 
 const Entity = () => {
   const params = useParams();
   const navigate = useNavigate();
 
   const [data] = createResource(() => ({...params}), provider.getInfo);
-  const [credits] = createResource(() => ({...params}), provider.getCredits);
-  const [recommendations] = createResource(() => ({...params}), provider.getRecommendations);
+  const [credits] = createResource<any, Tile[]>(() => ({...params}), provider.getCredits);
+  const [recommendations] = createResource<any, Tile[]>(() => ({...params}), provider.getRecommendations);
 
   createEffect(on(data, (data) => {
     setGlobalBackground(data.backgroundImage);
@@ -59,7 +60,7 @@ const Entity = () => {
   return (
     <Show when={data()} keyed>
       <ContentBlock y={360} x={150} {...data().heroContent}></ContentBlock>
-      <Column animate ref={columnRef} y={columnY} x={140} style={styles.Column}>
+      <Column animate ref={columnRef} y={columnY} x={140} style={styles.Column} zIndex={5}>
         <Show when={recommendations() && credits()}>
           <Text skipFocus style={styles.RowTitle}>Recommendations</Text>
           <TileRow autofocus onFocus={onRowFocus} onEnter={onEnter} items={recommendations()} />

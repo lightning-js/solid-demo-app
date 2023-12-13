@@ -42,7 +42,8 @@ export default {
     width: theme.layout.screenW,
     height: 600,
     y: 560,
-    x: 0
+    x: 0,
+    zIndex: 2,
   } satisfies IntrinsicNodeStyleProps,
   Thumbnail: {
     borderRadius: 16,
@@ -51,7 +52,7 @@ export default {
   } satisfies IntrinsicNodeStyleProps,
   FocusRing: {
     borderRadius: 16,
-    width: 194, height: 286, y: -5, x: -5
+    width: 194, height: 286, y: -5, x: -5, zIndex: -1
   } satisfies IntrinsicNodeStyleProps,
   showHeadline: { x: 70, y: 20 } satisfies IntrinsicNodeStyleProps,
   headlineBlur: {
@@ -83,7 +84,8 @@ export default {
     gap: 20,
     width: theme.layout.screenW - (2 * theme.layout.marginX),
     x: theme.layout.marginX + theme.layout.gutterX,
-    y: 48
+    y: 48,
+    zIndex: 2
   } satisfies IntrinsicNodeStyleProps,
   Rect: {
     width: 250,

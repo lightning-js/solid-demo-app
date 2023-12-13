@@ -17,8 +17,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@lightningjs/renderer": "^0.5.0",
-    "@lightningjs/solid": "^0.8.4",
+    "@lightningjs/renderer": "^0.6.0",
+    "@lightningjs/solid": "^0.10.0",
     "@lightningjs/solid-primitives": "^0.4.3",
     "@solidjs/router": "^0.8.3",
     "es6-proxy-polyfill": "^2.1.1",

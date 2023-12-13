@@ -49,11 +49,15 @@ const App = () => {
     assertTruthy(elm);
     setTimeout(() => {
       if (elm.heroContent) {
-        focusRingRef.parent = elm;
+        focusRingRef.parent = elm.parent;
         focusRingRef.alpha = 1;
+        focusRingRef.scale = 1;
+        focusRingRef.x = elm.x! - 5;
+        focusRingRef.y = elm.y! - 5;
         focusRingRef.width = elm.width! + 10;
         focusRingRef.height = elm.height! + 10;
-        focusRingRef.zIndex = (elm.zIndex! - 0.00000001);
+        focusRingRef.createAnimation({ scale: 1.1}).start();
+        // focusRingRef.zIndex = (elm.zIndex! - 0.00000001);
       } else {
         focusRingRef.alpha = 0;
       }

@@ -48,7 +48,7 @@ export default function Background() {
   }, { defer: true}))
 
   return (<>
-  <View width={1920} height={1080}>
+  <View width={1920} height={1080} zIndex={-5}>
     <View ref={bg1} animate animationSettings={animationSettings} style={bgStyles} />
     <View ref={bg2} animate animationSettings={animationSettings} style={bgStyles} alpha={0} />
     <View
