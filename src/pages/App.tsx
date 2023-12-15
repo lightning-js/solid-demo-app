@@ -1,19 +1,7 @@
 import { createEffect, on } from "solid-js";
-import { Route, Routes, useNavigate } from "@solidjs/router";
+import { useNavigate } from "@solidjs/router";
 import { View, activeElement, hexColor} from "@lightningjs/solid";
 import { useFocusManager, useAnnouncer } from "@lightningjs/solid-primitives";
-import Browse from './Browse';
-import Portal from './Portal';
-import TextPage from './Text';
-import ButtonsPage from './Buttons';
-import FlexPage from './Flex';
-import FlexSizePage from './FlexSize';
-import FlexColumnSizePage from './FlexColumnSize';
-import FlexColumnPage from './FlexColumn';
-import ButtonsMaterialPage from './ButtonsMaterial';
-import Entity from './Entity';
-import People from './People';
-import NotFound from './NotFound';
 import Background from '../components/Background';
 import NavDrawer from '../components/NavDrawer/NavDrawer';
 import {FocusRing} from '../components';
@@ -36,7 +24,7 @@ declare module '@lightningjs/solid' {
   }
 }
 
-const App = () => {
+const App = (props) => {
   useFocusManager({
     Menu: 'm'
   });
@@ -78,21 +66,9 @@ const App = () => {
       onRight={() => navDrawer.states.has('focus') && lastFocused.setFocus()}>
       <Background />
       <FocusRing color={hexColor(theme.color.focus)} ref={focusRingRef} />
-      <Routes>
-        <Route path="" component={Browse} />
-        <Route path="examples" component={Portal} />
-        <Route path="browse/:filter" component={Browse} />
-        <Route path="text" component={TextPage} />
-        <Route path="buttons" component={ButtonsPage} />
-        <Route path="flex" component={FlexPage} />
-        <Route path="flexsize" component={FlexSizePage} />
-        <Route path="flexcolumnsize" component={FlexColumnSizePage} />
-        <Route path="flexcolumn" component={FlexColumnPage} />
-        <Route path="buttonsmaterial" component={ButtonsMaterialPage} />
-        <Route path="entity/people/:id" component={People} />
-        <Route path="entity/:type/:id" component={Entity} />
-        <Route path="*all" component={NotFound} />
-      </Routes>
+      
+      {props.children}
+      
       <NavDrawer ref={navDrawer} />
     </View>
   )
