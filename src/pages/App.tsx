@@ -12,6 +12,7 @@ declare module '@lightningjs/solid-primitives' {
   // Augment the FocusManager KeyMap interface with our custom keys
   interface KeyMap {
     Menu: string;
+    Escape: string;
   }
 }
 
@@ -26,9 +27,11 @@ declare module '@lightningjs/solid' {
 
 const App = (props) => {
   useFocusManager({
-    Menu: 'm'
+    Menu: 'm',
+    Escape: 'Escape',
   });
-  useAnnouncer();
+  const announcer = useAnnouncer();
+  announcer.enabled = false;
   const navigate = useNavigate();
 
   let focusRingRef, navDrawer, lastFocused;

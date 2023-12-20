@@ -2,7 +2,7 @@ import { ElementNode, Text, View, Show, hexColor } from '@lightningjs/solid';
 import { Column } from '@lightningjs/solid-primitives';
 import { useParams } from "@solidjs/router";
 import { createEffect, createResource, on } from "solid-js";
-import { TileRow } from '../components';
+import { TileRow, Button } from '../components';
 import { setGlobalBackground } from "../state";
 import ContentBlock from "../components/ContentBlock";
 import { useNavigate } from "@solidjs/router";
@@ -10,6 +10,7 @@ import styles from '../styles';
 import * as provider from '../api/providers/entity';
 import { assertTruthy } from '@lightningjs/renderer/utils';
 import type { Tile } from '../api/formatters/ItemFormatter';
+import { playVideo, closeVideo } from '../video';
 
 const Entity = () => {
   const params = useParams();
@@ -55,21 +56,28 @@ const Entity = () => {
     navigate(entity.href);
   };
 
-  let columnRef, backdropRef;
+  let columnRef, backdropRef, trailerButton;
 
   return (
     <Show when={data()} keyed>
-      <ContentBlock y={360} x={150} {...data().heroContent}></ContentBlock>
-      <Column animate ref={columnRef} y={columnY} x={140} style={styles.Column} zIndex={5}>
-        <Show when={recommendations() && credits()}>
-          <Text skipFocus style={styles.RowTitle}>Recommendations</Text>
-          <TileRow autofocus onFocus={onRowFocus} onEnter={onEnter} items={recommendations()} />
-          <Text skipFocus style={styles.RowTitle}>Cast and Crew</Text>
-          <TileRow onFocus={onRowFocusAnimate} onEnter={onEnter} items={credits()} />
-        </Show>
-      </Column>
-      <View ref={backdropRef} animate style={Backdrop} />
-
+      <View onUp={() => trailerButton.setFocus()} onEscape={() => closeVideo()}>
+        <ContentBlock y={360} x={150} {...data().heroContent}></ContentBlock>
+        <Button autofocus
+          ref={trailerButton}
+          y={560} x={150}
+          onDown={() => columnRef.setFocus()}
+          onEnter={() => playVideo()}
+          >Watch Trailer</Button>
+        <Column animate ref={columnRef} y={columnY} x={140} style={styles.Column} zIndex={5}>
+          <Show when={recommendations() && credits()}>
+            <Text skipFocus style={styles.RowTitle}>Recommendations</Text>
+            <TileRow onFocus={onRowFocus} onEnter={onEnter} items={recommendations()} />
+            <Text skipFocus style={styles.RowTitle}>Cast and Crew</Text>
+            <TileRow onFocus={onRowFocusAnimate} onEnter={onEnter} items={credits()} />
+          </Show>
+        </Column>
+        <View ref={backdropRef} animate style={Backdrop} />
+      </View>
     </Show>
   );
 };

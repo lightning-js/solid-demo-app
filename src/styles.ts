@@ -103,25 +103,16 @@ export default {
 };
 
 const Button = {
-  width: 386,
-  height: 136,
+  width: 120,
+  height: 40,
   color: hexColor('#000000'),
-  alpha: 0.3,
-  borderRadius: 30,
-  border: { width: 5, color: hexColor('#cc33ff') },
+  borderRadius: 8,
+  border: { width: 2, color: hexColor('#3333ff') },
   scale: 1,
   focus: {
-    color: [hexColor('#58807d'), {duration: 2000}] as any, // TODO: Fix this type
-    scale: 1.2,
-    border: { width: 5, color: hexColor('#ff0000') },
-    alpha: [1, {duration: 1500, delay: 200, timing: "easy-in"}] as any, // TODO: Fix this type
+    scale: 1.1,
+    border: { width: 5, color: hexColor('#333333') },
   },
-  active: {
-    color: hexColor('#33ff55')
-  },
-  disabled: {
-    alpha: 1,
-  }
 } satisfies IntrinsicNodeStyleProps;
 
 const TopBar = {
@@ -133,17 +124,14 @@ const TopBar = {
 } satisfies IntrinsicNodeStyleProps;
 
 const ButtonText = {
-  fontSize: 32,
+  fontSize: 12,
+  y: 12,
   // lineHeight: Button.height, // TODO: Add back when lineHeight is supported
   contain: 'width',
   textAlign: 'center',
-  mountY: -0.35,
   color: hexColor('#F6F6F9'),
   height: Button.height,
-  width: Button.width,
-  focus: {
-    fontSize: 64
-  }
+  width: Button.width
 } satisfies IntrinsicTextNodeStyleProps;
 
 export const buttonStyles = {

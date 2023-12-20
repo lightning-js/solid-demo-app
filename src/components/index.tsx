@@ -1,7 +1,7 @@
-import { IntrinsicNodeProps, View } from '@lightningjs/solid';
+import { IntrinsicNodeProps, View, Text } from '@lightningjs/solid';
 import { Row } from '@lightningjs/solid-primitives';
 import { For, splitProps } from 'solid-js';
-import styles from '../styles';
+import styles, { buttonStyles } from '../styles';
 import { type Tile } from '../api/formatters/ItemFormatter';
 
 export function Thumbnail(props: IntrinsicNodeProps) {
@@ -25,4 +25,13 @@ export function TileRow(props: TileRowProps) {
     </For>
   </Row>
 
+}
+
+export function Button(props) {
+  return (
+    <View {...props} forwardStates animate
+      style={buttonStyles.container}>
+      <Text style={buttonStyles.text}>{props.children}</Text>
+    </View>
+  );
 }
