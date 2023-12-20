@@ -1,7 +1,7 @@
 import { ElementNode, Text, View, Show, hexColor } from '@lightningjs/solid';
 import { Column } from '@lightningjs/solid-primitives';
 import { useParams } from "@solidjs/router";
-import { createEffect, createResource, on } from "solid-js";
+import { createEffect, createResource, on, createSignal } from "solid-js";
 import { TileRow, Button } from '../components';
 import { setGlobalBackground } from "../state";
 import ContentBlock from "../components/ContentBlock";
@@ -19,6 +19,7 @@ const Entity = () => {
   const [data] = createResource(() => ({...params}), provider.getInfo);
   const [credits] = createResource<any, Tile[]>(() => ({...params}), provider.getCredits);
   const [recommendations] = createResource<any, Tile[]>(() => ({...params}), provider.getRecommendations);
+  const [backdropAlpha, setBackdropAlpha] = createSignal(0);
 
   createEffect(on(data, (data) => {
     setGlobalBackground(data.backgroundImage);
@@ -60,13 +61,13 @@ const Entity = () => {
 
   return (
     <Show when={data()} keyed>
-      <View onUp={() => trailerButton.setFocus()} onEscape={() => closeVideo()}>
+      <View onUp={() => trailerButton.setFocus()} onEscape={() => { closeVideo(); setBackdropAlpha(0) }}>
         <ContentBlock y={360} x={150} {...data().heroContent}></ContentBlock>
         <Button autofocus
           ref={trailerButton}
           y={560} x={150}
           onDown={() => columnRef.setFocus()}
-          onEnter={() => playVideo()}
+          onEnter={() => { playVideo(); setBackdropAlpha(0.9) }}
           >Watch Trailer</Button>
         <Column animate ref={columnRef} y={columnY} x={140} style={styles.Column} zIndex={5}>
           <Show when={recommendations() && credits()}>
@@ -78,6 +79,7 @@ const Entity = () => {
         </Column>
         <View ref={backdropRef} animate style={Backdrop} />
       </View>
+      <View alpha={backdropAlpha()} color={hexColor('#000000')}  zIndex={200}/>
     </Show>
   );
 };
