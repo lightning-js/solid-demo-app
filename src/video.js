@@ -54,13 +54,13 @@ function onError(error) {
 
 export function playVideo() {
   const video = document.getElementById('video');
-  video.style.zIndex = 2;
+  video.hidden = false;
   video.play();
 }
 
 export function closeVideo() {
   const video = document.getElementById('video');
-  video.style.zIndex = -1;
+  video.hidden = true;
   video.pause();
 }
 
