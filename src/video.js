@@ -1,3 +1,6 @@
+// Documentation from Shaka player:
+// https://shaka-player-demo.appspot.com/docs/api/tutorial-basic-usage.html
+
 const manifestUri =
     'https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd';
 
