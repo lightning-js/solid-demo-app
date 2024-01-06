@@ -48,11 +48,12 @@ export default {
   Thumbnail: {
     borderRadius: 16,
     width: 185, height: 278, scale: 1, zIndex: 2,
+    transition: { scale: { duration: 250, easing: 'ease-in-out' } },
     focus: { scale: 1.1 }
   } satisfies IntrinsicNodeStyleProps,
   FocusRing: {
     borderRadius: 16,
-    width: 194, height: 286, y: -5, x: -5, zIndex: -1
+    width: 194, height: 286, y: -5, x: -5, zIndex: -1,
   } satisfies IntrinsicNodeStyleProps,
   showHeadline: { x: 70, y: 20 } satisfies IntrinsicNodeStyleProps,
   headlineBlur: {
@@ -85,6 +86,7 @@ export default {
     width: theme.layout.screenW - (2 * theme.layout.marginX),
     x: theme.layout.marginX + theme.layout.gutterX,
     y: 48,
+    transition: { y: { duration: 250, easing: 'ease-in-out' } },
     zIndex: 2
   } satisfies IntrinsicNodeStyleProps,
   Rect: {
@@ -113,6 +115,7 @@ const Button = {
     scale: 1.1,
     border: { width: 5, color: hexColor('#333333') },
   },
+  transition: { scale: true, color: true },
 } satisfies IntrinsicNodeStyleProps;
 
 const TopBar = {

@@ -59,7 +59,7 @@ const Browse = () => {
     <Show when={provider().pages().length}>
       <ContentBlock y={360} x={150} {...heroContent()}></ContentBlock>
       <View clipping style={styles.itemsContainer}>
-        <Column plinko announce="All Trending - Week" animate y={columnY()} style={styles.Column}>
+        <Column plinko announce="All Trending - Week" y={columnY()} style={styles.Column}>
           <For each={provider().pages()}>
             {(items, i) =>
               <TileRow autofocus={isFirst(i())}

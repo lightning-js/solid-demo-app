@@ -5,7 +5,7 @@ import styles, { buttonStyles } from '../styles';
 import { type Tile } from '../api/formatters/ItemFormatter';
 
 export function Thumbnail(props: IntrinsicNodeProps) {
-  return <View {...props} animate style={styles.Thumbnail} />
+  return <View {...props} style={styles.Thumbnail} />
 }
 
 export function FocusRing(props: IntrinsicNodeProps) {
@@ -29,7 +29,7 @@ export function TileRow(props: TileRowProps) {
 
 export function Button(props) {
   return (
-    <View {...props} forwardStates animate
+    <View {...props} forwardStates
       style={buttonStyles.container}>
       <Text style={buttonStyles.text}>{props.children}</Text>
     </View>

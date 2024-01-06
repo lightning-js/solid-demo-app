@@ -41,14 +41,13 @@ const App = (props) => {
     setTimeout(() => {
       if (elm.heroContent) {
         focusRingRef.parent = elm.parent;
-        focusRingRef.alpha = 1;
+        focusRingRef.alpha = 0;
         focusRingRef.scale = 1;
         focusRingRef.x = elm.x! - 5;
         focusRingRef.y = elm.y! - 5;
         focusRingRef.width = elm.width! + 10;
         focusRingRef.height = elm.height! + 10;
-        focusRingRef.createAnimation({ scale: 1.1}).start();
-        // focusRingRef.zIndex = (elm.zIndex! - 0.00000001);
+        focusRingRef.animate({ scale: 1.1, alpha: 1 }).start();
       } else {
         focusRingRef.alpha = 0;
       }

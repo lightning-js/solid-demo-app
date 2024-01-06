@@ -83,7 +83,7 @@ const Entity = () => {
           onDown={() => columnRef.setFocus()}
           onEnter={onEnterTrailer}
           >Watch Trailer</Button>
-        <Column animate ref={columnRef} y={columnY} x={140} style={styles.Column} zIndex={5}>
+        <Column ref={columnRef} y={columnY} x={140} style={styles.Column} zIndex={5}>
           <Show when={recommendations() && credits()}>
             <Text skipFocus style={styles.RowTitle}>Recommendations</Text>
             <TileRow onFocus={onRowFocus} onEnter={onEnter} items={recommendations()} />
@@ -91,9 +91,9 @@ const Entity = () => {
             <TileRow onFocus={onRowFocusAnimate} onEnter={onEnter} items={credits()} />
           </Show>
         </Column>
-        <View ref={backdropRef} animate style={Backdrop} />
+        <View ref={backdropRef} style={Backdrop} transition={{ alpha: true, y: true }} />
       </View>
-      <View alpha={backdropAlpha()} color={hexColor('#000000')}  zIndex={200}/>
+      <View alpha={backdropAlpha()} color={hexColor('#000000')} zIndex={200} transition={{ alpha: true }} />
     </Show>
   );
 };

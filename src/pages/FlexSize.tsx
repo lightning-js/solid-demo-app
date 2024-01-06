@@ -50,7 +50,7 @@ const FlexSizePage = () => {
 
   return (
     <>
-      <Column x={160} y={columnY()} animate gap={30} height={850} width={RowStyles.width} style={styles.Column}>
+      <Column x={160} y={columnY()} gap={30} height={850} width={RowStyles.width} style={styles.Column}>
         <Text style={rowTitle}>Flex Start - AlignItems: center</Text>
         <Row alignItems='center' gap={gap} style={RowStyles} onFocus={onFocus}>
           <Block autofocus height={randSize()} />

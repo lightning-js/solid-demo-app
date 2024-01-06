@@ -9,20 +9,13 @@ export default {
     y: 360,
     gap: 20,
     zIndex: 101,
-    x: [8,
-      {
-        duration: 250,
-        easing: 'ease-in-out'
-      },
-    ] as any, // TODO: Fix this type
+    transition: { x: {
+      duration: 250,
+      easing: 'ease-in-out'
+    }},
+    x: 8,
     focus: {
-      x: [
-        theme.layout.marginX,
-        {
-          duration: 250,
-          easing: 'ease-in-out'
-        },
-      ] as any, // TODO: Fix this type
+      x: theme.layout.marginX
     },
   } satisfies IntrinsicNodeStyleProps,
   Gradient: {
@@ -32,13 +25,14 @@ export default {
       stops: [0, 0.4, 0.8],
       colors: [hexColor(theme.color.primary), hexColor(theme.color.primary), hexColor('#00000000')],
     },
-    alpha: [0] as any, // TODO: Fix this type
+    alpha: 0,
     focus: {
       width: 1600,
-      alpha: [1] as any, // TODO: Fix this type
+      alpha: 1
     },
     width: 100,
     height: 1080,
+    transition: { alpha: true }
   } satisfies IntrinsicNodeStyleProps,
   NavButton: {
     zIndex: 102,

@@ -33,7 +33,7 @@ const MaterialButtonsPage = () => {
   const RoundedRectangle = ['RoundedRectangle', { radius: 65 }];
   function Button(props) {
     return (
-      <View {...props} forwardStates animate
+      <View {...props} forwardStates
         style={MaterialButton} shader={RoundedRectangle}>
         <Text style={MaterialButtonText}>{props.children}</Text>
       </View>

@@ -45,7 +45,7 @@ const FlexPage = () => {
 
   return (
     <>
-      <Column x={160} y={columnY()} animate gap={30} height={850} width={RowStyles.width} style={styles.Column}>
+      <Column x={160} y={columnY()} gap={30} height={850} width={RowStyles.width} style={styles.Column}>
         <Text style={rowTitle}>Flex Start</Text>
         <Row gap={gap} style={RowStyles} onFocus={onFocus}>
           <Block autofocus />

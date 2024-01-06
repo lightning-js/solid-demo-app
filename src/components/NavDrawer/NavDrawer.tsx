@@ -53,7 +53,7 @@ export default function NavDrawer(props) {
 
   return (
     <>
-      <Column {...props} onFocus={onFocus} onBlur={onBlur} style={styles.Column} animate>
+      <Column {...props} onFocus={onFocus} onBlur={onBlur} style={styles.Column}>
         <NavButton onEnter={() => navigate('/browse/all')} icon='trending'>Trending</NavButton>
         <NavButton icon='movie' onEnter={() => navigate('/browse/movie')}>Movies</NavButton>
         <NavButton icon='tv' onEnter={() => navigate('/browse/tv')}>TV</NavButton>

@@ -59,6 +59,7 @@ const Portal = () => {
       borderRadius: 6,
       scale: 1,
       color: 0x182b44ff,
+      transition: { color: true, scale: true },
       focus: {
         scale: 1.1,
         color: 0xffffffff,
@@ -66,7 +67,7 @@ const Portal = () => {
     };
     const [color, setColor] = createSignal(0xffffffff);
 
-    return <View {...props} onFocus={() => setColor(0x000000ff)} onBlur={() => setColor(0xffffffff)} animate style={Container}>
+    return <View {...props} onFocus={() => setColor(0x000000ff)} onBlur={() => setColor(0xffffffff)} style={Container}>
       <View x={30}>
         <Text y={30} fontSize={84} color={color()}>{props.index}</Text>
         <Text y={140} fontSize={42} width={340} height={42} contain="both" color={color()}>{props.title}</Text>
@@ -89,8 +90,8 @@ const Portal = () => {
         <View y={140} height={1} width={1800} color={0xe8d7f9ff} />
       </View>
       <Row onSelectedChanged={moveRow} onEnter={onEnter}
-        animationSettings={{delay: 20, duration: 300}}
-        animate x={rowX()} y={300} width={4400} style={styles.Row} justifyContent={'flexStart'} gap={40}>
+        transition={{ x: {delay: 20, duration: 300}}}
+        x={rowX()} y={300} width={4400} style={styles.Row} justifyContent={'flexStart'} gap={40}>
         <For each={demos}>
             {(demo, i) =>
               <DemoTile autofocus={isFirst(i())} index={i()} {...demo} />

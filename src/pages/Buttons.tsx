@@ -20,7 +20,7 @@ const ButtonsPage = () => {
 
   function Button(props) {
     return (
-      <View {...props} forwardStates animate
+      <View {...props} forwardStates
         style={buttonStyles.container}>
         <Text style={buttonStyles.text}>{props.children}</Text>
       </View>
