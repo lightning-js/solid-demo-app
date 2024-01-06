@@ -6,7 +6,7 @@
 	<meta charset="UTF-8" />
 	<style>
 		html, body, * { padding: 0; margin: 0}
-		video { position: absolute; top: 0; left: 0; z-index: 2; }
+		video { position: absolute; top: 0; left: 0; z-index: 2; outline: none; }
 		.center-element {
 			position: absolute;
 			top: 50%;
@@ -26,7 +26,7 @@
 	controls autoplay></video>
   <script type="module" src="./src/index.tsx"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/shaka-player/4.7.0/shaka-player.compiled.js" defer></script>
-  <script src="./src/video.js" defer></script>
+  <script type="module" src="./src/video.js" defer></script>
 </body>
 
 </html>

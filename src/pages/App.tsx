@@ -73,6 +73,7 @@ const App = (props) => {
       {props.children}
       
       <NavDrawer ref={navDrawer} />
+      {/* <VideoPlayer ref={videoPlayer} /> */}
     </View>
   )
 };

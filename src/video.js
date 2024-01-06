@@ -55,13 +55,17 @@ function onError(error) {
 export function playVideo() {
   const video = document.getElementById('video');
   video.hidden = false;
-  video.play();
+  // Needs delay from hidden to play in Chrome
+  setTimeout(() => video.play(), 50);
+  video.focus();
+  return video;
 }
 
 export function closeVideo() {
   const video = document.getElementById('video');
   video.hidden = true;
   video.pause();
+  return video;
 }
 
 document.addEventListener('DOMContentLoaded', initApp);

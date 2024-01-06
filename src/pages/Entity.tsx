@@ -1,4 +1,4 @@
-import { ElementNode, Text, View, Show, hexColor } from '@lightningjs/solid';
+import { ElementNode, Text, View, Show, hexColor, setActiveElement } from '@lightningjs/solid';
 import { Column } from '@lightningjs/solid-primitives';
 import { useParams } from "@solidjs/router";
 import { createEffect, createResource, on, createSignal } from "solid-js";
@@ -57,17 +57,31 @@ const Entity = () => {
     navigate(entity.href);
   };
 
+  function onEscape() {
+    closeVideo();
+    // Set focus back to lightning app
+    document.getElementsByTagName('canvas')[0].focus();
+    setActiveElement(trailerButton);
+    setBackdropAlpha(0);
+  }
+
+  function onEnterTrailer() {
+    const video = playVideo();
+    setActiveElement(video);
+    setBackdropAlpha(0.9);
+  }
+
   let columnRef, backdropRef, trailerButton;
 
   return (
     <Show when={data()} keyed>
-      <View onUp={() => trailerButton.setFocus()} onEscape={() => { closeVideo(); setBackdropAlpha(0) }}>
+      <View onUp={() => trailerButton.setFocus()} onEscape={onEscape}>
         <ContentBlock y={360} x={150} {...data().heroContent}></ContentBlock>
         <Button autofocus
           ref={trailerButton}
           y={560} x={150}
           onDown={() => columnRef.setFocus()}
-          onEnter={() => { playVideo(); setBackdropAlpha(0.9) }}
+          onEnter={onEnterTrailer}
           >Watch Trailer</Button>
         <Column animate ref={columnRef} y={columnY} x={140} style={styles.Column} zIndex={5}>
           <Show when={recommendations() && credits()}>

@@ -17,7 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@lightningjs/renderer": "^0.6.0",
+    "@lightningjs/renderer": "^0.6.1",
     "@lightningjs/solid": "^0.10.2",
     "@lightningjs/solid-primitives": "^0.4.7",
     "@solidjs/router": "^0.10.0",
