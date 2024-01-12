@@ -1,5 +1,6 @@
-import { render, Canvas, Config, SolidNode, SolidRendererOptions, hexColor } from '@lightningjs/solid';
+import { render, Canvas, Config, SolidNode, SolidRendererOptions, hexColor, ElementNode } from '@lightningjs/solid';
 import { HashRouter, Route } from "@solidjs/router";
+import { createSignal } from 'solid-js';
 import App from './pages/App';
 import Browse from './pages/Browse';
 import Portal from './pages/Portal';
@@ -15,21 +16,36 @@ import People from './pages/People';
 import NotFound from './pages/NotFound';
 import coreExtensionModuleUrl from './AppCoreExtensions.js?importChunkUrl';
 import coreWorkerUrl from './threadx-core-worker.js?importChunkUrl';
+import type { RendererMain } from '@lightningjs/renderer';
 
 Config.debug = false;
+Config.animationsEnabled = true;
 Config.fontSettings.fontFamily = 'Ubuntu';
 Config.fontSettings.color = hexColor('#ffffff');
 Config.fontSettings.fontSize = 100;
 
 const driver = 'main' as 'main' | 'threadx'; // Use 'main' for main thread-only rendering
+const logFps = true;
+let canvasRoot: ElementNode | null = null;
+const [fps, setFps] = createSignal(0);
+
+function setupFPS(root: ElementNode) {
+  root.renderer.on(
+    'fpsUpdate',
+    (target: RendererMain, fpsData: number) => {
+      setFps(fpsData);
+    }
+  );
+}
 
 render(() =>  (
   <Canvas options={{
     coreExtensionModule: coreExtensionModuleUrl,
     threadXCoreWorkerUrl: driver === 'threadx' ? coreWorkerUrl : undefined,
+    fpsUpdateInterval: logFps ? 250 : 0,
     // deviceLogicalPixelRatio: 1
-  }}>
-    <HashRouter root={App}>
+  }} ref={setupFPS}>
+    <HashRouter root={(props) => <App {...props} fps={fps()}/>}>
       <Route path="" component={Browse} />
       <Route path="examples" component={Portal} />
       <Route path="browse/:filter" component={Browse} />
@@ -44,7 +60,6 @@ render(() =>  (
       <Route path="entity/:type/:id" component={Entity} />
       <Route path="*all" component={NotFound} />
     </HashRouter>
-    
   </Canvas>
 ));
 

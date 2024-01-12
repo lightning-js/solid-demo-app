@@ -4,13 +4,14 @@ import { View, activeElement, hexColor} from "@lightningjs/solid";
 import { useFocusManager, useAnnouncer } from "@lightningjs/solid-primitives";
 import Background from '../components/Background';
 import NavDrawer from '../components/NavDrawer/NavDrawer';
-import {FocusRing} from '../components';
+import { FocusRing, FPSCounter } from '../components';
 import theme from 'theme';
 import { assertTruthy } from "@lightningjs/renderer/utils";
 
 declare module '@lightningjs/solid-primitives' {
   // Augment the FocusManager KeyMap interface with our custom keys
   interface KeyMap {
+    Announcer: string;
     Menu: string;
     Escape: string;
   }
@@ -27,6 +28,7 @@ declare module '@lightningjs/solid' {
 
 const App = (props) => {
   useFocusManager({
+    Announcer: 'a',
     Menu: 'm',
     Escape: 'Escape',
   });
@@ -56,6 +58,7 @@ const App = (props) => {
 
   return (
     <View ref={window.APP}
+      onAnnouncer={() => announcer.enabled = !announcer.enabled}
       onLast={() => history.back()}
       onMenu={() => navigate('/')} style={{ width: 1920, height: 1080 }}
       onLeft={() => {
@@ -67,6 +70,7 @@ const App = (props) => {
       }}
       onRight={() => navDrawer.states.has('focus') && lastFocused.setFocus()}>
       <Background />
+      <FPSCounter fps={props.fps} />
       <FocusRing color={hexColor(theme.color.focus)} ref={focusRingRef} />
       
       {props.children}

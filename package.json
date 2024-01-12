@@ -18,12 +18,12 @@
   "license": "ISC",
   "dependencies": {
     "@lightningjs/renderer": "^0.6.1",
-    "@lightningjs/solid": "^0.11.0",
+    "@lightningjs/solid": "^0.11.3",
     "@lightningjs/solid-primitives": "^0.4.7",
-    "@solidjs/router": "^0.10.6",
+    "@solidjs/router": "^0.10.8",
     "es6-proxy-polyfill": "^2.1.1",
     "proxy-polyfill": "^0.3.2",
-    "solid-js": "^1.8.8",
+    "solid-js": "^1.8.10",
     "vite-plugin-babel": "^1.2.0",
     "whatwg-fetch": "^3.6.20"
   },

@@ -55,6 +55,26 @@ export default {
     borderRadius: 16,
     width: 194, height: 286, y: -5, x: -5, zIndex: -1,
   } satisfies IntrinsicNodeStyleProps,
+  FPS: {
+    color: 0x000000ff,
+    height: 42,
+    width: 140,
+    x: 20,
+    y: 20,
+    zIndex: 100,
+  } as const,
+  FPSLabel: {
+    x: 10,
+    y: 0,
+    fontSize: 36,
+    textColor: hexColor('#ffffff')
+  },
+  FPSValue: {
+    x: 90,
+    y: 0,
+    fontSize: 36,
+    textColor: hexColor('#ffffff')
+  },
   showHeadline: { x: 70, y: 20 } satisfies IntrinsicNodeStyleProps,
   headlineBlur: {
     width: 1920,
