@@ -16,6 +16,7 @@ import People from './pages/People';
 import NotFound from './pages/NotFound';
 import coreExtensionModuleUrl from './AppCoreExtensions.js?importChunkUrl';
 import coreWorkerUrl from './threadx-core-worker.js?importChunkUrl';
+import { setupFPS } from './components/FPSCounter';
 import type { RendererMain } from '@lightningjs/renderer';
 
 Config.debug = false;
@@ -27,25 +28,15 @@ Config.fontSettings.fontSize = 100;
 const driver = 'main' as 'main' | 'threadx'; // Use 'main' for main thread-only rendering
 const logFps = true;
 let canvasRoot: ElementNode | null = null;
-const [fps, setFps] = createSignal(0);
-
-function setupFPS(root: ElementNode) {
-  root.renderer.on(
-    'fpsUpdate',
-    (target: RendererMain, fpsData: number) => {
-      setFps(fpsData);
-    }
-  );
-}
 
 render(() =>  (
   <Canvas options={{
     coreExtensionModule: coreExtensionModuleUrl,
     threadXCoreWorkerUrl: driver === 'threadx' ? coreWorkerUrl : undefined,
-    fpsUpdateInterval: logFps ? 250 : 0,
+    fpsUpdateInterval: logFps ? 1000 : 0,
     // deviceLogicalPixelRatio: 1
-  }} ref={setupFPS}>
-    <HashRouter root={(props) => <App {...props} fps={fps()}/>}>
+  }} ref={(root) => setupFPS(root)}>
+    <HashRouter root={(props) => <App {...props} />}>
       <Route path="" component={Browse} />
       <Route path="examples" component={Portal} />
       <Route path="browse/:filter" component={Browse} />

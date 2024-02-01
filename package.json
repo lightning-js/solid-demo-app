@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "vite --open --host --force",
+    "start:prod": "vite --open --host --force --mode production",
     "build": "vite build --sourcemap=true",
     "build:github": "vite build --sourcemap=true --base=/solid-demo-app/",
     "build:analyze": "vite-bundle-visualizer",
@@ -17,25 +18,26 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@lightningjs/renderer": "^0.6.1",
-    "@lightningjs/solid": "^0.11.3",
-    "@lightningjs/solid-primitives": "^0.4.7",
-    "@solidjs/router": "^0.10.8",
+    "@lightningjs/renderer": "^0.7.0",
+    "@lightningjs/solid": "^0.12.2",
+    "@lightningjs/solid-primitives": "^0.5.0",
+    "@solid-primitives/scheduled": "^1.4.2",
+    "@solidjs/router": "^0.11.0",
     "es6-proxy-polyfill": "^2.1.1",
     "proxy-polyfill": "^0.3.2",
-    "solid-js": "^1.8.10",
+    "solid-js": "^1.8.12",
     "vite-plugin-babel": "^1.2.0",
     "whatwg-fetch": "^3.6.20"
   },
   "devDependencies": {
     "@lightningjs/vite-plugin-import-chunk-url": "^0.3.0",
-    "@vitejs/plugin-legacy": "^4.1.1",
+    "@vitejs/plugin-legacy": "^5.3.0",
     "gh-pages": "^6.1.1",
-    "terser": "^5.26.0",
+    "terser": "^5.27.0",
     "typescript": "^5.3.3",
-    "vite": "^4.5.1",
-    "vite-bundle-visualizer": "^0.10.1",
+    "vite": "^5.0.12",
+    "vite-bundle-visualizer": "^1.0.1",
     "vite-plugin-cross-origin-isolation": "^0.1.6",
-    "vite-plugin-solid": "^2.8.0"
+    "vite-plugin-solid": "^2.9.1"
   }
 }

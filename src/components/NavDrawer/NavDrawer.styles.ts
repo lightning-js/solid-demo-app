@@ -1,4 +1,4 @@
-import { IntrinsicNodeStyleProps, deg2rad, hexColor } from '@lightningjs/solid';
+import { IntrinsicNodeStyleProps, hexColor } from '@lightningjs/solid';
 import theme from 'theme';
 
 export default {
@@ -20,18 +20,14 @@ export default {
   } satisfies IntrinsicNodeStyleProps,
   Gradient: {
     zIndex: 99,
-    linearGradient: {
-      angle: deg2rad(270),
-      stops: [0, 0.4, 0.8],
-      colors: [hexColor(theme.color.primary), hexColor(theme.color.primary), hexColor('#00000000')],
-    },
+    color: hexColor('#000000'),
+    src: '/assets/sidenav.png',
     alpha: 0,
+    width: 1200,
+    height: 1080,
     focus: {
-      width: 1600,
       alpha: 1
     },
-    width: 100,
-    height: 1080,
     transition: { alpha: true }
   } satisfies IntrinsicNodeStyleProps,
   NavButton: {

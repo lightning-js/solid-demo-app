@@ -4,7 +4,8 @@ import { View, activeElement, hexColor} from "@lightningjs/solid";
 import { useFocusManager, useAnnouncer } from "@lightningjs/solid-primitives";
 import Background from '../components/Background';
 import NavDrawer from '../components/NavDrawer/NavDrawer';
-import { FocusRing, FPSCounter } from '../components';
+import { FocusRing } from '../components';
+import { FPSCounter } from '../components/FPSCounter';
 import theme from 'theme';
 import { assertTruthy } from "@lightningjs/renderer/utils";
 
@@ -70,7 +71,7 @@ const App = (props) => {
       }}
       onRight={() => navDrawer.states.has('focus') && lastFocused.setFocus()}>
       <Background />
-      <FPSCounter fps={props.fps} />
+      <FPSCounter />
       <FocusRing color={hexColor(theme.color.focus)} ref={focusRingRef} />
       
       {props.children}

@@ -12,15 +12,6 @@ export function FocusRing(props: IntrinsicNodeProps) {
   return <View {...props} style={styles.FocusRing} />
 }
 
-export function FPSCounter(props: {
-  fps: string;
-} & IntrinsicNodeProps) {
-  return <View {...props} style={styles.FPS}>
-    <Text style={styles.FPSLabel}>FPS:</Text>
-    <Text style={styles.FPSValue}>{props.fps}</Text>
-  </View>
-}
-
 export interface TileRowProps extends IntrinsicNodeProps {
   items: Tile[];
 }
