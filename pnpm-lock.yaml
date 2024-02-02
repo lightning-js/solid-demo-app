@@ -6,20 +6,20 @@ settings:
 
 dependencies:
   '@lightningjs/renderer':
-    specifier: ^0.7.0
-    version: 0.7.0
+    specifier: ^0.7.1
+    version: 0.7.1
   '@lightningjs/solid':
-    specifier: ^0.12.2
-    version: 0.12.2(@babel/core@7.23.9)(solid-js@1.8.12)(vite@5.0.12)
+    specifier: ^0.12.4
+    version: 0.12.4(@babel/core@7.23.9)(solid-js@1.8.12)(vite@5.0.12)
   '@lightningjs/solid-primitives':
-    specifier: ^0.5.0
-    version: 0.5.0(@lightningjs/renderer@0.7.0)(@lightningjs/solid@0.12.2)(solid-js@1.8.12)
+    specifier: ^0.5.1
+    version: 0.5.1(@lightningjs/renderer@0.7.1)(@lightningjs/solid@0.12.4)(solid-js@1.8.12)
   '@solid-primitives/scheduled':
     specifier: ^1.4.2
     version: 1.4.2(solid-js@1.8.12)
   '@solidjs/router':
-    specifier: ^0.11.0
-    version: 0.11.0(solid-js@1.8.12)
+    specifier: ^0.11.2
+    version: 0.11.2(solid-js@1.8.12)
   es6-proxy-polyfill:
     specifier: ^2.1.1
     version: 2.1.1
@@ -1450,16 +1450,8 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@lightningjs/renderer@0.6.1:
-    resolution: {integrity: sha512-dLy+uAPfQSC6p9rHsubuOrsW0AtDtImd/qxgiqa+/+vzBdzXp5RLjZpXP0hCgALG02eah+eVyJGYG9njJuVkOw==}
-    engines: {node: '>= 20.9.0', npm: please-use-pnpm, pnpm: '>= 8.9.2'}
-    dependencies:
-      '@lightningjs/threadx': 0.3.4
-      '@protobufjs/eventemitter': 1.1.0
-    dev: false
-
-  /@lightningjs/renderer@0.7.0:
-    resolution: {integrity: sha512-q2b3ZVAGtU0wNtAYVTyXDZCRocKMuzuL+GHeoebSc9851iYk8eoPo7FKBxzy++7lVyxj+euQUmro4NDF1ICENA==}
+  /@lightningjs/renderer@0.7.1:
+    resolution: {integrity: sha512-kXiHpoYqV+CAj0gs2XrBpQd1F6UqnAObP2fqapTFYN+3pOyPIt/KW98mCE/7e+TOF7iN1A8AzIeEHjauu6oYMg==}
     engines: {node: '>= 20.9.0', npm: please-use-pnpm, pnpm: '>= 8.9.2'}
     dependencies:
       '@lightningjs/threadx': 0.3.4
@@ -1467,67 +1459,26 @@ packages:
       memize: 2.1.0
     dev: false
 
-  /@lightningjs/solid-primitives@0.4.8(@lightningjs/renderer@0.6.1)(@lightningjs/solid@0.11.5)(solid-js@1.8.12):
-    resolution: {integrity: sha512-uuE6SGvRHNZYFraJI5pMx4oG06ex6cvKleb+fOIr+NPs97niQvhJcsKL92z7LsnywhQMze0y60PlnvFZYAtamw==}
+  /@lightningjs/solid-primitives@0.5.1(@lightningjs/renderer@0.7.1)(@lightningjs/solid@0.12.4)(solid-js@1.8.12):
+    resolution: {integrity: sha512-qYSro9RIzWxbtFic7bm1NwyGk/d1FUEIaJ3thLgzBKu9S7S7Wal5ohd98lnGrO1JKtxLV4wSALr57LH8HrHAhg==}
     peerDependencies:
       '@lightningjs/renderer': '*'
       '@lightningjs/solid': '*'
       solid-js: '*'
     dependencies:
-      '@lightningjs/renderer': 0.6.1
-      '@lightningjs/solid': 0.11.5(@babel/core@7.23.9)(solid-js@1.8.12)(vite@5.0.12)
+      '@lightningjs/renderer': 0.7.1
+      '@lightningjs/solid': 0.12.4(@babel/core@7.23.9)(solid-js@1.8.12)(vite@5.0.12)
       '@solid-primitives/keyboard': 1.2.6(solid-js@1.8.12)
       '@solid-primitives/scheduled': 1.4.2(solid-js@1.8.12)
       solid-js: 1.8.12
     dev: false
 
-  /@lightningjs/solid-primitives@0.4.8(@lightningjs/renderer@0.6.1)(solid-demo-app@1.0.0)(solid-js@1.8.12):
-    resolution: {integrity: sha512-uuE6SGvRHNZYFraJI5pMx4oG06ex6cvKleb+fOIr+NPs97niQvhJcsKL92z7LsnywhQMze0y60PlnvFZYAtamw==}
-    peerDependencies:
-      '@lightningjs/renderer': '*'
-      '@lightningjs/solid': '*'
-      solid-js: '*'
-    dependencies:
-      '@lightningjs/renderer': 0.6.1
-      '@lightningjs/solid': file:(@babel/core@7.23.9)(solid-demo-app@1.0.0)(vite@5.0.12)
-      '@solid-primitives/keyboard': 1.2.6(solid-js@1.8.12)
-      '@solid-primitives/scheduled': 1.4.2(solid-js@1.8.12)
-      solid-js: 1.8.12
-    dev: false
-
-  /@lightningjs/solid-primitives@0.5.0(@lightningjs/renderer@0.7.0)(@lightningjs/solid@0.12.2)(solid-js@1.8.12):
-    resolution: {integrity: sha512-VKTDmB2wohwtgWRzwLtPYTJQyidcZo55X80+3S95JfBYja6KMwhEGLGqOXOJZkbdwRaJF5gLqGPCoUgN6EqJtA==}
-    peerDependencies:
-      '@lightningjs/renderer': '*'
-      '@lightningjs/solid': '*'
-      solid-js: '*'
-    dependencies:
-      '@lightningjs/renderer': 0.7.0
-      '@lightningjs/solid': 0.12.2(@babel/core@7.23.9)(solid-js@1.8.12)(vite@5.0.12)
-      '@solid-primitives/keyboard': 1.2.6(solid-js@1.8.12)
-      '@solid-primitives/scheduled': 1.4.2(solid-js@1.8.12)
-      solid-js: 1.8.12
-    dev: false
-
-  /@lightningjs/solid@0.11.5(@babel/core@7.23.9)(solid-js@1.8.12)(vite@5.0.12):
-    resolution: {integrity: sha512-ludIifCWW/2bjANSxOhoZYXwF06SOY8dRum/nuPpIRL/3247LfCFnFX/XkF8NPpnifTO08CJosyU0cuFoa+8bg==}
+  /@lightningjs/solid@0.12.4(@babel/core@7.23.9)(solid-js@1.8.12)(vite@5.0.12):
+    resolution: {integrity: sha512-IF/UOP/yNUQbj1ueuhRzVc+oaR3siXY78UIr+orOXiHxxDuBauskCYS4fnZ5C6/Wscb/DOBiyiCT6AeAJT2HsA==}
     peerDependencies:
       solid-js: '*'
     dependencies:
-      '@lightningjs/renderer': 0.7.0
-      '@lightningjs/solid': file:(@babel/core@7.23.9)(solid-demo-app@1.0.0)(vite@5.0.12)
-      solid-js: 1.8.12
-    transitivePeerDependencies:
-      - '@babel/core'
-      - vite
-    dev: false
-
-  /@lightningjs/solid@0.12.2(@babel/core@7.23.9)(solid-js@1.8.12)(vite@5.0.12):
-    resolution: {integrity: sha512-uk8PZdIgM7lg8cNnT2j0pmrJLf2+cOJYDdmB6pCHYgr9pS7hlK1MwaBH5TKwcN8E2z4cQZxf2FuI8nWvXm823Q==}
-    peerDependencies:
-      solid-js: '*'
-    dependencies:
-      '@lightningjs/renderer': 0.7.0
+      '@lightningjs/renderer': 0.7.1
       '@lightningjs/solid': file:(@babel/core@7.23.9)(vite@5.0.12)
       solid-js: 1.8.12
     transitivePeerDependencies:
@@ -1687,16 +1638,8 @@ packages:
       solid-js: 1.8.12
     dev: false
 
-  /@solidjs/router@0.10.10(solid-js@1.8.12):
-    resolution: {integrity: sha512-nGl7gMgsojuaupI5MAK2cFtkndmWWSAPhill/8La3IjujY3vMBamcQFymBsA2ejzxEYJjkOlEQHYgp2jNFkwuQ==}
-    peerDependencies:
-      solid-js: ^1.8.6
-    dependencies:
-      solid-js: 1.8.12
-    dev: false
-
-  /@solidjs/router@0.11.0(solid-js@1.8.12):
-    resolution: {integrity: sha512-UWCzTdjE06K4jfx7I1BEkPUOelM4bK0X54lLGd2OyVvqSktpsnOy5hwtn1PeLLmBev9NOsmiLv1kp/y9eMgztA==}
+  /@solidjs/router@0.11.2(solid-js@1.8.12):
+    resolution: {integrity: sha512-fhhq6IR2hDKPGrD8rHp7C3/Lqf2dkuVtdFIbu0yiJKNqV/od3LVUEew3kDuOOdheUK31Fapm6alMtjatSNR88g==}
     peerDependencies:
       solid-js: ^1.8.6
     dependencies:
@@ -1870,8 +1813,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001582
-      electron-to-chromium: 1.4.653
+      caniuse-lite: 1.0.30001583
+      electron-to-chromium: 1.4.655
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.3)
 
@@ -1883,8 +1826,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /caniuse-lite@1.0.30001582:
-    resolution: {integrity: sha512-vsJG3V5vgfduaQGVxL53uSX/HUzxyr2eA8xCo36OLal7sRcSZbibJtLeh0qja4sFOr/QQGt4opB4tOy+eOgAxg==}
+  /caniuse-lite@1.0.30001583:
+    resolution: {integrity: sha512-acWTYaha8xfhA/Du/z4sNZjHUWjkiuoAi2LM+T/aL+kemKQgPT1xBb/YKjlQ0Qo8gvbHsGNplrEJ+9G3gL7i4Q==}
 
   /chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -1971,8 +1914,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /electron-to-chromium@1.4.653:
-    resolution: {integrity: sha512-wA2A2LQCqnEwQAvwADQq3KpMpNwgAUBnRmrFgRzHnPhbQUFArTR32Ab46f4p0MovDLcg4uqd4nCsN2hTltslpA==}
+  /electron-to-chromium@1.4.655:
+    resolution: {integrity: sha512-2yszojF7vIZ68adIOvzV4bku8OZad9w5H9xF3ZAMZjPuOjBarlflUkjN6DggdV+L71WZuKUfKUhov/34+G5QHg==}
 
   /email-addresses@5.0.0:
     resolution: {integrity: sha512-4OIPYlA6JXqtVn8zpHpGiI7vE6EQOAg16aGnDMIAlZVinnoZ8208tW1hAbjWydgN/4PLTT9q+O1K6AH/vALJGw==}
@@ -2810,37 +2753,16 @@ packages:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: true
 
-  file:(@babel/core@7.23.9)(solid-demo-app@1.0.0)(vite@5.0.12):
-    resolution: {directory: '', type: directory}
-    id: 'file:'
-    name: solid-demo-app
-    dependencies:
-      '@lightningjs/renderer': 0.6.1
-      '@lightningjs/solid': 0.11.5(@babel/core@7.23.9)(solid-js@1.8.12)(vite@5.0.12)
-      '@lightningjs/solid-primitives': 0.4.8(@lightningjs/renderer@0.6.1)(solid-demo-app@1.0.0)(solid-js@1.8.12)
-      '@solid-primitives/scheduled': 1.4.2(solid-js@1.8.12)
-      '@solidjs/router': 0.10.10(solid-js@1.8.12)
-      es6-proxy-polyfill: 2.1.1
-      proxy-polyfill: 0.3.2
-      solid-js: 1.8.12
-      vite-plugin-babel: 1.2.0(@babel/core@7.23.9)(vite@5.0.12)
-      whatwg-fetch: 3.6.20
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@lightningjs/solid'
-      - vite
-    dev: false
-
   file:(@babel/core@7.23.9)(vite@5.0.12):
     resolution: {directory: '', type: directory}
     id: 'file:'
     name: solid-demo-app
     dependencies:
-      '@lightningjs/renderer': 0.6.1
-      '@lightningjs/solid': 0.11.5(@babel/core@7.23.9)(solid-js@1.8.12)(vite@5.0.12)
-      '@lightningjs/solid-primitives': 0.4.8(@lightningjs/renderer@0.6.1)(@lightningjs/solid@0.11.5)(solid-js@1.8.12)
+      '@lightningjs/renderer': 0.7.1
+      '@lightningjs/solid': 0.12.4(@babel/core@7.23.9)(solid-js@1.8.12)(vite@5.0.12)
+      '@lightningjs/solid-primitives': 0.5.1(@lightningjs/renderer@0.7.1)(@lightningjs/solid@0.12.4)(solid-js@1.8.12)
       '@solid-primitives/scheduled': 1.4.2(solid-js@1.8.12)
-      '@solidjs/router': 0.10.10(solid-js@1.8.12)
+      '@solidjs/router': 0.11.2(solid-js@1.8.12)
       es6-proxy-polyfill: 2.1.1
       proxy-polyfill: 0.3.2
       solid-js: 1.8.12
