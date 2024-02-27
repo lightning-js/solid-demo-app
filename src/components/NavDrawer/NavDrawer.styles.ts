@@ -22,7 +22,7 @@ export default {
   Gradient: {
     zIndex: 99,
     color: hexColor('#000000'),
-    src: '/assets/sidenav.png',
+    src: './assets/sidenav.png',
     alpha: 0,
     width: 1200,
     height: 1080,
