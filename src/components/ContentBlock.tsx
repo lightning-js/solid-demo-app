@@ -78,7 +78,8 @@ const MetaTextStyle = theme.typography.body2;
 const Metadata = (props) => (
   <View
     style={{
-      ...theme.flexRow as IntrinsicNodeStyleProps,
+      display: 'flex',
+      flexDirection: 'row',
       gap: 12,
       width: blockWidth,
       height: 48,
@@ -91,14 +92,16 @@ const Metadata = (props) => (
 );
 
 const ContentBlock = (props) => {
+  const style = {
+    display: 'flex',
+    flexDirection: 'column',
+    width: blockWidth,
+    height: 160,
+    gap: 16,
+  };
   return <View
       {...props}
-      style={{
-        ...theme.flexColumn,
-        width: blockWidth,
-        height: 160,
-        gap: 16,
-      }}
+      style={style}
     >
       <Headline>{props.title}</Headline>
       <Description>{props.description}</Description>

@@ -1,6 +1,6 @@
 import { createSignal, createSelector, For } from "solid-js";
 import { ElementNode, View, Text, activeElement } from '@lightningjs/solid';
-import { Row } from '@lightningjs/solid-primitives';
+import { Row } from '@lightningjs/solid-ui';
 import { useNavigate } from "@solidjs/router";
 import styles from '../styles';
 import { assertTruthy } from "@lightningjs/renderer/utils";

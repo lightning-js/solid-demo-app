@@ -1,6 +1,6 @@
 import { useNavigate } from '@solidjs/router';
 import { View, Text, IntrinsicNodeProps, ElementNode } from '@lightningjs/solid';
-import { Column } from '@lightningjs/solid-primitives';
+import { Column } from '@lightningjs/solid-ui';
 import styles from './NavDrawer.styles';
 import Icon from '../Icon';
 import theme from 'theme';
@@ -53,7 +53,7 @@ export default function NavDrawer(props) {
 
   return (
     <>
-      <Column {...props} onFocus={onFocus} onBlur={onBlur} style={styles.Column}>
+      <Column {...props} onFocus={onFocus} onBlur={onBlur} style={styles.Column} scroll='none'>
         <NavButton onEnter={() => navigate('/browse/all')} icon='trending'>Trending</NavButton>
         <NavButton icon='movie' onEnter={() => navigate('/browse/movie')}>Movies</NavButton>
         <NavButton icon='tv' onEnter={() => navigate('/browse/tv')}>TV</NavButton>

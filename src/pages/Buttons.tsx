@@ -1,5 +1,6 @@
 import { View, Text, ElementNode, IntrinsicNodeProps, hexColor, IntrinsicNodeStyleProps } from '@lightningjs/solid';
-import { Row, withPadding } from '@lightningjs/solid-primitives';
+import { withPadding } from '@lightningjs/solid-primitives';
+import { Row } from '@lightningjs/solid-ui';
 import { buttonStyles } from '../styles';
 withPadding;
 

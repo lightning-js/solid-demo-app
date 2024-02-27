@@ -1,7 +1,7 @@
 import { createEffect, createMemo, on, createSignal,
   Show, createResource, createSelector, For } from "solid-js";
 import { ElementNode, View, activeElement } from '@lightningjs/solid';
-import { Column } from '@lightningjs/solid-primitives';
+import { Column } from '@lightningjs/solid-ui';
 import { useNavigate, useParams } from "@solidjs/router";
 import { TileRow } from '../components';
 import styles from '../styles';

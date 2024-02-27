@@ -1,5 +1,5 @@
 import { ElementNode, Text, View, Show, hexColor, setActiveElement } from '@lightningjs/solid';
-import { Column } from '@lightningjs/solid-primitives';
+import { Column } from '@lightningjs/solid-ui';
 import { useParams } from "@solidjs/router";
 import { createEffect, createResource, on, createSignal } from "solid-js";
 import { TileRow, Button } from '../components';

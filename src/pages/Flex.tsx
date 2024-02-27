@@ -1,5 +1,5 @@
 import { ElementNode, IntrinsicNodeStyleProps, Text, View, hexColor } from '@lightningjs/solid';
-import { Column, Row } from '@lightningjs/solid-primitives';
+import { Column, Row } from '@lightningjs/solid-ui';
 import { createSignal, onMount } from 'solid-js';
 import styles from '../styles';
 import { setGlobalBackground } from "../state";

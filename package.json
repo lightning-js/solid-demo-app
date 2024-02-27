@@ -18,26 +18,28 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@lightningjs/renderer": "^0.7.1",
-    "@lightningjs/solid": "^0.12.4",
-    "@lightningjs/solid-primitives": "^0.5.1",
+    "@lightningjs/l3-ui-theme-base": "^0.3.1",
+    "@lightningjs/renderer": "^0.7.4",
+    "@lightningjs/solid": "^0.12.15",
+    "@lightningjs/solid-primitives": "^0.6.1",
+    "@lightningjs/solid-ui": "^0.5.4",
     "@solid-primitives/scheduled": "^1.4.2",
-    "@solidjs/router": "^0.11.2",
+    "@solidjs/router": "^0.12.4",
     "es6-proxy-polyfill": "^2.1.1",
     "proxy-polyfill": "^0.3.2",
-    "solid-js": "^1.8.12",
+    "solid-js": "^1.8.15",
     "vite-plugin-babel": "^1.2.0",
     "whatwg-fetch": "^3.6.20"
   },
   "devDependencies": {
     "@lightningjs/vite-plugin-import-chunk-url": "^0.3.0",
-    "@vitejs/plugin-legacy": "^5.3.0",
+    "@vitejs/plugin-legacy": "^5.3.1",
     "gh-pages": "^6.1.1",
-    "terser": "^5.27.0",
+    "terser": "^5.28.1",
     "typescript": "^5.3.3",
-    "vite": "^5.0.12",
+    "vite": "^5.1.4",
     "vite-bundle-visualizer": "^1.0.1",
     "vite-plugin-cross-origin-isolation": "^0.1.6",
-    "vite-plugin-solid": "^2.9.1"
+    "vite-plugin-solid": "^2.10.1"
   }
 }

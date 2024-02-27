@@ -58,7 +58,7 @@ export default function Background() {
   <View width={1920} height={1080} zIndex={-5}>
     <View ref={bg1} style={bgStyles} />
     <View ref={bg2} style={bgStyles} alpha={0} />
-    <View src="/assets/hero-mask-inverted.png" color={hexColor(theme.color.primary)} width={1920} height={1080} />
+    <View src="/assets/hero-mask-inverted.png" color={hexColor(theme.color.materialBrand)} width={1920} height={1080} />
     </View>
   </>);
 }

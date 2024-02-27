@@ -3,7 +3,8 @@ import theme from 'theme';
 
 export default {
   Column: {
-    ...(theme.flexColumn as IntrinsicNodeStyleProps),
+    flexDirection: 'column',
+    display: 'flex',
     width: 320,
     height: 600,
     y: 360,
@@ -36,7 +37,7 @@ export default {
     width: 100,
     borderRadius: 8,
     focus: {
-      color: hexColor(theme.color.container),
+      color: hexColor(theme.color.material),
     },
     active: {
       width: 328,

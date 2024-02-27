@@ -1,5 +1,5 @@
 import { ElementNode, IntrinsicNodeStyleProps, Text, View, hexColor } from '@lightningjs/solid';
-import { Row } from '@lightningjs/solid-primitives';
+import { Row } from '@lightningjs/solid-ui';
 
 import { MaterialButtonText } from '../styles';
 

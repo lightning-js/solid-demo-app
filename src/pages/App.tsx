@@ -1,4 +1,3 @@
-import { createEffect, on } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import { View, activeElement, hexColor} from "@lightningjs/solid";
 import { useFocusManager, useAnnouncer } from "@lightningjs/solid-primitives";
@@ -39,24 +38,6 @@ const App = (props) => {
 
   let focusRingRef, navDrawer, lastFocused;
 
-  createEffect(on(activeElement, (elm) => {
-    assertTruthy(elm);
-    setTimeout(() => {
-      if (elm.heroContent) {
-        focusRingRef.parent = elm.parent;
-        focusRingRef.alpha = 0;
-        focusRingRef.scale = 1;
-        focusRingRef.x = elm.x! - 5;
-        focusRingRef.y = elm.y! - 5;
-        focusRingRef.width = elm.width! + 10;
-        focusRingRef.height = elm.height! + 10;
-        focusRingRef.animate({ scale: 1.1, alpha: 1 }).start();
-      } else {
-        focusRingRef.alpha = 0;
-      }
-    }, 10)
-  }, { defer: true}))
-
   return (
     <View ref={window.APP}
       onAnnouncer={() => announcer.enabled = !announcer.enabled}
@@ -72,7 +53,6 @@ const App = (props) => {
       onRight={() => navDrawer.states.has('focus') && lastFocused.setFocus()}>
       <Background />
       <FPSCounter />
-      <FocusRing color={hexColor(theme.color.focus)} ref={focusRingRef} />
       
       {props.children}
       

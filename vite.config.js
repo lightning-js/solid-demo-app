@@ -16,7 +16,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      theme: '/src/material-theme.json?init',
+      theme: '@lightningjs/l3-ui-theme-base',
     },
     dedupe: ['solid-js', '@lightningjs/solid', '@lightningjs/renderer'],
   },

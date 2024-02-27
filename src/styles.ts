@@ -49,7 +49,8 @@ export default {
     borderRadius: 16,
     width: 185, height: 278, scale: 1, zIndex: 2,
     transition: { scale: { duration: 250, easing: 'ease-in-out' } },
-    focus: { scale: 1.1 }
+    border: { width: 0, color: 0x00000000 },
+    focus: { scale: 1.1, border: { color: theme.color.materialBrand, width: 6 } }
   } satisfies IntrinsicNodeStyleProps,
   FocusRing: {
     borderRadius: 16,
