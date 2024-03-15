@@ -16,30 +16,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@lightningjs/l3-ui-theme-base": "^0.3.1",
-    "@lightningjs/renderer": "^0.7.5",
-    "@lightningjs/solid": "^0.14.3",
-    "@lightningjs/solid-primitives": "^0.6.3",
-    "@lightningjs/solid-ui": "^0.6.0",
-    "@solid-primitives/scheduled": "^1.4.3",
-    "@solidjs/router": "^0.13.0",
-    "es6-proxy-polyfill": "^2.1.1",
-    "proxy-polyfill": "^0.3.2",
-    "solid-js": "^1.8.15",
-    "vite-plugin-babel": "^1.2.0",
-    "whatwg-fetch": "^3.6.20"
-  },
-  "devDependencies": {
-    "@lightningjs/vite-plugin-import-chunk-url": "^0.3.0",
-    "@vitejs/plugin-legacy": "^5.3.2",
-    "gh-pages": "^6.1.1",
-    "terser": "^5.29.1",
-    "typescript": "^5.4.2",
-    "vite": "^5.1.5",
-    "vite-bundle-visualizer": "^1.0.1",
-    "vite-plugin-cross-origin-isolation": "^0.1.6",
-    "vite-plugin-solid": "^2.10.1"
-  }
+  "license": "ISC"
 }
+
