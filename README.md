@@ -15,3 +15,8 @@ To run the lightning app:
 ```
 pnpm start:lightning
 ```
+
+To run the web app:
+```
+pnpm start:web
+```
