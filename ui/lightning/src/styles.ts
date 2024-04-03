@@ -50,7 +50,7 @@ export default {
     width: 185, height: 278, scale: 1, zIndex: 2,
     transition: { scale: { duration: 250, easing: 'ease-in-out' } },
     border: { width: 0, color: 0x00000000 },
-    focus: { scale: 1.1, border: { color: theme.color.materialBrand, width: 6 } }
+    focus: { scale: 1.1, border: { color: 0xffffff66, width: 8 } }
   } satisfies IntrinsicNodeStyleProps,
   FocusRing: {
     borderRadius: 16,
