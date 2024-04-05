@@ -1,35 +1,37 @@
-import { IntrinsicNodeStyleProps, hexColor } from '@lightningjs/solid';
-import theme from 'theme';
+import { IntrinsicNodeStyleProps, hexColor } from "@lightningjs/solid";
+import theme from "theme";
 
 export default {
   Column: {
-    flexDirection: 'column',
-    display: 'flex',
+    flexDirection: "column",
+    display: "flex",
     width: 320,
     height: 600,
     y: 360,
     gap: 20,
     zIndex: 101,
-    transition: { x: {
-      duration: 250,
-      easing: 'ease-in-out'
-    }},
+    transition: {
+      x: {
+        duration: 250,
+        easing: "ease-in-out",
+      },
+    },
     x: 8,
     focus: {
-      x: theme.layout.marginX
+      x: theme.layout.marginX,
     },
   } satisfies IntrinsicNodeStyleProps,
   Gradient: {
     zIndex: 99,
-    color: hexColor('#000000'),
-    src: './assets/sidenav.png',
+    color: hexColor("#000000"),
+    src: "./assets/sidenav.png",
     alpha: 0,
     width: 1200,
     height: 1080,
     focus: {
-      alpha: 1
+      alpha: 1,
     },
-    transition: { alpha: true }
+    transition: { alpha: true },
   } satisfies IntrinsicNodeStyleProps,
   NavButton: {
     zIndex: 102,
@@ -37,7 +39,7 @@ export default {
     width: 100,
     borderRadius: 8,
     focus: {
-      color: hexColor('#424242'),
+      color: hexColor("#424242"),
     },
     active: {
       width: 328,

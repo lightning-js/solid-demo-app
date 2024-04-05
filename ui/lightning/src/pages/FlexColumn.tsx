@@ -1,40 +1,46 @@
-import { ElementNode, IntrinsicNodeStyleProps, Text, View, hexColor } from '@lightningjs/solid';
-import { Column, Row } from '@lightningjs/solid-ui';
-import { createSignal, onMount } from 'solid-js';
+import {
+  ElementNode,
+  IntrinsicNodeStyleProps,
+  Text,
+  View,
+  hexColor,
+} from "@lightningjs/solid";
+import { Column, Row } from "@lightningjs/solid-ui";
+import { createSignal, onMount } from "solid-js";
 import { setGlobalBackground } from "../state";
 
 const FlexColumnPage = () => {
   const RowStyles = {
-    display: 'flex',
-    justifyContent: 'spaceEvenly',
+    display: "flex",
+    justifyContent: "spaceEvenly",
     width: 1920,
     y: 100,
     height: 880,
-    color: hexColor('00000000'),
+    color: hexColor("00000000"),
   } satisfies IntrinsicNodeStyleProps;
 
   const ColumnStyles = {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flexStart',
-    color: hexColor('#4dabf5'),
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flexStart",
+    color: hexColor("#4dabf5"),
     height: 850,
-    width: 60
+    width: 60,
   } satisfies IntrinsicNodeStyleProps;
 
   const rowTitle = {
     fontSize: 44,
     y: 20,
     x: 150,
-  }
+  };
 
   function Block(props) {
     const styles = {
       width: 50,
       height: 80,
       x: 5,
-      color: hexColor('#1769aa'),
-    }
+      color: hexColor("#1769aa"),
+    };
 
     return <View {...props} style={styles} />;
   }
@@ -46,14 +52,16 @@ const FlexColumnPage = () => {
   }
 
   onMount(() => {
-    setGlobalBackground('#333333');
-  })
+    setGlobalBackground("#333333");
+  });
 
   const gap = 50;
 
   return (
     <>
-      <Text style={rowTitle}>Start, MarginTop, End, MarginBottom, Center, Between, Evenly</Text>
+      <Text style={rowTitle}>
+        Start, MarginTop, End, MarginBottom, Center, Between, Evenly
+      </Text>
       <Row gap={gap} style={RowStyles} onFocus={onFocus}>
         <Column gap={30} style={ColumnStyles}>
           <Block autofocus />
@@ -71,7 +79,12 @@ const FlexColumnPage = () => {
           <Block />
         </Column>
 
-        <Column gap={gap} justifyContent={'flexEnd'} style={ColumnStyles} onFocus={onFocus}>
+        <Column
+          gap={gap}
+          justifyContent={"flexEnd"}
+          style={ColumnStyles}
+          onFocus={onFocus}
+        >
           <Block />
           <Block />
           <Block />
@@ -79,7 +92,12 @@ const FlexColumnPage = () => {
           <Block />
         </Column>
 
-        <Column gap={gap} justifyContent={'flexEnd'} style={ColumnStyles} onFocus={onFocus}>
+        <Column
+          gap={gap}
+          justifyContent={"flexEnd"}
+          style={ColumnStyles}
+          onFocus={onFocus}
+        >
           <Block />
           <Block marginBottom={100} />
           <Block />
@@ -87,7 +105,12 @@ const FlexColumnPage = () => {
           <Block marginBottom={100} />
         </Column>
 
-        <Column gap={gap} justifyContent={'center'} style={ColumnStyles} onFocus={onFocus}>
+        <Column
+          gap={gap}
+          justifyContent={"center"}
+          style={ColumnStyles}
+          onFocus={onFocus}
+        >
           <Block />
           <Block />
           <Block />
@@ -95,7 +118,12 @@ const FlexColumnPage = () => {
           <Block />
         </Column>
 
-        <Column gap={gap} justifyContent={'spaceBetween'} style={ColumnStyles} onFocus={onFocus}>
+        <Column
+          gap={gap}
+          justifyContent={"spaceBetween"}
+          style={ColumnStyles}
+          onFocus={onFocus}
+        >
           <Block />
           <Block />
           <Block />
@@ -103,7 +131,12 @@ const FlexColumnPage = () => {
           <Block />
         </Column>
 
-        <Column gap={gap} justifyContent={'spaceEvenly'} style={ColumnStyles} onFocus={onFocus}>
+        <Column
+          gap={gap}
+          justifyContent={"spaceEvenly"}
+          style={ColumnStyles}
+          onFocus={onFocus}
+        >
           <Block />
           <Block />
           <Block />

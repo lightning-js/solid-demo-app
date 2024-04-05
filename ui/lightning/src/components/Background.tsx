@@ -68,8 +68,8 @@ export default function Background() {
       (img: string) => {
         delayedBackgrounds(img);
       },
-      { defer: true }
-    )
+      { defer: true },
+    ),
   );
 
   return (

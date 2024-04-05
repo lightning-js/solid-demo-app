@@ -1,13 +1,13 @@
-import API_KEY_V4 from './key';
-const API_BASE = 'https://api.themoviedb.org/3';
+import API_KEY_V4 from "./key";
+const API_BASE = "https://api.themoviedb.org/3";
 let tmdbConfig;
 let baseImageUrl;
-const basePosterSize = 'w185';
+const basePosterSize = "w185";
 
 const defaultFetchParams = {
   headers: {
-    'Content-Type': 'application/json',
-    Authorization: 'Bearer ' + API_KEY_V4,
+    "Content-Type": "application/json",
+    Authorization: "Bearer " + API_KEY_V4,
   },
 };
 
@@ -19,7 +19,7 @@ function get(path: string, params: RequestInit = {}) {
   if (tmdbConfig) {
     return _get(path, params);
   } else {
-    return loadConfig().then(() => _get(path, params))
+    return loadConfig().then(() => _get(path, params));
   }
 }
 
@@ -31,7 +31,7 @@ function _get(path: string, params: RequestInit = {}) {
 }
 
 function loadConfig() {
-  return _get('/configuration').then((data) => {
+  return _get("/configuration").then((data) => {
     tmdbConfig = data;
     baseImageUrl = data.images?.secure_base_url;
     return data;

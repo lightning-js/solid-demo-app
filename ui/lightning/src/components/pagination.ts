@@ -9,21 +9,19 @@ export function createInfiniteScroll(fetcher: (page: number) => Promise<any>) {
 
   createComputed(() => {
     const content = contents();
-    if (!content)
-      return;
+    if (!content) return;
     batch(() => {
-      if (content.length === 0)
-        setEnd(true);
+      if (content.length === 0) setEnd(true);
       setPages((p) => [...p, ...content]);
     });
   });
 
   return {
-      pages,
-      page,
-      setPage,
-      setPages,
-      end,
-      setEnd
-    };
+    pages,
+    page,
+    setPage,
+    setPages,
+    end,
+    setEnd,
+  };
 }

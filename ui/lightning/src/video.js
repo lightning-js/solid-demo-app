@@ -2,7 +2,7 @@
 // https://shaka-player-demo.appspot.com/docs/api/tutorial-basic-usage.html
 
 const manifestUri =
-    'https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd';
+  "https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd";
 
 function initApp() {
   // Install built-in polyfills to patch browser incompatibilities.
@@ -14,13 +14,13 @@ function initApp() {
     initPlayer();
   } else {
     // This browser does not have the minimum set of APIs we need.
-    console.error('Browser not supported!');
+    console.error("Browser not supported!");
   }
 }
 
 async function initPlayer() {
   // Create a Player instance.
-  const video = document.getElementById('video');
+  const video = document.getElementById("video");
   const player = new shaka.Player();
   await player.attach(video);
 
@@ -28,14 +28,14 @@ async function initPlayer() {
   window.player = player;
 
   // Listen for error events.
-  player.addEventListener('error', onErrorEvent);
+  player.addEventListener("error", onErrorEvent);
 
   // Try to load a manifest.
   // This is an asynchronous process.
   try {
     await player.load(manifestUri);
     // This runs if the asynchronous load is successful.
-    console.log('The video has now been loaded!');
+    console.log("The video has now been loaded!");
   } catch (e) {
     // onError is executed if the asynchronous load fails.
     onError(e);
@@ -49,11 +49,11 @@ function onErrorEvent(event) {
 
 function onError(error) {
   // Log the error.
-  console.error('Error code', error.code, 'object', error);
+  console.error("Error code", error.code, "object", error);
 }
 
 export function playVideo() {
-  const video = document.getElementById('video');
+  const video = document.getElementById("video");
   video.hidden = false;
   // Needs delay from hidden to play in Chrome
   setTimeout(() => video.play(), 50);
@@ -62,10 +62,10 @@ export function playVideo() {
 }
 
 export function closeVideo() {
-  const video = document.getElementById('video');
+  const video = document.getElementById("video");
   video.hidden = true;
   video.pause();
   return video;
 }
 
-document.addEventListener('DOMContentLoaded', initApp);
+document.addEventListener("DOMContentLoaded", initApp);
