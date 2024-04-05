@@ -37,7 +37,7 @@ export default {
     width: 100,
     borderRadius: 8,
     focus: {
-      color: hexColor(theme.color.material),
+      color: hexColor('#424242'),
     },
     active: {
       width: 328,

@@ -53,6 +53,11 @@ const Portal = () => {
       id: "create",
       description: "Testing Show + children + inserting text",
     },
+    {
+      title: "Viewport",
+      id: "viewport",
+      description: "Events going in and out of viewport",
+    },
   ];
 
   function DemoTile(props) {

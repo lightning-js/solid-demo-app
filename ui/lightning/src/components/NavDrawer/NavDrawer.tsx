@@ -1,9 +1,14 @@
-import { useNavigate } from '@solidjs/router';
-import { View, Text, IntrinsicNodeProps, ElementNode } from '@lightningjs/solid';
-import { Column } from '@lightningjs/solid-ui';
-import styles from './NavDrawer.styles';
-import Icon from '../Icon';
-import theme from 'theme';
+import { useNavigate } from "@solidjs/router";
+import {
+  View,
+  Text,
+  IntrinsicNodeProps,
+  ElementNode,
+} from "@lightningjs/solid";
+import { Column } from "@lightningjs/solid-ui";
+import styles from "./NavDrawer.styles";
+import Icon from "../Icon";
+import theme from "theme";
 
 interface NavButtonProps extends IntrinsicNodeProps {
   icon: string;
@@ -21,7 +26,7 @@ function NavButton(props: NavButtonProps) {
           ...theme.typography.button1,
           fontSize: 38,
           x: 116,
-          y: 16,
+          y: 24,
           height: 50,
           alpha: 0,
           active: {
@@ -40,24 +45,38 @@ export default function NavDrawer(props) {
   const navigate = useNavigate();
 
   function onFocus(this: ElementNode) {
-    backdrop.states.add('focus');
-    this.children.forEach((c) => c.states!.add('active'));
+    backdrop.states.add("focus");
+    this.children.forEach((c) => c.states!.add("active"));
     this.children.selected!.setFocus();
   }
 
   function onBlur(this: ElementNode) {
-    backdrop.states.remove('focus');
+    backdrop.states.remove("focus");
     this.selected = 0;
-    this.children.forEach((c) => c.states!.remove('active'));
+    this.children.forEach((c) => c.states!.remove("active"));
   }
 
   return (
     <>
-      <Column {...props} onFocus={onFocus} onBlur={onBlur} style={styles.Column} scroll='none'>
-        <NavButton onEnter={() => navigate('/browse/all')} icon='trending'>Trending</NavButton>
-        <NavButton icon='movie' onEnter={() => navigate('/browse/movie')}>Movies</NavButton>
-        <NavButton icon='tv' onEnter={() => navigate('/browse/tv')}>TV</NavButton>
-        <NavButton icon='experiment' onEnter={() => navigate('/examples')}>Examples</NavButton>
+      <Column
+        {...props}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        style={styles.Column}
+        scroll="none"
+      >
+        <NavButton onEnter={() => navigate("/browse/all")} icon="trending">
+          Trending
+        </NavButton>
+        <NavButton icon="movie" onEnter={() => navigate("/browse/movie")}>
+          Movies
+        </NavButton>
+        <NavButton icon="tv" onEnter={() => navigate("/browse/tv")}>
+          TV
+        </NavButton>
+        <NavButton icon="experiment" onEnter={() => navigate("/examples")}>
+          Examples
+        </NavButton>
       </Column>
       <View ref={backdrop} style={styles.Gradient}></View>
     </>

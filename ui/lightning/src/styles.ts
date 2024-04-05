@@ -20,7 +20,7 @@ declare module '@lightningjs/solid' {
 export default {
   Page: {
     width: 1920, height: 1080
-  } satisfies IntrinsicNodeStyleProps,
+  },
   headlineText: {
     width: 1200, height: 240,
     x: 360,
@@ -44,18 +44,18 @@ export default {
     y: 560,
     x: 0,
     zIndex: 2,
-  } satisfies IntrinsicNodeStyleProps,
+  },
   Thumbnail: {
     borderRadius: 16,
     width: 185, height: 278, scale: 1, zIndex: 2,
     transition: { scale: { duration: 250, easing: 'ease-in-out' } },
     border: { width: 0, color: 0x00000000 },
     focus: { scale: 1.1, border: { color: 0xffffff66, width: 8 } }
-  } satisfies IntrinsicNodeStyleProps,
+  },
   FocusRing: {
     borderRadius: 16,
     width: 194, height: 286, y: -5, x: -5, zIndex: -1,
-  } satisfies IntrinsicNodeStyleProps,
+  },
   FPS: {
     color: 0x000000ff,
     height: 42,
@@ -76,7 +76,7 @@ export default {
     fontSize: 36,
     textColor: hexColor('#ffffff')
   },
-  showHeadline: { x: 70, y: 20 } satisfies IntrinsicNodeStyleProps,
+  showHeadline: { x: 70, y: 20 },
   headlineBlur: {
     width: 1920,
     height: 150,
@@ -85,7 +85,7 @@ export default {
     zIndex: 14,
     alpha: 0.9,
     color: hexColor('#000000')
-  } satisfies IntrinsicNodeStyleProps,
+  },
   RowTitle: {
     height: 60,
     width: 300,
@@ -98,7 +98,7 @@ export default {
     display: 'flex',
     justifyContent: 'spaceBetween',
     height: 300,
-  } satisfies IntrinsicNodeStyleProps,
+  },
   Column: {
     display: 'flex',
     flexDirection: 'column',
@@ -109,21 +109,21 @@ export default {
     y: 48,
     transition: { y: { duration: 250, easing: 'ease-in-out' } },
     zIndex: 2
-  } satisfies IntrinsicNodeStyleProps,
+  },
   Rect: {
     width: 250,
     height: 100,
     y: 10,
     x: 300,
     color: hexColor('#0000ff')
-  } satisfies IntrinsicNodeStyleProps,
+  },
   peopleBio: {
     ...theme.typography.body1,
     contain: 'both',
     width: 1500,
     height: 400
   } satisfies IntrinsicTextNodeStyleProps,
-};
+} as const;
 
 const Button = {
   width: 120,

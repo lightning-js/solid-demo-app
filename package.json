@@ -33,17 +33,15 @@
   "license": "ISC",
   "dependencies": {
     "@lightningjs/l3-ui-theme-base": "^0.3.1",
-    "@lightningjs/renderer": "^0.8.1",
-    "@lightningjs/solid": "^0.15.0",
+    "@lightningjs/renderer": "^0.8.2",
+    "@lightningjs/solid": "^0.15.2",
     "@lightningjs/solid-primitives": "^0.6.3",
     "@lightningjs/solid-ui": "^0.6.0",
     "@solid-primitives/scheduled": "^1.4.3",
     "@solidjs/router": "^0.13.1",
-    "es6-proxy-polyfill": "^2.1.1",
     "proxy-polyfill": "^0.3.2",
     "solid-js": "^1.8.16",
-    "vite-plugin-babel": "^1.2.0",
-    "whatwg-fetch": "^3.6.20"
+    "vite-plugin-babel": "^1.2.0"
   },
   "devDependencies": {
     "@lightningjs/vite-plugin-import-chunk-url": "^0.3.0",

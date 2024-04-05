@@ -7,12 +7,12 @@ import {
   ElementNode,
 } from "@lightningjs/solid";
 import { HashRouter, Route } from "@solidjs/router";
-import { createSignal } from "solid-js";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
 import Portal from "./pages/Portal";
 import TextPage from "./pages/Text";
 import CreatePage from "./pages/Create";
+import ViewportPage from "./pages/Viewport";
 import ButtonsPage from "./pages/Buttons";
 import FlexPage from "./pages/Flex";
 import FlexSizePage from "./pages/FlexSize";
@@ -29,7 +29,7 @@ Config.debug = false;
 Config.animationsEnabled = true;
 Config.fontSettings.fontFamily = "Ubuntu";
 Config.fontSettings.color = hexColor("#ffffff");
-Config.fontSettings.fontSize = 100;
+Config.fontSettings.fontSize = 32;
 Config.rendererOptions = {
   coreExtensionModule: coreExtensionModuleUrl,
   fpsUpdateInterval: logFps ? 1000 : 0,
@@ -46,6 +46,7 @@ render(() => (
     <Route path="buttons" component={ButtonsPage} />
     <Route path="flex" component={FlexPage} />
     <Route path="create" component={CreatePage} />
+    <Route path="viewport" component={ViewportPage} />
     <Route path="flexsize" component={FlexSizePage} />
     <Route path="flexcolumnsize" component={FlexColumnSizePage} />
     <Route path="flexcolumn" component={FlexColumnPage} />
