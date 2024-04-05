@@ -1,0 +1,2 @@
+import{C as t,W as a,S as e}from"./CoreExtension-DOmsP2uW.js";function r(){import.meta.url,import("_").catch(()=>1),async function*(){}().next()}const o="/solid-demo-app/";class f extends t{async run(n){n.fontManager.addFontFace(new a("NotoSans",{},o+"fonts/NotoSans-Regular.ttf")),n.fontManager.addFontFace(new e("Ubuntu",{},"msdf",n,o+"fonts/Ubuntu-Bold.msdf.png",o+"fonts/Ubuntu-Bold.msdf.json"))}}export{r as __vite_legacy_guard,f as default};
+//# sourceMappingURL=AppCoreExtensions-CYWum99P.js.map
