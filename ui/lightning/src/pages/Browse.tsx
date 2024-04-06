@@ -49,8 +49,8 @@ const Browse = () => {
           setHeroContent(elm.heroContent);
         }
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
   function onRowFocus(this: ElementNode) {
@@ -74,7 +74,7 @@ const Browse = () => {
 
   return (
     <Show when={provider().pages().length}>
-      <ContentBlock y={360} x={150} {...heroContent()}></ContentBlock>
+      <ContentBlock y={360} x={162} {...heroContent()}></ContentBlock>
       <View clipping style={styles.itemsContainer}>
         <Column
           plinko
@@ -87,6 +87,7 @@ const Browse = () => {
               <TileRow
                 autofocus={isFirst(i())}
                 items={items}
+                width={1620}
                 onFocus={onRowFocus}
                 onEnter={onEnter}
               />

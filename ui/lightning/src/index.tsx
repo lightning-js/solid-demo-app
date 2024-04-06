@@ -28,11 +28,11 @@ const logFps = true;
 Config.debug = false;
 Config.animationsEnabled = true;
 Config.fontSettings.fontFamily = "Ubuntu";
-Config.fontSettings.color = hexColor("#ffffff");
+Config.fontSettings.color = hexColor("#f6f6f6");
 Config.fontSettings.fontSize = 32;
 Config.rendererOptions = {
   coreExtensionModule: coreExtensionModuleUrl,
-  fpsUpdateInterval: logFps ? 1000 : 0,
+  fpsUpdateInterval: logFps ? 200 : 0,
   enableInspector: true,
   // deviceLogicalPixelRatio: 1
 };

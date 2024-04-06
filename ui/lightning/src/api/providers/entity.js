@@ -5,8 +5,13 @@ export function minutesToHMM(minutes) {
   const hours = Math.floor(minutes / 60);
   const remainingMinutes = minutes % 60;
   return (
-    hours + "h " + (remainingMinutes < 10 ? "0" : "") + remainingMinutes + "m"
+    hours + "h " + (remainingMinutes < 10 ? "0" : "") + remainingMinutes + "min"
   );
+}
+
+function formatDate(dateString) {
+  const parts = dateString.split("-");
+  return parts[1] + "/" + parts[2] + "/" + parts[0];
 }
 
 function justYear(dateString) {
@@ -48,7 +53,7 @@ export function getInfo({ type, id }) {
       badges: ["HD"],
       metaText:
         type === "movie"
-          ? minutesToHMM(data.runtime) + " - " + data.release_date
+          ? minutesToHMM(data.runtime) + "   " + formatDate(data.release_date)
           : `${justYear(data.first_air_date)} - ${justYear(data.last_air_date)}`,
       reviews: rt,
     },

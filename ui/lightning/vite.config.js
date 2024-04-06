@@ -24,6 +24,7 @@ export default defineConfig({
     dedupe: [
       "solid-js",
       "@lightningjs/solid",
+      "@lightningjs/solid-ui",
       "@lightningjs/renderer",
       "@lightningjs/solid-primitives",
     ],

@@ -58,6 +58,18 @@ export default function NavDrawer(props) {
 
   return (
     <>
+      <View
+        flexItem={false}
+        x={40}
+        y={30}
+        zIndex={105}
+        alpha={props.showWidgets ? 1 : 0}
+      >
+        <Text x={80} fontSize={28} color={0xf6f6f644}>
+          Built With:
+        </Text>
+        <View y={22} src="./assets/solidWord.png" width={280} height={52} />
+      </View>
       <Column
         {...props}
         onFocus={onFocus}

@@ -3,6 +3,7 @@ import { globalBackground } from "../state.js";
 import {
   type IntrinsicNodeStyleProps,
   View,
+  Text,
   hexColor,
 } from "@lightningjs/solid";
 import { createEffect, on } from "solid-js";
@@ -68,8 +69,8 @@ export default function Background() {
       (img: string) => {
         delayedBackgrounds(img);
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
   return (

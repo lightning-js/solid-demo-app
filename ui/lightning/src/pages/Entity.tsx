@@ -6,10 +6,10 @@ import {
   hexColor,
   setActiveElement,
 } from "@lightningjs/solid";
-import { Column } from "@lightningjs/solid-ui";
+import { Column, Button, Row } from "@lightningjs/solid-ui";
 import { useParams } from "@solidjs/router";
 import { createEffect, createResource, on, createSignal } from "solid-js";
-import { TileRow, Button } from "../components";
+import { TileRow } from "../components";
 import { setGlobalBackground } from "../state";
 import ContentBlock from "../components/ContentBlock";
 import { useNavigate } from "@solidjs/router";
@@ -26,11 +26,11 @@ const Entity = () => {
   const [data] = createResource(() => ({ ...params }), provider.getInfo);
   const [credits] = createResource<any, Tile[]>(
     () => ({ ...params }),
-    provider.getCredits,
+    provider.getCredits
   );
   const [recommendations] = createResource<any, Tile[]>(
     () => ({ ...params }),
-    provider.getRecommendations,
+    provider.getRecommendations
   );
   const [backdropAlpha, setBackdropAlpha] = createSignal(0);
 
@@ -40,18 +40,18 @@ const Entity = () => {
       (data) => {
         setGlobalBackground(data.backgroundImage);
       },
-      { defer: true },
-    ),
+      { defer: true }
+    )
   );
 
-  const columnY = 600;
+  const columnY = 640;
 
   const Backdrop = {
     color: hexColor("#000000"),
     alpha: 0,
     width: 1900,
     height: 890,
-    x: 10,
+    x: -160,
     y: columnY,
     borderRadius: 30,
   };
@@ -80,7 +80,7 @@ const Entity = () => {
     closeVideo();
     // Set focus back to lightning app
     document.getElementsByTagName("canvas")[0].focus();
-    setActiveElement(trailerButton);
+    entityActions.setFocus();
     setBackdropAlpha(0);
   }
 
@@ -90,26 +90,32 @@ const Entity = () => {
     setBackdropAlpha(0.9);
   }
 
-  let columnRef, backdropRef, trailerButton;
+  let columnRef, backdropRef, entityActions;
 
   return (
     <Show when={data()} keyed>
-      <View onUp={() => trailerButton.setFocus()} onEscape={onEscape}>
-        <ContentBlock y={360} x={150} {...data().heroContent}></ContentBlock>
-        <Button
-          autofocus
-          ref={trailerButton}
-          y={560}
-          x={150}
+      <View x={170} onUp={() => entityActions.setFocus()} onEscape={onEscape}>
+        <ContentBlock y={260} {...data().heroContent}></ContentBlock>
+        <Row
+          ref={entityActions}
+          y={500}
+          scroll="none"
+          height={90}
+          width={640}
+          gap={40}
           onDown={() => columnRef.setFocus()}
           onEnter={onEnterTrailer}
         >
-          Watch Trailer
-        </Button>
+          <Button width={300} autofocus>
+            Play
+          </Button>
+          <Button width={300}>Resume</Button>
+        </Row>
+
         <Column
           ref={columnRef}
+          x={0}
           y={columnY}
-          x={140}
           style={styles.Column}
           zIndex={5}
         >
@@ -121,6 +127,7 @@ const Entity = () => {
               onFocus={onRowFocus}
               onEnter={onEnter}
               items={recommendations()}
+              width={1620}
             />
             <Text skipFocus style={styles.RowTitle}>
               Cast and Crew
@@ -129,6 +136,7 @@ const Entity = () => {
               onFocus={onRowFocusAnimate}
               onEnter={onEnter}
               items={credits()}
+              width={1620}
             />
           </Show>
         </Column>

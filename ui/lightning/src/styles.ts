@@ -104,7 +104,7 @@ export default {
   RowTitle: {
     height: 60,
     width: 300,
-    marginTop: 20,
+    marginBottom: -40,
     fontSize: 36,
     color: hexColor("#f0f0f0"),
     zIndex: 2,
@@ -118,7 +118,7 @@ export default {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flexStart",
-    gap: 20,
+    gap: 64,
     width: theme.layout.screenW - 2 * theme.layout.marginX,
     x: theme.layout.marginX + theme.layout.gutterX,
     y: 48,
