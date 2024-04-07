@@ -1,4 +1,4 @@
-import { useNavigate } from "@solidjs/router";
+import { useMatch, useNavigate } from "@solidjs/router";
 import {
   View,
   Text,
@@ -43,7 +43,6 @@ function NavButton(props: NavButtonProps) {
 export default function NavDrawer(props) {
   let backdrop;
   const navigate = useNavigate();
-
   function onFocus(this: ElementNode) {
     backdrop.states.add("focus");
     this.children.forEach((c) => c.states!.add("active"));
@@ -54,6 +53,15 @@ export default function NavDrawer(props) {
     backdrop.states.remove("focus");
     this.selected = 0;
     this.children.forEach((c) => c.states!.remove("active"));
+  }
+
+  function handleNavigate(page: string) {
+    const isOnPage = useMatch(() => page);
+    if (isOnPage()) {
+      return props.focusPage();
+    }
+
+    navigate(page);
   }
 
   return (
@@ -77,16 +85,22 @@ export default function NavDrawer(props) {
         style={styles.Column}
         scroll="none"
       >
-        <NavButton onEnter={() => navigate("/browse/all")} icon="trending">
+        <NavButton
+          onEnter={() => handleNavigate("/browse/all")}
+          icon="trending"
+        >
           Trending
         </NavButton>
-        <NavButton icon="movie" onEnter={() => navigate("/browse/movie")}>
+        <NavButton icon="movie" onEnter={() => handleNavigate("/browse/movie")}>
           Movies
         </NavButton>
-        <NavButton icon="tv" onEnter={() => navigate("/browse/tv")}>
+        <NavButton icon="tv" onEnter={() => handleNavigate("/browse/tv")}>
           TV
         </NavButton>
-        <NavButton icon="experiment" onEnter={() => navigate("/examples")}>
+        <NavButton
+          icon="experiment"
+          onEnter={() => handleNavigate("/examples")}
+        >
           Examples
         </NavButton>
       </Column>

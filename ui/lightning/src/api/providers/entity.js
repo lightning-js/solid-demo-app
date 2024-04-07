@@ -50,7 +50,9 @@ export function getInfo({ type, id }) {
     heroContent: {
       title: data.title || data.name,
       description: data.overview,
-      badges: ["HD"],
+      badges: ["HD", "CC"],
+      voteAverage: data.vote_average,
+      voteCount: data.vote_count,
       metaText:
         type === "movie"
           ? minutesToHMM(data.runtime) + "   " + formatDate(data.release_date)

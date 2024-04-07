@@ -92,9 +92,19 @@ const Metadata = (props) => (
       height: 48,
     }}
   >
+    <View y={-4} src="./assets/stars.png" width={188} height={31}></View>
+    <View
+      y={-4}
+      flexItem={false}
+      clipping
+      width={(188 * props.voteAverage) / 10}
+      height={31}
+    >
+      <View src="./assets/stars-full.png" width={188} height={31}></View>
+    </View>
+    <Text style={MetaTextStyle}>{props.voteCount} reviews</Text>
     <Text style={MetaTextStyle}>{props.metaText}</Text>
     <For each={props.badges}>{(item) => <Badge y={-5}>{item}</Badge>}</For>
-    {getReviews(props.reviews)}
   </View>
 );
 
@@ -110,11 +120,14 @@ const ContentBlock = (props) => {
     <View {...props} style={style}>
       <Headline>{props.title}</Headline>
       <Description>{props.description}</Description>
-      <Metadata
-        metaText={props.metaText}
-        badges={props.badges}
-        reviews={props.reviews}
-      />
+      <Show when={props.voteCount}>
+        <Metadata
+          metaText={props.metaText}
+          badges={props.badges}
+          voteCount={props.voteCount}
+          voteAverage={props.voteAverage}
+        />
+      </Show>
     </View>
   );
 };
