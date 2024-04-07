@@ -1,7 +1,7 @@
 import { ElementNode, Text, View, Show, hexColor } from "@lightningjs/solid";
 import { Column } from "@lightningjs/solid-ui";
 import { useParams } from "@solidjs/router";
-import { createEffect, createResource, on } from "solid-js";
+import { createResource, onMount } from "solid-js";
 import { TileRow } from "../components";
 import { setGlobalBackground } from "../state";
 import { useNavigate } from "@solidjs/router";
@@ -17,20 +17,10 @@ const People = () => {
   const [data] = createResource(() => ({ ...params }), provider.getInfo);
   const [credits] = createResource(() => ({ ...params }), provider.getCredits);
 
-  createEffect(
-    on(
-      data,
-      (data) => {
-        setGlobalBackground(data.backgroundImage);
-      },
-      { defer: true },
-    ),
-  );
-
   const Backdrop = {
     color: hexColor("#000000"),
     alpha: 0.8,
-    width: 1540,
+    width: 800,
     height: 440,
     x: 130,
     y: 180,
@@ -43,11 +33,34 @@ const People = () => {
     navigate(entity.href);
   }
 
+  onMount(() => {
+    setGlobalBackground("#333333");
+  });
+
   return (
     <Show when={data()} keyed>
-      <View x={150} y={200} style={styles.Column} zIndex={3}>
-        <Text style={theme.typography.display2}>{data().name}</Text>
-        <Text style={styles.peopleBio}>{data().biography}</Text>
+      <View
+        src={data().backgroundImage}
+        width={400}
+        autosize
+        y={0}
+        x={1800}
+        mountX={1}
+      />
+      <View
+        x={150}
+        y={200}
+        width={800}
+        gap={24}
+        style={styles.Column}
+        zIndex={3}
+      >
+        <Text contain="width" style={theme.typography.display2}>
+          {data().name}
+        </Text>
+        <Text contain="both" style={styles.peopleBio}>
+          {data().biography}
+        </Text>
       </View>
       <View style={Backdrop} />
       <Column y={670} x={140} style={styles.Column}>

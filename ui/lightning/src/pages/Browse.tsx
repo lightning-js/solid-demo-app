@@ -19,6 +19,7 @@ import { createInfiniteScroll } from "../components/pagination";
 import ContentBlock from "../components/ContentBlock";
 import * as entityProvider from "../api/providers/entity";
 import { assertTruthy } from "@lightningjs/renderer/utils";
+import { debounce } from "@solid-primitives/scheduled";
 
 const Browse = () => {
   const params = useParams();
@@ -35,18 +36,22 @@ const Browse = () => {
     return createInfiniteScroll(browseProvider(params.filter || "all"));
   });
 
+  const delayedBackgrounds = debounce(
+    (img: string) => setGlobalBackground(img),
+    400
+  );
+  const delayedHero = debounce((content: {}) => setHeroContent(content), 200);
+
   createEffect(
     on(
       activeElement,
       (elm) => {
         if (elm.backdrop) {
-          setGlobalBackground(elm.backdrop);
+          delayedBackgrounds(elm.backdrop);
         }
-        // if (elm.entityInfo) {
-        //   setEntityInfo(elm.entityInfo);
-        // }
+
         if (elm.heroContent) {
-          setHeroContent(elm.heroContent);
+          delayedHero(elm.heroContent);
         }
       },
       { defer: true }

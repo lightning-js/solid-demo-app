@@ -135,8 +135,8 @@ export default {
   peopleBio: {
     ...theme.typography.body1,
     contain: "both",
-    width: 1500,
-    height: 400,
+    width: 780,
+    height: 340,
   } satisfies IntrinsicTextNodeStyleProps,
 } as const;
 

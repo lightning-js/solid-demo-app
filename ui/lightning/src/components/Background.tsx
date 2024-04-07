@@ -7,7 +7,6 @@ import {
   hexColor,
 } from "@lightningjs/solid";
 import { createEffect, on } from "solid-js";
-import { debounce } from "@solid-primitives/scheduled";
 import theme from "theme";
 
 export default function Background() {
@@ -61,13 +60,11 @@ export default function Background() {
     }
   }
 
-  const delayedBackgrounds = debounce(changeBackgrounds, 400);
-
   createEffect(
     on(
       globalBackground,
       (img: string) => {
-        delayedBackgrounds(img);
+        changeBackgrounds(img);
       },
       { defer: true }
     )

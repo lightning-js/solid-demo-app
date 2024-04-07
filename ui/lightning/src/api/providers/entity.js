@@ -46,7 +46,7 @@ export function getInfo({ type, id }) {
       : {};
 
   return api.get(`/${type}/${id}`).then((data) => ({
-    backgroundImage: getImageUrl(data.backdrop_path, "original"),
+    backgroundImage: getImageUrl(data.backdrop_path, "w1280"),
     heroContent: {
       title: data.title || data.name,
       description: data.overview,
