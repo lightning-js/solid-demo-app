@@ -75,6 +75,7 @@ const Browse = () => {
     let entity = this.children.selected;
     assertTruthy(entity && entity.href);
     navigate(entity.href);
+    return true;
   }
 
   return (

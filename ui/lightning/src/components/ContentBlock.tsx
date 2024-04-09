@@ -6,6 +6,7 @@ import {
   For,
 } from "@lightningjs/solid";
 import { withPadding } from "@lightningjs/solid-primitives";
+import { createEffect } from "solid-js/types/server/reactive.js";
 import theme from "theme";
 withPadding;
 
@@ -16,11 +17,7 @@ const HeadlineStyles = {
   width: blockWidth,
   contain: "width",
 };
-const Headline = (props) => (
-  <Text {...props} style={HeadlineStyles}>
-    {props.children}
-  </Text>
-);
+const Headline = (props) => <Text {...props} style={HeadlineStyles}></Text>;
 
 const DescriptionStyles = {
   ...theme.typography.body1,
@@ -116,6 +113,7 @@ const ContentBlock = (props) => {
     height: 220,
     gap: 16,
   };
+
   return (
     <View {...props} style={style}>
       <Headline>{props.title}</Headline>
