@@ -140,8 +140,8 @@ const CreatePage = () => {
   };
 
   function hasFocus(elm) {
-    console.log("Ref is available: ", elm);
-    return true;
+    // This doesnt work yet - need to make states reactive
+    return elm.states.has("focus");
   }
 
   return (
@@ -170,7 +170,7 @@ const CreatePage = () => {
         color={hexColor("#00ff00")}
         x={900}
         y={400}
-        alpha={hasFocus(myBox) ? 1 : 0.5}
+        alpha={hasFocus(myBox) ? 1 : 0.2}
       />
     </View>
   );

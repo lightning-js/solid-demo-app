@@ -55,9 +55,12 @@ const App = (props) => {
   const showOnPaths = ["/browse", "/entity"];
   createEffect(() => {
     const currentPath = location.pathname;
-    const matchesPartial = showOnPaths.some((path) =>
+    let matchesPartial = showOnPaths.some((path) =>
       currentPath.startsWith(path)
     );
+    if (currentPath === "/") {
+      matchesPartial = true;
+    }
     setShowWidgets(matchesPartial);
   });
 
