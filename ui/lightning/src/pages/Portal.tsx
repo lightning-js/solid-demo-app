@@ -119,7 +119,7 @@ const Portal = () => {
   return (
     <View colorTop={0x446b9eff} colorBottom={0x2c4f7cff}>
       <View x={120}>
-        <View src="/assets/solidjs.png" width={101} height={90} y={40} />
+        <View src="./assets/solidjs.png" width={101} height={90} y={40} />
         <Text fontSize={90} x={110} y={40}>
           Examples
         </Text>
