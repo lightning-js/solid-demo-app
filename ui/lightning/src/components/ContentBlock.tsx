@@ -6,13 +6,14 @@ import {
   For,
 } from "@lightningjs/solid";
 import { withPadding } from "@lightningjs/solid-primitives";
-import { createEffect } from "solid-js/types/server/reactive.js";
 import theme from "theme";
 withPadding;
 
 const blockWidth = 900;
 const HeadlineStyles = {
   ...theme.typography.display2,
+  fontFamily: "Ubuntu",
+  fontWeight: 700,
   maxLines: 1,
   width: blockWidth,
   contain: "width",
@@ -21,6 +22,8 @@ const Headline = (props) => <Text {...props} style={HeadlineStyles}></Text>;
 
 const DescriptionStyles = {
   ...theme.typography.body1,
+  fontFamily: "Ubuntu",
+  fontWeight: 400,
   lineHeight: 32,
   width: blockWidth,
   maxLines: 3,
@@ -77,7 +80,11 @@ const Badge = (props) => {
   );
 };
 
-const MetaTextStyle = theme.typography.body2;
+const MetaTextStyle = {
+  ...theme.typography.body2,
+  fontFamily: "Ubuntu",
+  fontWeight: 400,
+};
 
 const Metadata = (props) => (
   <View

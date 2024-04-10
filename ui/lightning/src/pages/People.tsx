@@ -55,7 +55,11 @@ const People = () => {
         style={styles.Column}
         zIndex={3}
       >
-        <Text contain="width" style={theme.typography.display2}>
+        <Text
+          contain="width"
+          fontFamily={"Ubuntu"}
+          style={theme.typography.display2}
+        >
           {data().name}
         </Text>
         <Text contain="both" style={styles.peopleBio}>
@@ -63,7 +67,7 @@ const People = () => {
         </Text>
       </View>
       <View style={Backdrop} />
-      <Column y={670} x={140} style={styles.Column}>
+      <Column y={670} x={140} style={styles.Column} scroll="none">
         <Show when={credits()}>
           <Text skipFocus style={styles.RowTitle}>
             Credits

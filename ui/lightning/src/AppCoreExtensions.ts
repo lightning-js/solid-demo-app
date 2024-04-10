@@ -28,21 +28,31 @@ const basePath = import.meta.env.BASE_URL;
 
 export default class AppCoreExtension extends CoreExtension {
   async run(stage: Stage) {
+    // stage.fontManager.addFontFace(
+    //   new WebTrFontFace(
+    //     "NotoSans",
+    //     {},
+    //     basePath + "fonts/NotoSans-Regular.ttf",
+    //   ),
+    // );
     stage.fontManager.addFontFace(
-      new WebTrFontFace(
-        "NotoSans",
-        {},
-        basePath + "fonts/NotoSans-Regular.ttf",
+      new SdfTrFontFace(
+        "Ubuntu",
+        { weight: 700 },
+        "msdf",
+        stage,
+        basePath + "fonts/Ubuntu-Bold.msdf.png",
+        basePath + "fonts/Ubuntu-Bold.msdf.json",
       ),
     );
     stage.fontManager.addFontFace(
       new SdfTrFontFace(
         "Ubuntu",
-        {},
+        { weight: 400 },
         "msdf",
         stage,
-        basePath + "fonts/Ubuntu-Bold.msdf.png",
-        basePath + "fonts/Ubuntu-Bold.msdf.json",
+        basePath + "fonts/Ubuntu-Regular.msdf.png",
+        basePath + "fonts/Ubuntu-Regular.msdf.json",
       ),
     );
   }

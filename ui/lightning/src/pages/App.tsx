@@ -3,8 +3,8 @@ import { View, activeElement, renderer } from "@lightningjs/solid";
 import { useFocusManager, useAnnouncer } from "@lightningjs/solid-primitives";
 import Background from "../components/Background";
 import NavDrawer from "../components/NavDrawer/NavDrawer";
-import { FPSCounter, Row, setupFPS } from "@lightningjs/solid-ui";
-import { createEffect, createSignal, onMount } from "solid-js";
+import { FPSCounter, setupFPS } from "@lightningjs/solid-ui";
+import { createEffect, createSignal, getOwner } from "solid-js";
 
 declare module "@lightningjs/solid-primitives" {
   // Augment the FocusManager KeyMap interface with our custom keys
@@ -38,9 +38,10 @@ const App = (props) => {
 
   let navDrawer, lastFocused;
 
-  onMount(() => {
-    setupFPS({ renderer });
-  });
+  const root = getOwner();
+  console.log("root2", root);
+
+  setupFPS({ renderer });
 
   function focusNavDrawer() {
     if (navDrawer.states.has("focus")) {

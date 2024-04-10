@@ -23,10 +23,9 @@ function NavButton(props: NavButtonProps) {
       </View>
       <Text
         style={{
-          ...theme.typography.button1,
           fontSize: 38,
           x: 116,
-          y: 24,
+          y: 18,
           height: 50,
           alpha: 0,
           active: {

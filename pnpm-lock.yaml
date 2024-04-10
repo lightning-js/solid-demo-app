@@ -12,14 +12,14 @@ dependencies:
     specifier: ^0.8.2
     version: 0.8.2
   '@lightningjs/solid':
-    specifier: ^0.15.4
-    version: 0.15.4(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8)
+    specifier: ^0.15.6
+    version: 0.15.6(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8)
   '@lightningjs/solid-primitives':
-    specifier: ^0.6.3
-    version: 0.6.3(@lightningjs/renderer@0.8.2)(@lightningjs/solid@0.15.4)(solid-js@1.8.16)
+    specifier: ^0.6.4
+    version: 0.6.4(@lightningjs/renderer@0.8.2)(@lightningjs/solid@0.15.6)(solid-js@1.8.16)
   '@lightningjs/solid-ui':
-    specifier: ^0.12.0
-    version: 0.12.0(@babel/core@7.24.4)(@lightningjs/renderer@0.8.2)(@lightningjs/solid-primitives@0.6.3)(@lightningjs/solid@0.15.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8)
+    specifier: ^0.12.1
+    version: 0.12.1(@babel/core@7.24.4)(@lightningjs/renderer@0.8.2)(@lightningjs/solid-primitives@0.6.4)(@lightningjs/solid@0.15.6)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8)
   '@solid-primitives/scheduled':
     specifier: ^1.4.3
     version: 1.4.3(solid-js@1.8.16)
@@ -1726,51 +1726,22 @@ packages:
       memize: 2.1.0
     dev: false
 
-  /@lightningjs/solid-primitives@0.6.3(@lightningjs/renderer@0.8.2)(@lightningjs/solid@0.15.4)(solid-js@1.8.16):
-    resolution: {integrity: sha512-p5xXjQWVCLb7W7Oz+ucC4iPvypC6wqe6JHgfTMzCdenN24OOROnEsssqNzZMsKBNn/9mGWNSsXc/oo4P81C54w==}
+  /@lightningjs/solid-primitives@0.6.4(@lightningjs/renderer@0.8.2)(@lightningjs/solid@0.15.6)(solid-js@1.8.16):
+    resolution: {integrity: sha512-3W+IkanGq20Dh0cHO1gK3jYPlOZ9jandZH0uzKPoV0PvGzZY4vVESHWVywOwuFR7qCGrPdsFl6FtXv7S8KdrcA==}
     peerDependencies:
       '@lightningjs/renderer': '*'
       '@lightningjs/solid': '*'
       solid-js: '*'
     dependencies:
       '@lightningjs/renderer': 0.8.2
-      '@lightningjs/solid': 0.15.4(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8)
+      '@lightningjs/solid': 0.15.6(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8)
       '@solid-primitives/keyboard': 1.2.8(solid-js@1.8.16)
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.16)
       solid-js: 1.8.16
     dev: false
 
-  /@lightningjs/solid-ui@0.11.3(@babel/core@7.24.4)(@lightningjs/renderer@0.8.2)(@lightningjs/solid-primitives@0.6.3)(@lightningjs/solid@0.15.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.4)(vite@5.2.8):
-    resolution: {integrity: sha512-XyhNOZZNbdsU5ESw2JVKRhGd7q7T2IVlaKbimypl37B7y09R98fswLXHo0W4EJmW/mNMfF6VLL2DIgu17pF8LQ==}
-    peerDependencies:
-      '@lightningjs/renderer': ^0.8.1
-      '@lightningjs/solid': ^0.15.3
-      '@lightningjs/solid-primitives': ^0.6.3
-    dependencies:
-      '@lightningjs/renderer': 0.8.2
-      '@lightningjs/solid': 0.15.4(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8)
-      '@lightningjs/solid-primitives': 0.6.3(@lightningjs/renderer@0.8.2)(@lightningjs/solid@0.15.4)(solid-js@1.8.16)
-      '@solid-primitives/refs': 1.0.8(solid-js@1.8.16)
-      '@solidjs/router': 0.12.5(solid-js@1.8.16)
-      '@storybook/html': 7.6.17(@babel/core@7.24.4)
-      '@storybook/html-vite': 7.6.17(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.4)(vite@5.2.8)
-      solid-js: 1.8.16
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@preact/preset-vite'
-      - bufferutil
-      - encoding
-      - react
-      - react-dom
-      - supports-color
-      - typescript
-      - utf-8-validate
-      - vite
-      - vite-plugin-glimmerx
-    dev: false
-
-  /@lightningjs/solid-ui@0.12.0(@babel/core@7.24.4)(@lightningjs/renderer@0.8.2)(@lightningjs/solid-primitives@0.6.3)(@lightningjs/solid@0.15.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8):
-    resolution: {integrity: sha512-rWdQTrjJALexRJSGmnvQ4+OKmaQxfZupXJd8u9QFj9Pw41WIBcwL60i/6ChFfcP6EYLt+lSKSBegHmtAZRPssw==}
+  /@lightningjs/solid-ui@0.12.1(@babel/core@7.24.4)(@lightningjs/renderer@0.8.2)(@lightningjs/solid-primitives@0.6.4)(@lightningjs/solid@0.15.6)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8):
+    resolution: {integrity: sha512-t38a1B5uGGcU+DMOf1CRmp8x2/cKTeCZJHp2/7yN1wX4w8RyfTrFBj9GrlQT1yS9nunrgJj0TqXyLP7a5+e0ZQ==}
     peerDependencies:
       '@lightningjs/renderer': ^0.8.1
       '@lightningjs/solid': ^0.15.3
@@ -1778,8 +1749,8 @@ packages:
       solid-js: ^1.8.15
     dependencies:
       '@lightningjs/renderer': 0.8.2
-      '@lightningjs/solid': 0.15.4(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8)
-      '@lightningjs/solid-primitives': 0.6.3(@lightningjs/renderer@0.8.2)(@lightningjs/solid@0.15.4)(solid-js@1.8.16)
+      '@lightningjs/solid': 0.15.6(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8)
+      '@lightningjs/solid-primitives': 0.6.4(@lightningjs/renderer@0.8.2)(@lightningjs/solid@0.15.6)(solid-js@1.8.16)
       '@solid-primitives/refs': 1.0.8(solid-js@1.8.16)
       '@storybook/html': 7.6.17(@babel/core@7.24.4)
       '@storybook/html-vite': 7.6.17(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.4)(vite@5.2.8)
@@ -1798,8 +1769,8 @@ packages:
       - vite-plugin-glimmerx
     dev: false
 
-  /@lightningjs/solid@0.15.4(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8):
-    resolution: {integrity: sha512-TCL0XBRBEJCQDVHf1ziv+UGw0+xJEEsOTKg3w3WzxXOeVwN+Dst1u2EOb0X0qIjE9sraFYuLZAzsdKEvBqbVyg==}
+  /@lightningjs/solid@0.15.6(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8):
+    resolution: {integrity: sha512-VLpkMjQJjMAIviE1AhboWhb/M/locT5Nuc5T/8lrYGqiaY9KQpl2Lp4EuYqs4tNH5ROVK60OnrUY6uPQTDw1XQ==}
     peerDependencies:
       solid-js: '*'
     dependencies:
@@ -2023,14 +1994,6 @@ packages:
       solid-js: 1.8.16
     dev: false
 
-  /@solidjs/router@0.12.5(solid-js@1.8.16):
-    resolution: {integrity: sha512-UK9GnWPS1RmBf7w35DpWwqNgpVbKhon5eXOl7Xk+edPMTzzHkwPW2RytQKQ0BMRQOHzyM/WRetWLbIAubKdlog==}
-    peerDependencies:
-      solid-js: ^1.8.6
-    dependencies:
-      solid-js: 1.8.16
-    dev: false
-
   /@solidjs/router@0.13.1(solid-js@1.8.16):
     resolution: {integrity: sha512-Rz5Lf0ssWMuN+Wm2GFO0vwZoO/KSwYFSuCUzWrRAvje5M0ZYZrMk5FZxuzdJT+zg8KuqWJQlRALks5E0r+FjAA==}
     peerDependencies:
@@ -2150,7 +2113,7 @@ packages:
       '@storybook/node-logger': 7.6.17
       '@storybook/types': 7.6.17
       '@types/find-cache-dir': 3.2.1
-      '@types/node': 18.19.30
+      '@types/node': 18.19.31
       '@types/node-fetch': 2.6.11
       '@types/pretty-hrtime': 1.0.3
       chalk: 4.1.2
@@ -2199,7 +2162,7 @@ packages:
       '@storybook/telemetry': 7.6.17
       '@storybook/types': 7.6.17
       '@types/detect-port': 1.3.5
-      '@types/node': 18.19.30
+      '@types/node': 18.19.31
       '@types/pretty-hrtime': 1.0.3
       '@types/semver': 7.5.8
       better-opn: 3.0.2
@@ -2465,13 +2428,13 @@ packages:
     resolution: {integrity: sha512-fB3Zu92ucau0iQ0JMCFQE7b/dv8Ot07NI3KaZIkIUNXq82k4eBAqUaneXfleGY9JWskeS9y+u0nXMyspcuQrCg==}
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.12.5
+      '@types/node': 20.12.7
     dev: false
 
   /@types/connect@3.4.38:
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
     dependencies:
-      '@types/node': 20.12.5
+      '@types/node': 20.12.7
     dev: false
 
   /@types/detect-port@1.3.5:
@@ -2492,7 +2455,7 @@ packages:
   /@types/express-serve-static-core@4.19.0:
     resolution: {integrity: sha512-bGyep3JqPCRry1wq+O5n7oiBgGWmeIJXPjXXCo8EK0u8duZGSYar7cGqd3ML2JUsLGeB7fmc06KYo9fLGWqPvQ==}
     dependencies:
-      '@types/node': 20.12.5
+      '@types/node': 20.12.7
       '@types/qs': 6.9.14
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -2522,18 +2485,18 @@ packages:
   /@types/node-fetch@2.6.11:
     resolution: {integrity: sha512-24xFj9R5+rfQJLRyM56qh+wnVSYhyXC2tkoBndtY0U+vubqNsYXGjufB2nn8Q6gt0LrARwL6UBtMCSVCwl4B1g==}
     dependencies:
-      '@types/node': 18.19.30
+      '@types/node': 18.19.31
       form-data: 4.0.0
     dev: false
 
-  /@types/node@18.19.30:
-    resolution: {integrity: sha512-453z1zPuJLVDbyahaa1sSD5C2sht6ZpHp5rgJNs+H8YGqhluCXcuOUmBYsAo0Tos0cHySJ3lVUGbGgLlqIkpyg==}
+  /@types/node@18.19.31:
+    resolution: {integrity: sha512-ArgCD39YpyyrtFKIqMDvjz79jto5fcI/SVUs2HwB+f0dAzq68yqOdyaSivLiLugSziTpNXLQrVb7RZFmdZzbhA==}
     dependencies:
       undici-types: 5.26.5
     dev: false
 
-  /@types/node@20.12.5:
-    resolution: {integrity: sha512-BD+BjQ9LS/D8ST9p5uqBxghlN+S42iuNxjsUGjeZobe/ciXzk2qb1B6IXc6AnRLS+yFJRpN2IPEHMzwspfDJNw==}
+  /@types/node@20.12.7:
+    resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
     dependencies:
       undici-types: 5.26.5
     dev: false
@@ -2562,14 +2525,14 @@ packages:
     resolution: {integrity: sha512-x2EM6TJOybec7c52BX0ZspPodMsQUd5L6PRwOunVyVUhXiBSKf3AezDL8Dgvgt5o0UfKNfuA0eMLr2wLT4AiBA==}
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.12.5
+      '@types/node': 20.12.7
     dev: false
 
   /@types/serve-static@1.15.7:
     resolution: {integrity: sha512-W8Ym+h8nhuRwaKPaDw34QUkwsGi6Rc4yYqvKFo5rm2FUEhCFbzVWrxXUxuKK8TASjWsysJY0nsmNCGhCOIsrOw==}
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 20.12.5
+      '@types/node': 20.12.7
       '@types/send': 0.17.4
     dev: false
 
@@ -2858,8 +2821,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001607
-      electron-to-chromium: 1.4.729
+      caniuse-lite: 1.0.30001608
+      electron-to-chromium: 1.4.731
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
 
@@ -2892,8 +2855,8 @@ packages:
       set-function-length: 1.2.2
     dev: false
 
-  /caniuse-lite@1.0.30001607:
-    resolution: {integrity: sha512-WcvhVRjXLKFB/kmOFVwELtMxyhq3iM/MvmXcyCe2PNf166c39mptscOc/45TTS96n2gpNV2z7+NakArTWZCQ3w==}
+  /caniuse-lite@1.0.30001608:
+    resolution: {integrity: sha512-cjUJTQkk9fQlJR2s4HMuPMvTiRggl0rAVMtthQuyOlDWuqHXqN8azLq+pi8B2TjwKJ32diHjUqRIKeFX4z1FoA==}
 
   /chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -3203,8 +3166,8 @@ packages:
       jake: 10.8.7
     dev: false
 
-  /electron-to-chromium@1.4.729:
-    resolution: {integrity: sha512-bx7+5Saea/qu14kmPTDHQxkp2UnziG3iajUQu3BxFvCOnpAJdDbMV4rSl+EqFDkkpNNVUFlR1kDfpL59xfy1HA==}
+  /electron-to-chromium@1.4.731:
+    resolution: {integrity: sha512-+TqVfZjpRz2V/5SPpmJxq9qK620SC5SqCnxQIOi7i/U08ZDcTpKbT7Xjj9FU5CbXTMUb4fywbIr8C7cGv4hcjw==}
 
   /email-addresses@5.0.0:
     resolution: {integrity: sha512-4OIPYlA6JXqtVn8zpHpGiI7vE6EQOAg16aGnDMIAlZVinnoZ8208tW1hAbjWydgN/4PLTT9q+O1K6AH/vALJGw==}
@@ -5485,9 +5448,9 @@ packages:
     dependencies:
       '@lightningjs/l3-ui-theme-base': 0.3.1
       '@lightningjs/renderer': 0.8.2
-      '@lightningjs/solid': 0.15.4(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8)
-      '@lightningjs/solid-primitives': 0.6.3(@lightningjs/renderer@0.8.2)(@lightningjs/solid@0.15.4)(solid-js@1.8.16)
-      '@lightningjs/solid-ui': 0.11.3(@babel/core@7.24.4)(@lightningjs/renderer@0.8.2)(@lightningjs/solid-primitives@0.6.3)(@lightningjs/solid@0.15.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.4)(vite@5.2.8)
+      '@lightningjs/solid': 0.15.6(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8)
+      '@lightningjs/solid-primitives': 0.6.4(@lightningjs/renderer@0.8.2)(@lightningjs/solid@0.15.6)(solid-js@1.8.16)
+      '@lightningjs/solid-ui': 0.12.1(@babel/core@7.24.4)(@lightningjs/renderer@0.8.2)(@lightningjs/solid-primitives@0.6.4)(@lightningjs/solid@0.15.6)(react-dom@18.2.0)(react@18.2.0)(solid-js@1.8.16)(typescript@5.4.4)(vite@5.2.8)
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.16)
       '@solidjs/router': 0.13.1(solid-js@1.8.16)
       proxy-polyfill: 0.3.2

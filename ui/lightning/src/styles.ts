@@ -134,6 +134,8 @@ export default {
   },
   peopleBio: {
     ...theme.typography.body1,
+    fontFamily: "Ubuntu",
+    fontWeight: "normal",
     contain: "both",
     width: 780,
     height: 340,
