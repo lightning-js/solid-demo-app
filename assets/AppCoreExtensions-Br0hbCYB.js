@@ -1,0 +1,2 @@
+import{C as e,S as o}from"./CoreExtension-COd_4a8s.js";function s(){import.meta.url,import("_").catch(()=>1),async function*(){}().next()}const t="/solid-demo-app/";class d extends e{async run(n){n.fontManager.addFontFace(new o("Ubuntu",{weight:700},"msdf",n,t+"fonts/Ubuntu-Bold.msdf.png",t+"fonts/Ubuntu-Bold.msdf.json")),n.fontManager.addFontFace(new o("Ubuntu",{weight:400},"msdf",n,t+"fonts/Ubuntu-Regular.msdf.png",t+"fonts/Ubuntu-Regular.msdf.json"))}}export{s as __vite_legacy_guard,d as default};
+//# sourceMappingURL=AppCoreExtensions-Br0hbCYB.js.map
