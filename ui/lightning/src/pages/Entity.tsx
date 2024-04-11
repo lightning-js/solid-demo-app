@@ -95,7 +95,7 @@ const Entity = () => {
   return (
     <Show when={data()} keyed>
       <View x={170} onUp={() => entityActions.setFocus()} onEscape={onEscape}>
-        <ContentBlock y={260} {...data().heroContent}></ContentBlock>
+        <ContentBlock y={260} content={data().heroContent}></ContentBlock>
         <Row
           ref={entityActions}
           y={500}

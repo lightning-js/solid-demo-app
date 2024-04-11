@@ -1,15 +1,19 @@
-import {
-  View,
-  Text,
-  Show,
-  IntrinsicNodeStyleProps,
-  For,
-} from "@lightningjs/solid";
+import { View, Text } from "@lightningjs/solid";
+import { For, Show } from "solid-js";
 import { withPadding } from "@lightningjs/solid-primitives";
 import theme from "theme";
 withPadding;
 
 const blockWidth = 900;
+
+const ContentBlockStyle = {
+  display: "flex",
+  flexDirection: "column",
+  width: blockWidth,
+  height: 220,
+  gap: 16,
+};
+
 const HeadlineStyles = {
   ...theme.typography.display2,
   fontFamily: "Ubuntu",
@@ -40,29 +44,6 @@ const Description = (props) => (
     {props.children}
   </Text>
 );
-
-function getReviews(reviews) {
-  return (
-    <>
-      <Show when={reviews?.rtCrit && reviews?.rtCrit !== "0"}>
-        <View
-          src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Tomato-Torrent-Icon.png"
-          title="Rotten Tomatoes Rating"
-          style={{ width: 30, height: 30, marginRight: -14 }}
-        />
-        <Text style={MetaTextStyle}>{reviews.rtCrit + "%"}</Text>
-      </Show>
-      <Show when={reviews?.rtFan && reviews?.rtFan !== "0"}>
-        <View
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Rotten_Tomatoes_positive_audience.svg/80px-Rotten_Tomatoes_positive_audience.svg.png"
-          title="Rotten Tomatoes Rating"
-          style={{ width: 24, height: 30, marginRight: -14 }}
-        />
-        <Text style={MetaTextStyle}>{reviews.rtFan + "%"}</Text>
-      </Show>
-    </>
-  );
-}
 
 const Badge = (props) => {
   return (
@@ -112,29 +93,19 @@ const Metadata = (props) => (
   </View>
 );
 
-const ContentBlock = (props) => {
-  const style = {
-    display: "flex",
-    flexDirection: "column",
-    width: blockWidth,
-    height: 220,
-    gap: 16,
-  };
-
-  return (
-    <View {...props} style={style}>
-      <Headline>{props.title}</Headline>
-      <Description>{props.description}</Description>
-      <Show when={props.voteCount}>
-        <Metadata
-          metaText={props.metaText}
-          badges={props.badges}
-          voteCount={props.voteCount}
-          voteAverage={props.voteAverage}
-        />
-      </Show>
-    </View>
-  );
-};
+const ContentBlock = (props) => (
+  <View id="contentBlock" style={ContentBlockStyle} {...props}>
+    <Headline>{props.content.title}</Headline>
+    <Description>{props.content.description}</Description>
+    <Show when={props.content.voteCount}>
+      <Metadata
+        metaText={props.content.metaText}
+        badges={props.content.badges}
+        voteCount={props.content.voteCount}
+        voteAverage={props.content.voteAverage}
+      />
+    </Show>
+  </View>
+);
 
 export default ContentBlock;

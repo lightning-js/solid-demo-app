@@ -4,7 +4,6 @@ import {
   on,
   createSignal,
   Show,
-  createResource,
   createSelector,
   For,
 } from "solid-js";
@@ -17,15 +16,12 @@ import { setGlobalBackground } from "../state";
 import browseProvider from "../api/providers/browse";
 import { createInfiniteScroll } from "../components/pagination";
 import ContentBlock from "../components/ContentBlock";
-import * as entityProvider from "../api/providers/entity";
 import { assertTruthy } from "@lightningjs/renderer/utils";
 import { debounce } from "@solid-primitives/scheduled";
 
 const Browse = () => {
   const params = useParams();
   const [columnY, setcolumnY] = createSignal(0);
-  const [entityInfo, setEntityInfo] = createSignal();
-  const [entityData] = createResource(entityInfo, entityProvider.getInfo);
   const [heroContent, setHeroContent] = createSignal({});
   const navigate = useNavigate();
   const isFirst = createSelector(() => {
@@ -40,7 +36,10 @@ const Browse = () => {
     (img: string) => setGlobalBackground(img),
     400
   );
-  const delayedHero = debounce((content: {}) => setHeroContent(content), 200);
+  const delayedHero = debounce(
+    (content: {}) => setHeroContent(content || {}),
+    200
+  );
 
   createEffect(
     on(
@@ -80,7 +79,7 @@ const Browse = () => {
 
   return (
     <Show when={provider().pages().length}>
-      <ContentBlock y={360} x={162} {...heroContent()}></ContentBlock>
+      <ContentBlock y={360} x={162} content={heroContent()} />
       <View clipping style={styles.itemsContainer}>
         <Column
           plinko

@@ -9,10 +9,10 @@ import { createEffect, createSignal } from "solid-js";
 declare module "@lightningjs/solid-primitives" {
   // Augment the FocusManager KeyMap interface with our custom keys
   interface KeyMap {
-    Announcer: string;
-    Menu: string;
-    Escape: string;
-    Backspace: string;
+    Announcer: (string | number)[];
+    Menu: (string | number)[];
+    Escape: (string | number)[];
+    Backspace: (string | number)[];
   }
 }
 
@@ -27,10 +27,15 @@ declare module "@lightningjs/solid" {
 
 const App = (props) => {
   useFocusManager({
-    Announcer: "a",
-    Menu: "m",
-    Escape: "Escape",
-    Backspace: "Backspace",
+    Announcer: ["a"],
+    Menu: ["m"],
+    Escape: ["Escape", 27],
+    Backspace: ["Backspace", 8],
+    Left: ["ArrowLeft", 37],
+    Right: ["ArrowRight", 39],
+    Up: ["ArrowUp", 38],
+    Down: ["ArrowDown", 40],
+    Enter: ["Enter", 13],
   });
   const announcer = useAnnouncer();
   announcer.enabled = false;
@@ -64,6 +69,7 @@ const App = (props) => {
 
   return (
     <View
+      ref={window.APP}
       onAnnouncer={() => (announcer.enabled = !announcer.enabled)}
       onLast={() => history.back()}
       onMenu={() => navigate("/")}

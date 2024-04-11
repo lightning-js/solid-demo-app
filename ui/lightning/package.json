@@ -9,6 +9,7 @@
     "start:prod": "vite --open --host --force --mode production",
     "build": "vite build --sourcemap=true",
     "build:github": "vite build --sourcemap=true --base=/solid-demo-app/",
+    "build:github:dev": "NODE_ENV=development vite build --sourcemap=true --mode development --base=/solid-demo-app/",
     "build:analyze": "vite-bundle-visualizer",
     "deploy": "gh-pages -d dist",
     "preview": "vite preview --open --port 8080",
@@ -18,4 +19,3 @@
   "author": "",
   "license": "ISC"
 }
-

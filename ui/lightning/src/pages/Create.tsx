@@ -151,7 +151,7 @@ const CreatePage = () => {
         <Text>{emptyTest()}</Text>
         <Text style={Subline}>Sub {insertTest()} Text</Text>
         <Show when={insertTest()}>
-          <View width={28} height={28} src={"/assets/rt-popcorn.png"}></View>
+          <View width={28} height={28} src={"./assets/rt-popcorn.png"}></View>
         </Show>
         <Text style={Subline}>More Text</Text>
       </View>

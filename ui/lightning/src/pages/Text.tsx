@@ -61,7 +61,7 @@ const TextPage = () => {
       </Text>
       <View style={SublineContainer}>
         <Text style={Subline}>Subline Text</Text>
-        <View width={28} height={28} src={"/assets/rt-popcorn.png"}></View>
+        <View width={28} height={28} src={"./assets/rt-popcorn.png"}></View>
         <Text style={Subline}>More Text</Text>
       </View>
     </View>
