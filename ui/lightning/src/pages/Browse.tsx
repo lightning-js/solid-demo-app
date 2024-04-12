@@ -85,6 +85,7 @@ const Browse = () => {
           plinko
           announce="All Trending - Week"
           y={columnY()}
+          scroll="none"
           style={styles.Column}
         >
           <For each={provider().pages()}>

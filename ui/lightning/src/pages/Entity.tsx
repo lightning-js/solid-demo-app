@@ -117,6 +117,7 @@ const Entity = () => {
           x={0}
           y={columnY}
           style={styles.Column}
+          scroll="none"
           zIndex={5}
         >
           <Show when={recommendations() && credits()}>
