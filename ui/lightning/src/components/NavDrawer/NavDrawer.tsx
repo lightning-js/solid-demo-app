@@ -67,8 +67,8 @@ export default function NavDrawer(props) {
     <>
       <View
         flexItem={false}
-        x={40}
-        y={30}
+        x={30}
+        y={15}
         zIndex={105}
         alpha={props.showWidgets ? 1 : 0}
       >
@@ -76,6 +76,19 @@ export default function NavDrawer(props) {
           Built With:
         </Text>
         <View y={22} src="./assets/solidWord.png" width={280} height={52} />
+
+        <View x={0} y={110} src="./assets/tmdb.png" width={80} height={41} />
+        <Text
+          x={90}
+          y={110}
+          contain="width"
+          width={160}
+          fontSize={12}
+          color={0xf6f6f644}
+        >
+          This product uses the TMDB API but is not endorsed or certified by
+          TMDB.
+        </Text>
       </View>
       <Column
         {...props}
