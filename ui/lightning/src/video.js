@@ -68,4 +68,4 @@ export function closeVideo() {
   return video;
 }
 
-document.addEventListener("DOMContentLoaded", initApp);
+//document.addEventListener("DOMContentLoaded", initApp);

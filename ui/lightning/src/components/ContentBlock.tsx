@@ -9,6 +9,7 @@ const blockWidth = 900;
 const ContentBlockStyle = {
   display: "flex",
   flexDirection: "column",
+  flexBoundary: "fixed",
   width: blockWidth,
   height: 220,
   gap: 16,

@@ -54,6 +54,11 @@ const Portal = () => {
       description: "Testing Show + children + inserting text",
     },
     {
+      title: "Flex Layout Tests",
+      id: "superflex",
+      description: "Complicated flex layouts",
+    },
+    {
       title: "Viewport",
       id: "viewport",
       description: "Events going in and out of viewport",
