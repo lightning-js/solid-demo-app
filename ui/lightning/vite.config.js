@@ -25,13 +25,13 @@ export default defineConfig({
       "solid-js",
       "@lightningjs/solid",
       "@lightningjs/solid-ui",
-      "@lightningjs/renderer",
       "@lightningjs/solid-primitives",
+      "@lightningjs/renderer",
     ],
   },
+  // Close to removing this - SolidUI is the only thing that needs it (renaming _ElementNode for some reason)
   optimizeDeps: {
     include: [],
-    // This is important for things to work right in `vite` dev mode! Needs more investigation.
     exclude: [
       "@lightningjs/solid",
       "@lightningjs/solid-ui",

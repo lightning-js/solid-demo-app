@@ -1,6 +1,6 @@
 import { createSignal, createSelector, For } from "solid-js";
-import { ElementNode, View, Text, activeElement } from "@lightningjs/solid";
-import { Row } from "@lightningjs/solid-ui";
+import { ElementNode, View, Text } from "@lightningjs/solid";
+import { Column, Row } from "@lightningjs/solid-ui";
 import { useNavigate } from "@solidjs/router";
 import styles from "../styles";
 import { assertTruthy } from "@lightningjs/renderer/utils";
@@ -17,7 +17,7 @@ const Portal = () => {
     navigate("/" + entity.id);
   }
 
-  const demos = [
+  const flexDemos = [
     {
       title: "Flex Row",
       id: "flex",
@@ -39,6 +39,14 @@ const Portal = () => {
       description: "Flex Column Vertical Align Implementation",
     },
     {
+      title: "Flex Layout Tests",
+      id: "superflex",
+      description: "Complicated flex layouts",
+    },
+  ];
+
+  const demos = [
+    {
       title: "Buttons",
       id: "buttons",
       description: "Demo a few buttons",
@@ -52,11 +60,6 @@ const Portal = () => {
       title: "Create Elements",
       id: "create",
       description: "Testing Show + children + inserting text",
-    },
-    {
-      title: "Flex Layout Tests",
-      id: "superflex",
-      description: "Complicated flex layouts",
     },
     {
       title: "Viewport",
@@ -115,12 +118,6 @@ const Portal = () => {
     );
   }
 
-  const [rowX, setRowX] = createSignal(140);
-
-  function moveRow(row) {
-    setRowX(row.selected * -400 + 140);
-  }
-
   return (
     <View colorTop={0x446b9eff} colorBottom={0x2c4f7cff}>
       <View x={120}>
@@ -130,23 +127,31 @@ const Portal = () => {
         </Text>
         <View y={140} height={1} width={1800} color={0xe8d7f9ff} />
       </View>
-      <Row
-        onSelectedChanged={moveRow}
-        onEnter={onEnter}
-        transition={{ x: { delay: 20, duration: 300 } }}
-        x={rowX()}
-        y={300}
-        width={4400}
-        style={styles.Row}
-        justifyContent={"flexStart"}
-        gap={40}
-      >
-        <For each={demos}>
-          {(demo, i) => (
-            <DemoTile autofocus={isFirst(i())} index={i()} {...demo} />
-          )}
-        </For>
-      </Row>
+      <Column scroll="none" y={200} x={170} gap={80}>
+        <Row
+          onEnter={onEnter}
+          style={styles.Row}
+          justifyContent={"flexStart"}
+          gap={40}
+        >
+          <For each={demos}>
+            {(demo, i) => (
+              <DemoTile autofocus={isFirst(i())} index={i()} {...demo} />
+            )}
+          </For>
+        </Row>
+
+        <Row
+          onEnter={onEnter}
+          style={styles.Row}
+          justifyContent={"flexStart"}
+          gap={40}
+        >
+          <For each={flexDemos}>
+            {(demo, i) => <DemoTile index={i()} {...demo} />}
+          </For>
+        </Row>
+      </Column>
     </View>
   );
 };
