@@ -1,11 +1,4 @@
-import {
-  render,
-  Config,
-  SolidNode,
-  SolidRendererOptions,
-  hexColor,
-  ElementNode,
-} from "@lightningjs/solid";
+import { render, Config, hexColor } from "@lightningjs/solid";
 import { HashRouter, Route } from "@solidjs/router";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
@@ -25,8 +18,8 @@ import People from "./pages/People";
 import NotFound from "./pages/NotFound";
 import coreExtensionModuleUrl from "./AppCoreExtensions.js?importChunkUrl";
 
-const logFps = true;
-Config.debug = false;
+const logFps = false;
+Config.debug = true;
 Config.animationsEnabled = true;
 Config.fontSettings.fontFamily = "Ubuntu";
 Config.fontSettings.color = hexColor("#f6f6f6");

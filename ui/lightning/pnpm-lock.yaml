@@ -3,3 +3,32 @@ lockfileVersion: '6.0'
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
+
+dependencies:
+  '@lightningjs/renderer':
+    specifier: ^0.8.3
+    version: 0.8.3
+
+packages:
+
+  /@lightningjs/renderer@0.8.3:
+    resolution: {integrity: sha512-MX+JRi+SFtqIvpmnm177kgsUchXNFAJG43ek1spW4YpxQLbjfU6gqTk+CQnXva4nlTsH8w71ju58snLHQGg/VQ==}
+    engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
+    requiresBuild: true
+    dependencies:
+      '@lightningjs/threadx': 0.3.5
+      '@protobufjs/eventemitter': 1.1.0
+      memize: 2.1.0
+    dev: false
+
+  /@lightningjs/threadx@0.3.5:
+    resolution: {integrity: sha512-aUIUfP/d3S0Vg/Ror7CLbqQR6qu5AAdGRnQ5RQuSQz4t9X2p8TomKD7ShRxI1/FnRR7om2MwKIe1Dix/Axdgpg==}
+    dev: false
+
+  /@protobufjs/eventemitter@1.1.0:
+    resolution: {integrity: sha512-j9ednRT81vYJ9OfVuXG6ERSTdEL1xVsNgqpkxMsbIabzSo3goCjDIveeGv5d03om39ML71RdmrGNjG5SReBP/Q==}
+    dev: false
+
+  /memize@2.1.0:
+    resolution: {integrity: sha512-yywVJy8ctVlN5lNPxsep5urnZ6TTclwPEyigM9M3Bi8vseJBOfqNrGWN/r8NzuIt3PovM323W04blJfGQfQSVg==}
+    dev: false
