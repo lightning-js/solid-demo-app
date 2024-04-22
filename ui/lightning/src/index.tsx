@@ -18,8 +18,8 @@ import People from "./pages/People";
 import NotFound from "./pages/NotFound";
 import coreExtensionModuleUrl from "./AppCoreExtensions.js?importChunkUrl";
 
-const logFps = false;
-Config.debug = true;
+const logFps = true;
+Config.debug = false;
 Config.animationsEnabled = true;
 Config.fontSettings.fontFamily = "Ubuntu";
 Config.fontSettings.color = hexColor("#f6f6f6");
