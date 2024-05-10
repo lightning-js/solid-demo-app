@@ -5,21 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@lightningjs/l3-ui-theme-base':
-    specifier: ^0.3.2
-    version: 0.3.2
-  '@lightningjs/renderer':
-    specifier: ^0.8.3
-    version: 0.8.3
-  '@lightningjs/solid':
-    specifier: ^0.15.14
-    version: 0.15.14(@lightningjs/renderer@0.8.3)(solid-js@1.8.17)
-  '@lightningjs/solid-primitives':
-    specifier: ^0.6.6
-    version: 0.6.6(@lightningjs/solid@0.15.14)(solid-js@1.8.17)
-  '@lightningjs/solid-ui':
-    specifier: ^0.13.1
-    version: 0.13.1(@lightningjs/solid-primitives@0.6.6)(@lightningjs/solid@0.15.14)(solid-js@1.8.17)
   '@solid-primitives/scheduled':
     specifier: ^1.4.3
     version: 1.4.3(solid-js@1.8.17)
@@ -1471,59 +1456,6 @@ packages:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@lightningjs/l3-ui-theme-base@0.3.2:
-    resolution: {integrity: sha512-le5qHL5NpD0Y5qQqcMMFL4Ie9uTnAJ1M/eITvAAHoNYqpPUNlbzjXhFBP3eylM1je+qMpsNkgBMFexF46whBsw==}
-    dev: false
-
-  /@lightningjs/renderer@0.8.3:
-    resolution: {integrity: sha512-MX+JRi+SFtqIvpmnm177kgsUchXNFAJG43ek1spW4YpxQLbjfU6gqTk+CQnXva4nlTsH8w71ju58snLHQGg/VQ==}
-    engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
-    requiresBuild: true
-    dependencies:
-      '@lightningjs/threadx': 0.3.5
-      '@protobufjs/eventemitter': 1.1.0
-      memize: 2.1.0
-    dev: false
-
-  /@lightningjs/solid-primitives@0.6.6(@lightningjs/solid@0.15.14)(solid-js@1.8.17):
-    resolution: {integrity: sha512-bowP29fXs7z4YJngxGqtM1z6ZMD0NcCI/BAbaU36TJDNVw6esfQ8DYiz7ThKmznG1CS9nYX1LX4XlJFOZMfOBQ==}
-    peerDependencies:
-      '@lightningjs/solid': '*'
-      solid-js: '*'
-    dependencies:
-      '@lightningjs/solid': 0.15.14(@lightningjs/renderer@0.8.3)(solid-js@1.8.17)
-      '@solid-primitives/keyboard': 1.2.8(solid-js@1.8.17)
-      '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.17)
-      solid-js: 1.8.17
-    dev: false
-
-  /@lightningjs/solid-ui@0.13.1(@lightningjs/solid-primitives@0.6.6)(@lightningjs/solid@0.15.14)(solid-js@1.8.17):
-    resolution: {integrity: sha512-+xpuIutmuD7fqwVJjELwOOEnRDdoZ5DpvfWkSVE2IRfiWNWn0vBUO/TLPu8hx2+iGnhjzj4vefwMEPxGjskI5w==}
-    peerDependencies:
-      '@lightningjs/solid': '*'
-      '@lightningjs/solid-primitives': '*'
-      solid-js: '*'
-    dependencies:
-      '@lightningjs/solid': 0.15.14(@lightningjs/renderer@0.8.3)(solid-js@1.8.17)
-      '@lightningjs/solid-primitives': 0.6.6(@lightningjs/solid@0.15.14)(solid-js@1.8.17)
-      '@solid-primitives/refs': 1.0.8(solid-js@1.8.17)
-      solid-js: 1.8.17
-    dev: false
-
-  /@lightningjs/solid@0.15.14(@lightningjs/renderer@0.8.3)(solid-js@1.8.17):
-    resolution: {integrity: sha512-heyi4oNGOPDOG/QiTKFOxQ2w/UQMAaLmhn/FPrZtfBWPFWMdBBenwXPIOpN4vKlJyMxhjVJY435G9BF7zT1TnQ==}
-    peerDependencies:
-      '@lightningjs/renderer': ^0.8.3
-      solid-js: '*'
-    dependencies:
-      '@lightningjs/renderer': 0.8.3
-      solid-js: 1.8.17
-    dev: false
-
-  /@lightningjs/threadx@0.3.5:
-    resolution: {integrity: sha512-aUIUfP/d3S0Vg/Ror7CLbqQR6qu5AAdGRnQ5RQuSQz4t9X2p8TomKD7ShRxI1/FnRR7om2MwKIe1Dix/Axdgpg==}
-    dev: false
-
   /@lightningjs/vite-plugin-import-chunk-url@0.3.1(vite@5.2.10):
     resolution: {integrity: sha512-jD/3Lelj2axT1eCPpV92APkMb4oXyBxRvj3oN8tEkph/in7b4KOp92SbBqhdPi5SmRWERNej78i9jE+6psDm6w==}
     peerDependencies:
@@ -1531,10 +1463,6 @@ packages:
     dependencies:
       vite: 5.2.10(terser@5.30.4)
     dev: true
-
-  /@protobufjs/eventemitter@1.1.0:
-    resolution: {integrity: sha512-j9ednRT81vYJ9OfVuXG6ERSTdEL1xVsNgqpkxMsbIabzSo3goCjDIveeGv5d03om39ML71RdmrGNjG5SReBP/Q==}
-    dev: false
 
   /@rollup/rollup-android-arm-eabi@4.16.4:
     resolution: {integrity: sha512-GkhjAaQ8oUTOKE4g4gsZ0u8K/IHU1+2WQSgS1TwTcYvL+sjbaQjNHFXbOJ6kgqGHIO1DfUhI/Sphi9GkRT9K+Q==}
@@ -1648,54 +1576,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@solid-primitives/event-listener@2.3.3(solid-js@1.8.17):
-    resolution: {integrity: sha512-DAJbl+F0wrFW2xmcV8dKMBhk9QLVLuBSW+TR4JmIfTaObxd13PuL7nqaXnaYKDWOYa6otB00qcCUIGbuIhSUgQ==}
-    peerDependencies:
-      solid-js: ^1.6.12
-    dependencies:
-      '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
-      solid-js: 1.8.17
-    dev: false
-
-  /@solid-primitives/keyboard@1.2.8(solid-js@1.8.17):
-    resolution: {integrity: sha512-pJtcbkjozS6L1xvTht9rPpyPpX55nAkfBzbFWdf3y0Suwh6qClTibvvObzKOf7uzQ+8aZRDH4LsoGmbTKXtJjQ==}
-    peerDependencies:
-      solid-js: ^1.6.12
-    dependencies:
-      '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.17)
-      '@solid-primitives/rootless': 1.4.5(solid-js@1.8.17)
-      '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
-      solid-js: 1.8.17
-    dev: false
-
-  /@solid-primitives/refs@1.0.8(solid-js@1.8.17):
-    resolution: {integrity: sha512-+jIsWG8/nYvhaCoG2Vg6CJOLgTmPKFbaCrNQKWfChalgUf9WrVxWw0CdJb3yX15n5lUcQ0jBo6qYtuVVmBLpBw==}
-    peerDependencies:
-      solid-js: ^1.6.12
-    dependencies:
-      '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
-      solid-js: 1.8.17
-    dev: false
-
-  /@solid-primitives/rootless@1.4.5(solid-js@1.8.17):
-    resolution: {integrity: sha512-GFJE9GC3ojx0aUKqAUZmQPyU8fOVMtnVNrkdk2yS4kd17WqVSpXpoTmo9CnOwA+PG7FTzdIkogvfLQSLs4lrww==}
-    peerDependencies:
-      solid-js: ^1.6.12
-    dependencies:
-      '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
-      solid-js: 1.8.17
-    dev: false
-
   /@solid-primitives/scheduled@1.4.3(solid-js@1.8.17):
     resolution: {integrity: sha512-HfWN5w7b7FEc6VPLBKnnE302h90jsLMuR28Fcf7neRGGf8jBj6wm6/UFQ00VlKexHFMR6KQ2u4VBh5a1ZcqM8g==}
-    peerDependencies:
-      solid-js: ^1.6.12
-    dependencies:
-      solid-js: 1.8.17
-    dev: false
-
-  /@solid-primitives/utils@6.2.3(solid-js@1.8.17):
-    resolution: {integrity: sha512-CqAwKb2T5Vi72+rhebSsqNZ9o67buYRdEJrIFzRXz3U59QqezuuxPsyzTSVCacwS5Pf109VRsgCJQoxKRoECZQ==}
     peerDependencies:
       solid-js: ^1.6.12
     dependencies:
@@ -2452,10 +2334,6 @@ packages:
     dependencies:
       semver: 6.3.1
     dev: true
-
-  /memize@2.1.0:
-    resolution: {integrity: sha512-yywVJy8ctVlN5lNPxsep5urnZ6TTclwPEyigM9M3Bi8vseJBOfqNrGWN/r8NzuIt3PovM323W04blJfGQfQSVg==}
-    dev: false
 
   /meow@13.2.0:
     resolution: {integrity: sha512-pxQJQzB6djGPXh08dacEloMFopsOqGVRKFPYvPOt9XDZ1HasbgDZA74CJGreSU4G3Ak7EFJGoiH2auq+yXISgA==}

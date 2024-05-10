@@ -2,18 +2,21 @@
   "compilerOptions": {
     "strict": true,
     "target": "ES2019",
-    "module": "ES2015",
+    "module": "esnext",
     "moduleResolution": "Bundler",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": ["vite/client", "@lightningjs/vite-plugin-import-chunk-url/client"],
+    "types": [
+      "vite/client",
+      "@lightningjs/vite-plugin-import-chunk-url/client"
+    ],
     "noEmit": true,
     "isolatedModules": true,
     "noImplicitAny": false,
     "paths": {
       "theme": ["./node_modules/@lightningjs/l3-ui-theme-base"]
     }
-  },
+  }
 }

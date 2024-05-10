@@ -19,6 +19,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@lightningjs/renderer": "^0.8.3"
+    "@lightningjs/l3-ui-theme-base": "^0.3.2",
+    "@lightningjs/renderer": "^0.8.4",
+    "@lightningjs/solid": "^0.16.0",
+    "@lightningjs/solid-primitives": "^0.6.6",
+    "@lightningjs/solid-ui": "^0.13.1"
   }
 }

@@ -1,22 +1,25 @@
 import { render, Config, hexColor } from "@lightningjs/solid";
 import { HashRouter, Route } from "@solidjs/router";
+import { lazy } from "solid-js";
 import App from "./pages/App";
 import Browse from "./pages/Browse";
-import Portal from "./pages/Portal";
-import TextPage from "./pages/Text";
-import CreatePage from "./pages/Create";
-import ViewportPage from "./pages/Viewport";
-import ButtonsPage from "./pages/Buttons";
-import FlexPage from "./pages/Flex";
-import FlexSizePage from "./pages/FlexSize";
-import FlexColumnSizePage from "./pages/FlexColumnSize";
-import FlexColumnPage from "./pages/FlexColumn";
-import ButtonsMaterialPage from "./pages/ButtonsMaterial";
-import SuperFlexPage from "./pages/SuperFlex";
-import Entity from "./pages/Entity";
-import People from "./pages/People";
 import NotFound from "./pages/NotFound";
 import coreExtensionModuleUrl from "./AppCoreExtensions.js?importChunkUrl";
+
+const Grid = lazy(() => import("./pages/Grid"));
+const Portal = lazy(() => import("./pages/Portal"));
+const TextPage = lazy(() => import("./pages/Text"));
+const CreatePage = lazy(() => import("./pages/Create"));
+const ViewportPage = lazy(() => import("./pages/Viewport"));
+const ButtonsPage = lazy(() => import("./pages/Buttons"));
+const FlexPage = lazy(() => import("./pages/Flex"));
+const FlexSizePage = lazy(() => import("./pages/FlexSize"));
+const FlexColumnSizePage = lazy(() => import("./pages/FlexColumnSize"));
+const FlexColumnPage = lazy(() => import("./pages/FlexColumn"));
+const ButtonsMaterialPage = lazy(() => import("./pages/ButtonsMaterial"));
+const SuperFlexPage = lazy(() => import("./pages/SuperFlex"));
+const Entity = lazy(() => import("./pages/Entity"));
+const People = lazy(() => import("./pages/People"));
 
 const logFps = true;
 Config.debug = false;
@@ -36,6 +39,7 @@ render(() => (
     <Route path="" component={Browse} />
     <Route path="examples" component={Portal} />
     <Route path="browse/:filter" component={Browse} />
+    <Route path="grid" component={Grid} />
     <Route path="text" component={TextPage} />
     <Route path="buttons" component={ButtonsPage} />
     <Route path="flex" component={FlexPage} />
