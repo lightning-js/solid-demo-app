@@ -61,6 +61,7 @@ const Browse = () => {
     this.children.selected?.setFocus();
     setcolumnY((this.y || 0) * -1 + 24);
     let numPages = provider().pages().length;
+    this.parent!.selected = this.parent!.children.indexOf(this);
 
     if (
       numPages === 0 ||
@@ -71,7 +72,7 @@ const Browse = () => {
   }
 
   function onEnter(this: ElementNode) {
-    let entity = this.children.selected;
+    let entity = this.children.find((c) => c.states!.has("focus"));
     assertTruthy(entity && entity.href);
     navigate(entity.href);
     return true;
@@ -82,6 +83,7 @@ const Browse = () => {
       <ContentBlock y={360} x={162} content={heroContent()} />
       <View clipping style={styles.itemsContainer}>
         <Column
+          id="BrowseColumn"
           plinko
           announce="All Trending - Week"
           y={columnY()}

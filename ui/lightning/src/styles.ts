@@ -48,7 +48,7 @@ export default {
   } satisfies IntrinsicTextNodeStyleProps,
   itemsContainer: {
     width: theme.layout.screenW,
-    height: 600,
+    height: 800,
     y: 560,
     x: 0,
     zIndex: 2,
@@ -118,6 +118,7 @@ export default {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flexStart",
+    flexBoundary: "contain",
     gap: 64,
     width: theme.layout.screenW - 2 * theme.layout.marginX,
     x: theme.layout.marginX + theme.layout.gutterX,
@@ -145,15 +146,16 @@ export default {
 const Button = {
   width: 120,
   height: 40,
-  color: hexColor("#000000"),
+  mount: 0.5,
+  color: 0x000000b3,
   borderRadius: 8,
-  border: { width: 2, color: hexColor("#3333ff") },
-  scale: 1,
+  borderBottom: { width: 2, color: 0xff00faff },
+  border: { width: 2, color: 0xfafafa33 },
   focus: {
-    scale: 1.1,
-    border: { width: 5, color: hexColor("#333333") },
+    color: 0xfafafaff,
+    borderRadius: 20,
+    borderBottom: { width: 0, color: 0x00000000 },
   },
-  transition: { scale: true, color: true },
 } satisfies IntrinsicNodeStyleProps;
 
 const TopBar = {

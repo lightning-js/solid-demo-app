@@ -71,7 +71,7 @@ const Entity = () => {
   }
 
   function onEnter(this: ElementNode) {
-    let entity = this.children.selected;
+    let entity = this.children.find((c) => c.states!.has("focus"));
     assertTruthy(entity && entity.href);
     navigate(entity.href);
   }
@@ -117,6 +117,7 @@ const Entity = () => {
           x={0}
           y={columnY}
           style={styles.Column}
+          height={880}
           scroll="none"
           zIndex={5}
         >
@@ -150,6 +151,7 @@ const Entity = () => {
       <View
         alpha={backdropAlpha()}
         color={hexColor("#000000")}
+        skipFocus
         zIndex={200}
         transition={{ alpha: true }}
       />

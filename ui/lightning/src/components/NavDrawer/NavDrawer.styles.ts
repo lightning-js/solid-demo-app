@@ -5,7 +5,7 @@ export default {
   Column: {
     flexDirection: "column",
     display: "flex",
-    width: 320,
+    width: 140,
     height: 600,
     y: 360,
     gap: 20,
@@ -18,6 +18,7 @@ export default {
     },
     x: 8,
     focus: {
+      width: 500,
       x: theme.layout.marginX,
     },
   } satisfies IntrinsicNodeStyleProps,

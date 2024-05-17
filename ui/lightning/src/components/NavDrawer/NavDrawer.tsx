@@ -67,6 +67,8 @@ export default function NavDrawer(props) {
     <>
       <View
         flexItem={false}
+        width={300}
+        height={150}
         x={30}
         y={15}
         zIndex={105}
@@ -116,7 +118,7 @@ export default function NavDrawer(props) {
           Examples
         </NavButton>
       </Column>
-      <View ref={backdrop} style={styles.Gradient}></View>
+      <View skipFocus ref={backdrop} style={styles.Gradient}></View>
     </>
   );
 }
