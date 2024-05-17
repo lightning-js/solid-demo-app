@@ -66,8 +66,8 @@ export default function Background() {
       (img: string) => {
         changeBackgrounds(img);
       },
-      { defer: true }
-    )
+      { defer: true },
+    ),
   );
 
   return (

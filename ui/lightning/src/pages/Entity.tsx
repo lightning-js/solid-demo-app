@@ -26,11 +26,11 @@ const Entity = () => {
   const [data] = createResource(() => ({ ...params }), provider.getInfo);
   const [credits] = createResource<any, Tile[]>(
     () => ({ ...params }),
-    provider.getCredits
+    provider.getCredits,
   );
   const [recommendations] = createResource<any, Tile[]>(
     () => ({ ...params }),
-    provider.getRecommendations
+    provider.getRecommendations,
   );
   const [backdropAlpha, setBackdropAlpha] = createSignal(0);
 
@@ -40,8 +40,8 @@ const Entity = () => {
       (data) => {
         setGlobalBackground(data.backgroundImage);
       },
-      { defer: true }
-    )
+      { defer: true },
+    ),
   );
 
   const columnY = 640;

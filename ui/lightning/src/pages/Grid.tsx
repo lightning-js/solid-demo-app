@@ -77,8 +77,8 @@ const Grid = () => {
           setPage((p) => p + 1);
         }
       },
-      { defer: true }
-    )
+      { defer: true },
+    ),
   );
 
   onMount(() => {
