@@ -31,7 +31,9 @@ Config.rendererOptions = {
   coreExtensionModule: coreExtensionModuleUrl,
   fpsUpdateInterval: logFps ? 200 : 0,
   enableInspector: true,
-  // deviceLogicalPixelRatio: 1
+  // Set the resolution based on window height
+  // 720p = 0.666667, 1080p = 1, 1440p = 1.5, 2160p = 2
+  deviceLogicalPixelRatio: window.innerHeight / 1080,
 };
 
 render(() => (
